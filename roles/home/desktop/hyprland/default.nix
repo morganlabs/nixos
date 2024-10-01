@@ -17,7 +17,7 @@ in
     ../mako.nix
 
     ../../programs/kitty.nix
-    ../../programs/firefox.nix
+    ../../programs/firefox
   ];
 
   options.roles.hyprland = {

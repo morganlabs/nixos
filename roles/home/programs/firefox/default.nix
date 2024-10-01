@@ -21,6 +21,7 @@ in
         isDefault = true;
 	name = "Morgan";
 
+	settings.extensions.autoDisableScopes = 0;
 	extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           onepassword-password-manager
           ublock-origin
@@ -28,7 +29,7 @@ in
           youtube-shorts-block
         ];
 
-	settings.extensions.autoDisableScopes = 0;
+	extraConfig = builtins.readFile ./user.js;
 	
 	search = {
 	  force = true;

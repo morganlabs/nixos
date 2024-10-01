@@ -18,8 +18,8 @@ let
     src = "source $HOME/.zshrc";
 
     # Replaced programs
-    cat = "bat -n --theme gruvbox-dark";
-    ls = "eza --long --icons --colour=always --all -T --level 1 --group-directories-first -b -h --git";
+    cat = "bat";
+    ls = "eza";
 
     # Git
     gi = "git init";
@@ -58,6 +58,11 @@ let
       cfg.sessionVariables.sessionVariables;
 in
 {
+  imports = [
+    ./eza.nix
+    ./bat.nix
+  ];
+
   options.roles.zsh = {
     enable = mkEnableOption "Enable ZSH";
 
@@ -107,11 +112,11 @@ in
   # config.programs.zsh.enable = mkIf cfg.enable true;
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      eza
-      bat
-    ];
-
+    roles = {
+      eza.enable = true;
+      bat.enable = true;
+    };
+  	
     programs.zsh = {
       enable = true;
       shellAliases = finalAliases;

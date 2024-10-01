@@ -23,7 +23,7 @@
       # wl-clipboard
 
       # pavucontrol
-      # discord
+      discord
       # element
       # joshuto
       # nextcloud-client
@@ -34,7 +34,7 @@
   };
 
   roles = {
-    # git.enable = true;
+    nvim.enable = true;
     zsh.enable = true;
 
     hyprland.enable = true;
