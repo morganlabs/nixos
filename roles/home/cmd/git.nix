@@ -95,7 +95,7 @@ in
           };
         }
         (mkIf cfg.use1PasswordSigning {
-          user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINa9j0bvBYusDeRyAOUCJot8/FVdrRnQ6YTYsGfjI2Gz";
+          user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNv1xhpJxFP8KP0+ai4+sK6HRu70J6Nq/u4dU27MixM";
           commit.gpgsign = true;
           gpg = {
             format = "ssh";
