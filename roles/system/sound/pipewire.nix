@@ -1,15 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.pipewire;
+  cfg = config.roles.sound.pipewire;
 in
 {
-  options.roles.pipewire = {
+  options.roles.sound.pipewire = {
     enable = mkEnableOption "Pipewire";
   };
 

@@ -6,15 +6,78 @@
 }:
 with lib;
 let
-  cfg = config.roles.waybar;
+  cfg = config.roles.desktop.waybar;
 in
 {
-  options.roles.waybar = {
+  options.roles.desktop.waybar = {
     enable = mkEnableOption "Enable Waybar";
+
+    modules = {
+      volume.enable = mkOption {
+        description = "Enable the volume indicator";
+        type = types.bool;
+        default = false;
+      };
+
+      brightness.enable = mkOption {
+        description = "Enable the brightness indicator";
+        type = types.bool;
+        default = false;
+      };
+
+      network.enable = mkOption {
+        description = "Enable the network indicator";
+        type = types.bool;
+        default = false;
+      };
+
+      bluetooth = {
+        enable = mkOption {
+          description = "Enable the bluetooth indicator";
+          type = types.bool;
+          default = false;
+        };
+
+        controller = mkOption {
+          description = "Specify which Bluetooth controller to monitor";
+          type = types.str;
+          default = "";
+        };
+      };
+
+      battery = {
+        enable = mkOption {
+          description = "Enable the battery indicator";
+          type = types.bool;
+          default = false;
+        };
+
+        bat = mkOption {
+          description = "Specify which battery to monitor";
+          type = types.str;
+          default = "BAT0";
+        };
+      };
+
+      tray.enable = mkOption {
+        description = "Enable the system tray";
+        type = types.bool;
+        default = false;
+      };
+    };
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [ playerctl ];
+    home.packages =
+      with pkgs;
+      builtins.concatLists [
+        [ playerctl ]
+        (if cfg.modules.bluetooth.enable then [ blueman ] else [ ])
+        (if cfg.modules.volume.enable then [ pavucontrol ] else [ ])
+        (if cfg.modules.brightness.enable then [ playerctl ] else [ ])
+        (if cfg.modules.network.enable then [ ] else [ ])
+      ];
+
     programs.waybar = {
       enable = true;
 
@@ -31,12 +94,11 @@ in
         }
 
         window#waybar {
-          background: #${base00};
+          background: #${base01};
         }
 
         .modules-center * .module,
-        .modules-right * .module,
-        #custom-music.module {
+        .modules-right * .module {
           margin: 0 8px;
         }
 
@@ -45,19 +107,27 @@ in
         }
 
         #workspaces .active * {
-          color: #${base01};
+          color: #${base00};
         }
 
-        #custom-power.flat {
-          padding-right: 9px;
-        }
-
-        #custom-music.module {
-          padding: 0 8px;
+        #window {
+          padding: 0 16px;
         }
 
         #pulseaudio.muted {
           padding: 0 0px;
+        }
+
+        #battery.charged {
+          color: #${base0B}
+        }
+
+        #battery.warning {
+          color: #${base09}
+        }
+
+        #battery.critical {
+          color: #${base08}
         }
       '';
 
@@ -68,25 +138,87 @@ in
           height = 32;
           modules-left = [
             "hyprland/workspaces"
-            "custom/music"
+            "hyprland/window"
           ];
-          modules-center = [ "hyprland/window" ];
-          modules-right = [
-            "tray"
-            "memory"
-            "pulseaudio"
-            "clock"
-            "custom/power"
-          ];
+          modules-center = [ "clock" ];
+          modules-right = (
+            builtins.concatLists [
+              (if cfg.modules.brightness.enable then [ "backlight" ] else [ ])
+              (if cfg.modules.volume.enable then [ "pulseaudio" ] else [ ])
+              (if cfg.modules.battery.enable then [ "battery" ] else [ ])
+              (if cfg.modules.bluetooth.enable then [ "bluetooth" ] else [ ])
+              (if cfg.modules.network.enable then [ "network" ] else [ ])
+              (if cfg.modules.tray.enable then [ "tray" ] else [ ])
+            ]
+          );
 
-          memory = {
-            interval = 1;
-            format = "  {percentage}% ({used:0.1f}/{total:0.0f}GB)";
+          bluetooth = {
+            inherit (cfg.modules.bluetooth) controller;
+            on-click = "blueman-manager";
+            format = " {status}";
+            format-on = " On";
+            format-off = "󰂲 Off";
+            format-disabled = "󰂲 Disabled";
+            format-connected = "󰂱 Connected";
+            tooltip-format-connected = "{device_alias}";
+          };
+
+          network = {
+            format = "{icon} {essid}";
+            format-wifi = "󰤨 {signalStrength}%";
+            format-ethernet = "󰈀";
+            format-disconnected = "󰤮 Disconnected";
+            tooltip-format-wifi = "{essid} ({ipaddr})";
+            tooltip-format-ethernet = "{ipaddr}";
           };
 
           tray = {
             show-passive-icons = true;
             spacing = 16;
+          };
+
+          backlight = {
+            format = "{icon} {percent}%";
+            tooltip = false;
+            scroll-step = 5;
+            reverse-scrolling = true;
+            format-icons = [
+              "󰃞"
+              "󰃞"
+              "󰃝"
+              "󰃝"
+              "󰃟"
+              "󰃟"
+              "󰃟"
+              "󰃟"
+              "󰃠"
+              "󰃠"
+            ];
+          };
+
+          battery = {
+            inherit (cfg.modules.battery) bat;
+            interval = 2;
+            format = "{icon} {capacity}%";
+            format-charging = "󱐋 {capacity}%";
+            states = {
+              charged = 100;
+              default = 99;
+              warning = 20;
+              critical = 10;
+            };
+            format-icons = [
+              "󰁺"
+              "󰁻"
+              "󰁼"
+              "󰁽"
+              "󰁾"
+              "󰁿"
+              "󰂀"
+              "󰂁"
+              "󰂂"
+              "󰁹"
+            ];
           };
 
           "hyprland/workspaces" = {
@@ -95,11 +227,6 @@ in
               default = "";
               urgent = " ";
             };
-          };
-
-          "custom/music" = {
-            exec = "playerctl metadata --follow --format \"{{ title }} - {{ artist }}\"";
-            format = "󰎇 {}";
           };
 
           pulseaudio = {
@@ -117,13 +244,10 @@ in
             on-click-right = "pamixer --toggle-mute";
           };
 
-          clock = {
-            format = "{:%A %d %B %H:%M}";
-          };
-
-          "custom/power" = {
-            format = "⏻";
-            on-click = "~/.config/waybar/scripts/power-menu.sh";
+          clock = with config.colorScheme.palette; {
+            format = "<span color='#${base0E}'>{:%a</span>%e %b <span color='#${base0E}'>%H</span>:%M}";
+            interval = 5;
+            tooltip = false;
           };
 
           "hyprland/window" = {

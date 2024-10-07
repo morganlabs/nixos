@@ -1,15 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.i18n;
+  cfg = config.roles.misc.i18n;
 in
 {
-  options.roles.i18n = {
+  options.roles.misc.i18n = {
     enable = mkEnableOption "The default i18n settings for my systems";
   };
 

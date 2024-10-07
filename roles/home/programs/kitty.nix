@@ -1,15 +1,10 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.kitty;
+  cfg = config.roles.programs.kitty;
 in
 {
-  options.roles.kitty = {
+  options.roles.programs.kitty = {
     enable = mkEnableOption "Enable Kitty";
   };
 
@@ -17,14 +12,14 @@ in
     programs.kitty = {
       enable = true;
 
+      shellIntegration.enableZshIntegration = config.roles.cmd.zsh.enable;
       font.name = "BlexMono Nerd Font";
-      shellIntegration.enableZshIntegration = true;
       themeFile = "gruvbox-dark";
 
       extraConfig = ''
         window_padding_width 8
         window_padding_height 5
-	enable_audio_bell no
+        enable_audio_bell no
       '';
     };
   };

@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.roles.mako;
+  cfg = config.roles.desktop.mako;
 in
 {
-  options.roles.mako = {
+  options.roles.desktop.mako = {
     enable = mkEnableOption "Enable Mako";
   };
 

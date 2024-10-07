@@ -1,15 +1,10 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.hyprlock;
+  cfg = config.roles.desktop.hyprlock;
 in
 {
-  options.roles.hyprlock = {
+  options.roles.desktop.hyprlock = {
     enable = mkEnableOption "Enable Hyprlock";
   };
 
@@ -21,13 +16,13 @@ in
 
         general = {
           hide_cursor = true;
-          grace = 0;
+          grace = 10;
           ignore_empty_input = true;
         };
 
         background = {
           monitor = "";
-          color = "rgb(${base01})";
+          color = "rgb(${base00})";
 
           blur_passes = 3;
           blur_size = 3;
@@ -75,21 +70,24 @@ in
             dots_center = true;
             dots_rounding = 0;
 
-            inner_color = "rgba(${base0E})";
-            outer_color = "rgba(${base0E})";
+            inner_color = "rgb(${base00})";
+            outer_color = "rgb(${base00})";
             font_color = "rgb(${base04})";
 
-            fade_on_empty = true;
-            fade_timeout = 1000;
+            fade_on_empty = false;
 
             placeholder_text = "";
 
-            rounding = 5;
+            rounding = 0;
 
             check_color = "rgb(${base09})";
             fail_color = "rgb(${base08})";
             fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
             fail_transition = 256;
+
+            capslock_color = "rgb(${base0E})";
+            numlock_color = "rgb(${base0C})";
+            bothlock_color = "rgb(${base0D})";
 
             position = "0, 128";
             halign = "center";

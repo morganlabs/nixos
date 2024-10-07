@@ -1,16 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  user,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.bat;
+  cfg = config.roles.cmd.bat;
 in
 {
-  options.roles.bat = {
+  options.roles.cmd.bat = {
     enable = mkEnableOption "Enable Bat";
   };
 
@@ -19,7 +13,7 @@ in
       enable = true;
       config = {
         theme = "gruvbox-dark";
-	style = "numbers,changes,header";
+        style = "numbers,changes,header";
       };
     };
   };

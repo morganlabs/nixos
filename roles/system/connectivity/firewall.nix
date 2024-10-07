@@ -1,15 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.firewall;
+  cfg = config.roles.connectivity.firewall;
 in
 {
-  options.roles.firewall = {
+  options.roles.connectivity.firewall = {
     enable = mkEnableOption "Firewall";
   };
 

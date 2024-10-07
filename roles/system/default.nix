@@ -1,17 +1,21 @@
 { ... }:
 {
   imports = [
+    ./defaultUser.nix
+
+    ./sound/pipewire.nix
+
     ./bootloader/grub.nix
 
     ./misc/i18n.nix
     ./misc/security.nix
-    ./misc/defaultUser.nix
     ./misc/defaultFonts.nix
 
-    ./sound/pipewire.nix
+    ./connectivity/ssh.nix
+    ./connectivity/firewall.nix
+    ./connectivity/networkmanager.nix
+    ./connectivity/bluetooth.nix
 
-    ./networking/ssh.nix
-    ./networking/firewall.nix
-    ./networking/networkmanager.nix
+    ./laptop/powerManagement.nix
   ];
 }

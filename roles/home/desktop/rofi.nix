@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.roles.rofi;
+  cfg = config.roles.desktop.rofi;
 in
 {
-  options.roles.rofi = {
+  options.roles.desktop.rofi = {
     enable = mkEnableOption "Enable Rofi";
   };
 

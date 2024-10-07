@@ -1,15 +1,24 @@
-{
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.hypridle;
+  cfg = config.roles.desktop.hypridle;
 in
 {
-  options.roles.hypridle = {
+  options.roles.desktop.hypridle = {
     enable = mkEnableOption "Enable Hypridle";
+
+    timeoutUntil = {
+      lock = mkOption {
+        type = types.int;
+        description = "How many seconds until the device auto-locks";
+        default = 600;
+      };
+      sleep = mkOption {
+        type = types.int;
+        description = "How many seconds until the device auto-sleeps";
+        default = 1200;
+      };
+    };
   };
 
   config = mkIf cfg.enable {
@@ -24,11 +33,11 @@ in
 
         listener = [
           {
-            timeout = 600;
+            timeout = cfg.timeoutUntil.lock;
             on-timeout = "hyprlock";
           }
           {
-            timeout = 1200;
+            timeout = cfg.timeoutUntil.sleep;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
           }

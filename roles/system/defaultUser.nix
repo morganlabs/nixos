@@ -14,18 +14,10 @@ in
     enable = mkEnableOption "SSH";
 
     features = {
-      autologin = mkOption {
+      autologin.enable = mkOption {
         type = types.bool;
         description = "Enable autologin";
         default = true;
-      };
-    };
-
-    extra = {
-      groups = mkOption {
-        type = types.listOf types.str;
-        description = "The groups that the user is present in";
-        default = [ "networkmanager" "wheel" ];
       };
     };
 
@@ -38,15 +30,29 @@ in
     packages = mkOption {
       type = types.listOf types.str;
       description = "The user's packages";
-      default = [];
+      default = [ ];
+    };
+
+    extra = {
+      groups = mkOption {
+        type = types.listOf types.str;
+        description = "The groups that the user is present in";
+        default = [
+          "networkmanager"
+          "wheel"
+        ];
+      };
     };
   };
 
   config = mkIf cfg.enable {
     # Ony autologin on the first TTY
-    systemd.services."getty@tty1" = mkIf cfg.features.autologin {
+    systemd.services."getty@tty1" = mkIf cfg.features.autologin.enable {
       overrideStrategy = "asDropin";
-      serviceConfig.ExecStart = ["" "@${pkgs.util-linux}/sbin/agetty agetty --login-program ${config.services.getty.loginProgram} --autologin ${user.username} --noclear --keep-baud %I 115200,38400,9600 $TERM"];
+      serviceConfig.ExecStart = [
+        ""
+        "@${pkgs.util-linux}/sbin/agetty agetty --login-program ${config.services.getty.loginProgram} --autologin ${user.username} --noclear --keep-baud %I 115200,38400,9600 $TERM"
+      ];
     };
 
     users.users.${user.username} = {
@@ -58,4 +64,3 @@ in
     };
   };
 }
-

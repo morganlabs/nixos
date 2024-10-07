@@ -1,15 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.grub;
+  cfg = config.roles.bootloader.grub;
 in
 {
-  options.roles.grub = {
+  options.roles.bootloader.grub = {
     enable = mkEnableOption "Enable the GRUB bootloader";
 
     configurationLimit = mkOption {
@@ -18,9 +13,9 @@ in
       default = 10;
     };
 
-    useOSProber = mkOption {
+    features.osProber.enable = mkOption {
       type = types.bool;
-      description = "The configuration limit";
+      description = "Enable OS Prober";
       default = false;
     };
   };
@@ -28,10 +23,11 @@ in
   config = mkIf cfg.enable {
     boot.loader = {
       grub = {
+        inherit (cfg) configurationLimit;
         enable = true;
         device = "nodev";
         efiSupport = true;
-        inherit (cfg) useOSProber configurationLimit;
+        useOSProber = cfg.features.osProber.enable;
       };
 
       efi = {

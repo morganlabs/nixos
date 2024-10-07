@@ -6,6 +6,7 @@
     ./cmd/nvim
 
     ./programs/kitty.nix
+    ./programs/betterbird.nix
     ./programs/firefox
 
     ./desktop/hyprland/default.nix

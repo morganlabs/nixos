@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.zsh;
+  cfg = config.roles.cmd.zsh;
 
   defaultPlugins = [
     "zsh-users/zsh-autosuggestions"
@@ -49,13 +49,15 @@ let
     HISTTIMEFORMAT = "[%F %T]";
   };
 
-  finalAliases = if cfg.alias.includeDefault then defaultAliases // cfg.alias.aliases else cfg.alias.aliase;
-  finalPlugins = if cfg.plugin.includeDefault then defaultPlugins ++ cfg.plugin.plugins else cfg.plugin.plugins;
+  finalAliases =
+    if cfg.aliases.default.enable then defaultAliases // cfg.aliases.extra else cfg.aliases.extra;
+  finalPlugins =
+    if cfg.plugins.default.enable then defaultPlugins ++ cfg.plugins.extra else cfg.plugins.extra;
   finalSessionVariables =
-    if cfg.sessionVariables.includeDefault then
-      defaultSessionVariables // cfg.sessionVariables.sessionVariables
+    if cfg.sessionVariables.default.enable then
+      defaultSessionVariables // cfg.sessionVariables.extra
     else
-      cfg.sessionVariables.sessionVariables;
+      cfg.sessionVariables.extra;
 in
 {
   imports = [
@@ -63,31 +65,31 @@ in
     ./bat.nix
   ];
 
-  options.roles.zsh = {
+  options.roles.cmd.zsh = {
     enable = mkEnableOption "Enable ZSH";
 
-    alias = {
-      includeDefault = mkOption {
+    aliases = {
+      default.enable = mkOption {
         type = types.bool;
         description = "Include default aliases";
         default = true;
       };
 
-      aliases = mkOption {
+      extra = mkOption {
         type = types.attrs;
         description = "Additional/custom aliases";
         default = { };
       };
     };
 
-    plugin = {
-      includeDefault = mkOption {
+    plugins = {
+      default.enable = mkOption {
         type = types.bool;
         description = "Include default plugins";
         default = true;
       };
 
-      plugins = mkOption {
+      extra = mkOption {
         type = types.listOf types.str;
         description = "Additional/custom plugins";
         default = [ ];
@@ -95,13 +97,13 @@ in
     };
 
     sessionVariables = {
-      includeDefault = mkOption {
+      default.enable = mkOption {
         type = types.bool;
         description = "Include default session variables";
         default = true;
       };
 
-      sessionVariables = mkOption {
+      extra = mkOption {
         type = types.attrs;
         description = "Additional/custom session variables";
         default = { };
@@ -109,14 +111,12 @@ in
     };
   };
 
-  # config.programs.zsh.enable = mkIf cfg.enable true;
-
   config = mkIf cfg.enable {
-    roles = {
+    roles.cmd = {
       eza.enable = true;
       bat.enable = true;
     };
-  	
+
     programs.zsh = {
       enable = true;
       shellAliases = finalAliases;
@@ -126,7 +126,7 @@ in
         enable = true;
         plugins = finalPlugins;
       };
-      initExtra = ''
+      initExtra = with config.colorScheme.palette; ''
         setopt HIST_FIND_NO_DUPS
         setopt INC_APPEND_HISTORY
 
@@ -138,7 +138,7 @@ in
         	cd "$1"
         }
 
-        PROMPT="%B%F{orange}[%n@%m:%3~]%b%{$reset_color%} "
+        PROMPT="%B%F{#${base0E}}[%n@%m:%3~]%b%{$reset_color%} "
       '';
     };
   };

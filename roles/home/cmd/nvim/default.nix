@@ -6,7 +6,7 @@
 }:
 with lib;
 let
-  cfg = config.roles.nvim;
+  cfg = config.roles.cmd.nvim;
 
   toLua = str: "lua << EOF\n${str}\nEOF\n";
   toLuaFile = file: toLua (builtins.readFile file);
@@ -22,7 +22,7 @@ let
   };
 in
 {
-  options.roles.nvim = {
+  options.roles.cmd.nvim = {
     enable = mkEnableOption "Enable Neovim";
   };
 
@@ -42,8 +42,8 @@ in
         nvim-treesitter.withAllGrammars
         nvim-treesitter-parsers.rasi
 
-        # (luaPluginRunSetup indent-blankline-nvim "ibl")
-        # (luaPluginRunSetup codeium-nvim "codeium")
+        (luaPluginRunSetup indent-blankline-nvim "ibl")
+        (luaPluginRunSetup codeium-nvim "codeium")
 
         (luaPluginConfigFile harpoon ./plugins/harpoon.lua)
         (luaPluginConfigFile lualine-nvim ./plugins/lualine.lua)
@@ -112,10 +112,12 @@ in
         codespell
       ];
 
-      extraLuaConfig = (strings.concatStrings [
-        (builtins.readFile ./options.lua)
-        (builtins.readFile ./binds.lua)
-      ]);
+      extraLuaConfig = (
+        strings.concatStrings [
+          (builtins.readFile ./options.lua)
+          (builtins.readFile ./binds.lua)
+        ]
+      );
     };
   };
 }

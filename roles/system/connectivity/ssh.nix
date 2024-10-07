@@ -1,16 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  user,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.ssh;
+  cfg = config.roles.connectivity.ssh;
 in
 {
-  options.roles.ssh = {
+  options.roles.connectivity.ssh = {
     enable = mkEnableOption "SSH";
   };
 

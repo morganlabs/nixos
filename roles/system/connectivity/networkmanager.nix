@@ -1,15 +1,10 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, ... }:
 with lib;
 let
-  cfg = config.roles.networkmanager;
+  cfg = config.roles.connectivity.networkmanager;
 in
 {
-  options.roles.networkmanager = {
+  options.roles.connectivity.networkmanager = {
     enable = mkEnableOption "NetworkManager";
   };
 

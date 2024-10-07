@@ -1,16 +1,14 @@
 {
   config,
   lib,
-  pkgs,
-  user,
   ...
 }:
 with lib;
 let
-  cfg = config.roles.eza;
+  cfg = config.roles.cmd.eza;
 in
 {
-  options.roles.eza = {
+  options.roles.cmd.eza = {
     enable = mkEnableOption "Enable Eza";
   };
 
@@ -21,8 +19,11 @@ in
       git = true;
       icons = true;
       extraOptions = [
-	"-b" "-h"
-        "--long" "--all" "--group-directories-first"
+        "-b"
+        "-h"
+        "--long"
+        "--all"
+        "--group-directories-first"
       ];
     };
   };

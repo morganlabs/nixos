@@ -7,7 +7,7 @@
 }:
 with lib;
 let
-  cfg = config.roles.git;
+  cfg = config.roles.cmd.git;
 
   defaults = {
     username = user.name;
@@ -16,7 +16,7 @@ let
   };
 in
 {
-  options.roles.git = {
+  options.roles.cmd.git = {
     enable = mkEnableOption "Enable Git";
 
     defaultBranch = mkOption {
@@ -48,17 +48,19 @@ in
     features = {
       delta.enable = mkOption {
         type = types.bool;
-	description = "Enable Delta";
-	default = true;
+        description = "Enable Delta";
+        default = true;
       };
     };
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; mkIf cfg.use1PasswordSigning [
-      _1password
-      _1password-gui
-    ];
+    home.packages =
+      with pkgs;
+      mkIf cfg.use1PasswordSigning [
+        _1password
+        _1password-gui
+      ];
 
     programs.git = {
       enable = true;
@@ -67,23 +69,23 @@ in
 
       delta = mkIf cfg.features.delta.enable {
         enable = true;
-	options = {
-	  core = {
-	    pager = "delta";
-	  };
-	  interactive = {
-	    diffFilter = "delta --color-only";
-	  };
-	  delta = {
-	    navigate = true;
-	  };
-	  merge = {
-	    conflictstyle = "diff3";
-	  };
-	  diff = {
-	    colorMoved = "default";
-	  };
-	};
+        options = {
+          core = {
+            pager = "delta";
+          };
+          interactive = {
+            diffFilter = "delta --color-only";
+          };
+          delta = {
+            navigate = true;
+          };
+          merge = {
+            conflictstyle = "diff3";
+          };
+          diff = {
+            colorMoved = "default";
+          };
+        };
       };
 
       extraConfig = mkMerge [

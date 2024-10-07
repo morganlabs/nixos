@@ -6,7 +6,21 @@
 }:
 with lib;
 let
-  cfg = config.roles.hyprland;
+  cfg = config.roles.desktop.windowManager.hyprland;
+
+  defaultAutostart = [
+    "exec-once = [workspace 1 silent] kitty"
+    "exec-once = [workspace 2 silent] firefox"
+    "exec-once = [workspace 3 silent] obsidian"
+    "exec-once = [workspace special:discord silent] discord"
+    "exec-once = [workspace special:mail silent] betterbird"
+    "exec-once=systemctl --user start plasma-polkit-agent"
+  ];
+
+  defaultExtraBinds = [
+    "bind = $mainMod, code:49, togglespecialworkspace, discord"
+    "bind = $mainMod SHIFT, code:49, togglespecialworkspace, mail"
+  ];
 in
 {
   imports = [
@@ -15,22 +29,47 @@ in
     ../rofi.nix
     ../waybar.nix
     ../mako.nix
-
-    ../../programs/kitty.nix
-    ../../programs/firefox
   ];
 
-  options.roles.hyprland = {
+  options.roles.desktop.windowManager.hyprland = {
     enable = mkEnableOption "Enable Hyprland";
 
+    extraBinds = {
+      includeDefault = mkOption {
+        type = types.bool;
+        description = "Include default extra bindings";
+        default = true;
+      };
+
+      bindings = mkOption {
+        type = types.listOf types.str;
+        description = "Additional bindings";
+        default = [ ];
+      };
+    };
+
     features = {
-      autostart = mkOption {
+      startOnLogin.enable = mkOption {
         type = types.bool;
         description = "Auto-start Hyprland from the TTY";
         default = true;
       };
 
-      screenshot = mkOption {
+      autostart = {
+        includeDefault = mkOption {
+          type = types.bool;
+          description = "Include default autostart programs";
+          default = true;
+        };
+
+        programs = mkOption {
+          type = types.listOf types.str;
+          description = "Programs to autostart";
+          default = [ ];
+        };
+      };
+
+      screenshot.enable = mkOption {
         type = types.bool;
         description = "Include the Screenshot script and binds";
         default = true;
@@ -38,19 +77,19 @@ in
     };
 
     functionRow = {
-      brightness = mkOption {
+      brightness.enable = mkOption {
         type = types.bool;
         description = "Include the config to use Function keys for brightness";
         default = true;
       };
 
-      volume = mkOption {
+      volume.enable = mkOption {
         type = types.bool;
         description = "Include the config to use Function keys for volume";
         default = true;
       };
 
-      music = mkOption {
+      music.enable = mkOption {
         type = types.bool;
         description = "Include the config to use Function keys for music control";
         default = true;
@@ -58,88 +97,80 @@ in
     };
 
     programs = {
-      hypridle = mkOption {
+      hypridle.enable = mkOption {
         type = types.bool;
         description = "Enable Hypridle";
         default = true;
       };
 
-      hyprlock = mkOption {
+      hyprlock.enable = mkOption {
         type = types.bool;
         description = "Enable Hyprlock";
         default = true;
       };
 
-      rofi = mkOption {
+      rofi.enable = mkOption {
         type = types.bool;
         description = "Enable Rofi";
         default = true;
       };
 
-      waybar = mkOption {
+      waybar.enable = mkOption {
         type = types.bool;
         description = "Enable Waybar";
         default = true;
       };
 
-      mako = mkOption {
+      mako.enable = mkOption {
         type = types.bool;
         description = "Enable Mako";
-        default = true;
-      };
-
-      kitty = mkOption {
-        type = types.bool;
-        description = "Enable Kitty";
-        default = true;
-      };
-
-      firefox = mkOption {
-        type = types.bool;
-        description = "Enable Firefox";
         default = true;
       };
     };
   };
 
   config = mkIf cfg.enable {
-    home.packages = with pkgs; (mkMerge [
-      [
-        swaybg
-        dconf
-        wl-clipboard
-        wev
-        kdePackages.polkit-kde-agent-1
-      ]
+    home.packages =
+      with pkgs;
+      builtins.concatLists [
+        [
+          dconf
+          wl-clipboard
+          wev
+          kdePackages.polkit-kde-agent-1
+        ]
 
-      (mkIf cfg.features.screenshot [
-        (writeShellScriptBin "screenshot" (builtins.readFile ./scripts/screenshot.sh))
-        slurp
-        grim
-        jq
-	wl-clipboard
-      ])
+        (
+          if cfg.features.screenshot.enable then
+            [
+              (writeShellScriptBin "screenshot" (builtins.readFile ./scripts/screenshot.sh))
+              slurp
+              grim
+              jq
+              wl-clipboard
+            ]
+          else
+            [ ]
+        )
 
-      (mkIf cfg.functionRow.brightness [ brightnessctl ])
-      (mkIf cfg.functionRow.volume [ pamixer ])
-      (mkIf cfg.functionRow.music [ playerctl ])
-    ]);
+        (if cfg.functionRow.brightness.enable then [ brightnessctl ] else [ ])
+        (if cfg.functionRow.volume.enable then [ pamixer ] else [ ])
+        (if cfg.functionRow.music.enable then [ playerctl ] else [ ])
+      ];
 
-    roles = {
-      hypridle.enable = cfg.programs.hypridle;
-      hyprlock.enable = cfg.programs.hyprlock;
-      rofi.enable = cfg.programs.rofi;
-      waybar.enable = cfg.programs.waybar;
-      mako.enable = cfg.programs.mako;
-      kitty.enable = cfg.programs.kitty;
-      firefox.enable = cfg.programs.firefox;
+    roles.desktop = {
+      hypridle.enable = cfg.programs.hypridle.enable;
+      hyprlock.enable = cfg.programs.hyprlock.enable;
+      rofi.enable = cfg.programs.rofi.enable;
+      waybar.enable = cfg.programs.waybar.enable;
+      mako.enable = cfg.programs.mako.enable;
     };
 
     services.network-manager-applet.enable = true;
 
-    programs.zsh.initExtra = mkIf cfg.features.autostart ''
+    programs.zsh.initExtra = mkIf cfg.features.startOnLogin.enable ''
       if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR}" -eq 1 ]; then
-        dbus-run-session Hyprland
+      dbus-run-session Hyprland
       fi
     '';
 
@@ -157,45 +188,86 @@ in
       enable = true;
 
       xwayland.enable = true;
-      extraConfig = with config.colorScheme.palette; strings.concatStrings [
-        (builtins.readFile ./binds.conf)
-        (builtins.readFile ./inputs.conf)
-        (builtins.readFile ./autostart.conf)
-        (builtins.readFile ./window_rules.conf)
-        (builtins.readFile ./decoration.conf)
-	''
-	exec-once = waybar
-	exec-once = swaybg -c "#${base00}"
+      extraConfig =
+        with config.colorScheme.palette;
+        strings.concatStrings [
+          (builtins.readFile ./binds.conf)
+          (builtins.readFile ./inputs.conf)
+          (builtins.readFile ./window_rules.conf)
+          (builtins.readFile ./decoration.conf)
+          ''
+            misc:background_color = rgb(${base00})
 
-	general {
-	  col.active_border = rgb(${base0E})
-	  col.inactive_border = rgb(${base01})
-	}
-        ''
-	(if cfg.features.screenshot then ''
-          bind = ALT SHIFT, 1, exec, screenshot selection
-          bind = ALT SHIFT, 2, exec, screenshot window
-          bind = ALT SHIFT, 3, exec, screenshot all
-	'' else "")
+            general {
+              col.active_border = rgb(${base0E})
+              col.inactive_border = rgb(${base01})
 
-	(if cfg.functionRow.brightness then ''
-          bind = , XF86MonBrightnessUp, exec, brightnessctl set +10%
-          bind = , XF86MonBrightnessDown, exec, brightnessctl set 10%-
-	'' else "")
+              resize_on_border = true
+              extend_border_grab_area = true
+            }
 
-	(if cfg.functionRow.volume then ''
-          bind = , XF86AudioRaiseVolume, exec, pamixer -i 5
-          bind = , XF86AudioLowerVolume, exec, pamixer -d 5
-          bind = , XF86AudioMute, exec, pamixer --toggle-mute
-	'' else "")
+            # Autostart
+            ${if (cfg.features.autostart.includeDefault) then (concatLines defaultAutostart) else ""}
+            ${(concatLines cfg.features.autostart.programs)}
 
-	(if cfg.functionRow.music then ''
-          bind = , XF86AudioPrev, exec, playerctl previous
-          bind = , XF86AudioNext, exec, playerctl next
-          bind = , XF86AudioPlay, exec, playerctl play-pause
-          bind = , XF86AudioPause, exec, playerctl play-pause
-	'' else "")
-      ];
+            # Extra Binds
+            ${if (cfg.extraBinds.includeDefault) then (concatLines defaultExtraBinds) else ""}
+            ${(concatLines cfg.extraBinds.bindings)}
+          ''
+
+          (
+            if cfg.programs.waybar.enable then
+              ''
+                exec-once = ${pkgs.waybar}/bin/waybar
+              ''
+            else
+              ""
+          )
+
+          (
+            if cfg.features.screenshot.enable then
+              ''
+                bind = ALT SHIFT, 1, exec, screenshot selection
+                bind = ALT SHIFT, 2, exec, screenshot window
+                bind = ALT SHIFT, 3, exec, screenshot all
+              ''
+            else
+              ""
+          )
+
+          (
+            if cfg.functionRow.brightness.enable then
+              ''
+                bind = , XF86MonBrightnessUp, exec, brightnessctl set +5%
+                bind = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+              ''
+            else
+              ""
+          )
+
+          (
+            if cfg.functionRow.volume.enable then
+              ''
+                bind = , XF86AudioRaiseVolume, exec, pamixer -i 5
+                bind = , XF86AudioLowerVolume, exec, pamixer -d 5
+                bind = , XF86AudioMute, exec, pamixer --toggle-mute
+              ''
+            else
+              ""
+          )
+
+          (
+            if cfg.functionRow.music.enable then
+              ''
+                bind = , XF86AudioPrev, exec, playerctl previous
+                bind = , XF86AudioNext, exec, playerctl next
+                bind = , XF86AudioPlay, exec, playerctl play-pause
+                bind = , XF86AudioPause, exec, playerctl play-pause
+              ''
+            else
+              ""
+          )
+        ];
     };
 
     home = {

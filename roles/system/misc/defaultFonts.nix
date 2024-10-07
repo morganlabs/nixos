@@ -6,10 +6,10 @@
 }:
 with lib;
 let
-  cfg = config.roles.defaultFonts;
+  cfg = config.roles.misc.defaultFonts;
 in
 {
-  options.roles.defaultFonts = {
+  options.roles.misc.defaultFonts = {
     enable = mkEnableOption "Enable default fonts";
   };
 

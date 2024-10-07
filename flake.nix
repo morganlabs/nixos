@@ -20,50 +20,63 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, ... }@inputs:
-  let
-    lib = nixpkgs.lib;
-
-    user = {
-      username = "morgan";
-      name = "Morgan Jones";
-      email = "me@morganlabs.dev";
-    };
-
-    mkSystem = { hostname, system ? "x86_64-linux", }:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nur,
+      ...
+    }@inputs:
     let
-      overlays = [
-        nur.overlay
-        (_: prev: {
-          vimPlugins = prev.vimPlugins // {
-            scroll-eof-nvim = prev.vimUtils.buildVimPlugin {
-              name = "scroll-eof-nvim";
-              src = inputs.plugin-scroll-eof-nvim;
-            };
-          };
-        })
-      ];
+      lib = nixpkgs.lib;
 
-      pkgs = import nixpkgs {
-        inherit system overlays;
-        config.allowUnfree = true;
+      user = {
+        username = "morgan";
+        name = "Morgan Jones";
+        email = "me@morganlabs.dev";
       };
 
-    in lib.nixosSystem {
-        inherit system pkgs;
+      mkSystem =
+        {
+          hostname,
+          system ? "x86_64-linux",
+        }:
+        let
+          overlays = [
+            nur.overlay
+            (_: prev: {
+              vimPlugins = prev.vimPlugins // {
+                scroll-eof-nvim = prev.vimUtils.buildVimPlugin {
+                  name = "scroll-eof-nvim";
+                  src = inputs.plugin-scroll-eof-nvim;
+                };
+              };
+            })
+          ];
 
-        specialArgs = {
-          inherit inputs system user;
-        };
+          pkgs = import nixpkgs {
+            inherit system overlays;
+            config.allowUnfree = true;
+          };
 
-        modules = [
-          (./hosts + "/${hostname}/configuration.nix")
-          ({ ... }:
-           {
-	     environment.systemPackages = with pkgs; [ git ];
-             networking.hostName = hostname;
-             nix.registry.nixpkgs.flake = nixpkgs;
-           })
+        in
+        lib.nixosSystem {
+          inherit system pkgs;
+
+          specialArgs = {
+            inherit inputs system user;
+          };
+
+          modules = [
+            (./hosts + "/${hostname}/configuration.nix")
+            (
+              { ... }:
+              {
+                environment.systemPackages = with pkgs; [ git ];
+                networking.hostName = hostname;
+                nix.registry.nixpkgs.flake = nixpkgs;
+              }
+            )
 
             home-manager.nixosModules.home-manager
             {
@@ -77,25 +90,29 @@
 
                 users.${user.username} = lib.mkMerge [
                   (./hosts + "/${hostname}/home.nix")
-                  ({ ... }: {
-                     imports = [ ./roles/home ];
-                     roles.git.enable = lib.mkDefault true;
-                  })
+                  (
+                    { ... }:
+                    {
+                      imports = [ ./roles/home ];
+                      roles.cmd.git.enable = lib.mkDefault true;
+                    }
+                  )
                 ];
               };
             }
-         ];
-       };
-  in {
-    nixosConfigurations = {
-      # Veins - Lil Peep
-      # HP Laptop 14s-dq2512sa
-      # Intel i5-1135G7
-      # Intel Iris Xe
-      # 256GB NVMe SSD
-      # 16GB (2x8GB) DDR4-2666
-      # Realtek RTL8821CE-M Wi-Fi and Bluetooth 4.2
-      veins = mkSystem { hostname = "veins"; };
+          ];
+        };
+    in
+    {
+      nixosConfigurations = {
+        # Veins - Lil Peep
+        # HP Laptop 14s-dq2512sa
+        # Intel i5-1135G7
+        # Intel Iris Xe
+        # 256GB NVMe SSD
+        # 16GB (2x8GB) DDR4-2666
+        # Realtek RTL8821CE-M Wi-Fi and Bluetooth 4.2
+        veins = mkSystem { hostname = "veins"; };
+      };
     };
-  };
 }
