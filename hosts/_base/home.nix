@@ -45,6 +45,7 @@
       git.enable = true;
       nvim.enable = true;
       zsh.enable = true;
+      pfetch.enable = true;
     };
 
     desktop.waybar.modules = {

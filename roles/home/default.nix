@@ -3,6 +3,7 @@
   imports = [
     ./cmd/zsh.nix
     ./cmd/git.nix
+    ./cmd/pfetch.nix
     ./cmd/nvim
 
     ./programs/kitty.nix
