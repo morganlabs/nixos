@@ -93,6 +93,14 @@
     in
     {
       nixosConfigurations = {
+        # MERCILESS - KoruSe & SNITCHXV
+        # Custom Build
+        # Ryzen 7 5800X
+        # AMD Radeon RX 6650 XT
+        # 512GB NVMe SSD
+        # 48GB (2x8gb, 2x16gb) DDR4-3200
+        merciless = mkSystem { hostname = "merciless"; };
+
         # Veins - Lil Peep
         # HP Laptop 14s-dq2512sa
         # Intel i5-1135G7

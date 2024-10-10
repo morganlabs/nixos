@@ -39,6 +39,7 @@
       kitty.enable = true;
       firefox.enable = true;
       betterbird.enable = true;
+      _1password.enable = true;
     };
 
     cmd = {

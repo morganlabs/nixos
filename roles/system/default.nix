@@ -16,6 +16,10 @@
     ./connectivity/networkmanager.nix
     ./connectivity/bluetooth.nix
 
+    ./security/keyring.nix
+
     ./laptop/powerManagement.nix
+
+    ./programs/1password.nix
   ];
 }

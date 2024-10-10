@@ -100,16 +100,14 @@ in
 
       extraConfig = mkMerge [
         {
-          init = {
-            defaultBranch = cfg.defaultBranch;
-          };
+          init.defaultBranch = cfg.defaultBranch;
         }
         (mkIf cfg.use1PasswordSigning {
           user.signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBNv1xhpJxFP8KP0+ai4+sK6HRu70J6Nq/u4dU27MixM";
           commit.gpgsign = true;
           gpg = {
             format = "ssh";
-            ssh.program = "${pkgs._1password-gui}/bin/op-ssh-sign";
+            ssh.program = "${lib.getExe' pkgs._1password-gui "op-ssh-sign"}";
           };
         })
       ];

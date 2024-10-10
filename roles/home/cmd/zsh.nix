@@ -2,6 +2,7 @@
   config,
   lib,
   myLib,
+  pkgs,
   ...
 }:
 with lib;
@@ -9,10 +10,10 @@ with myLib;
 let
   cfg = config.roles.cmd.zsh;
 
-  defaultPlugins = [
-    "zsh-users/zsh-autosuggestions"
-    "zsh-users/zsh-syntax-highlighting"
-    "zsh-users/zsh-history-substring-search"
+  defaultPlugins = with pkgs; [
+    "${zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    "${zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    "${zsh-history-substring-search}/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
   ];
 
   defaultAliases = {
@@ -81,7 +82,7 @@ in
 
     plugins = {
       default.enable = mkOptionBool "Include default plugins" true;
-      extra = mkOptionListOf types.str "Additional/custom plugins" [ ];
+      extra = mkOptionListOf types.package "Additional/custom plugins" [ ];
     };
 
     sessionVariables = {
@@ -101,24 +102,28 @@ in
       shellAliases = finalAliases;
       sessionVariables = finalSessionVariables;
       autocd = true;
-      antidote = {
-        enable = true;
-        plugins = finalPlugins;
-      };
-      initExtra = with config.colorScheme.palette; ''
-        setopt HIST_FIND_NO_DUPS
-        setopt INC_APPEND_HISTORY
 
-        bindkey '^[[A' history-substring-search-up
-        bindkey '^[[B' history-substring-search-down
+      initExtraBeforeCompInit = concatStringsSep "\n" (map (item: "source \"${item}\"") finalPlugins);
 
-        function mkcdir() {
-        	mkdir -p "$1"
-        	cd "$1"
-        }
+      initExtra =
+        with config.colorScheme.palette;
+        mkMerge [
+          ''
+            setopt HIST_FIND_NO_DUPS
+            setopt INC_APPEND_HISTORY
 
-        PROMPT="%B%F{#${base0E}}[%n@%m:%3~]%b%{$reset_color%} "
-      '';
+            function mkcdir() {
+            	mkdir -p "$1"
+            	cd "$1"
+            }
+
+            PROMPT="%B%F{#${base0E}}[%n@%m:%3~]%b%{$reset_color%} "
+          ''
+          (mkIfStr cfg.plugins.default.enable ''
+            bindkey '^[[A' history-substring-search-up
+            bindkey '^[[B' history-substring-search-down
+          '')
+        ];
     };
   };
 }

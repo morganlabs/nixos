@@ -8,6 +8,7 @@
 
     ./programs/kitty.nix
     ./programs/betterbird.nix
+    ./programs/1password.nix
     ./programs/firefox
 
     ./desktop/hyprland/default.nix

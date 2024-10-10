@@ -29,6 +29,14 @@
       firewall.enable = true;
       ssh.enable = true;
     };
+
+    security = {
+      keyring.enable = true;
+    };
+
+    programs = {
+      _1password.enable = true;
+    };
   };
 
   hardware.graphics.enable = true;
