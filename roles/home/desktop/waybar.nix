@@ -1,10 +1,12 @@
 {
-  pkgs,
   config,
   lib,
+  myLib,
+  pkgs,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.desktop.waybar;
 in
@@ -13,56 +15,19 @@ in
     enable = mkEnableOption "Enable Waybar";
 
     modules = {
-      volume.enable = mkOption {
-        description = "Enable the volume indicator";
-        type = types.bool;
-        default = false;
-      };
-
-      brightness.enable = mkOption {
-        description = "Enable the brightness indicator";
-        type = types.bool;
-        default = false;
-      };
-
-      network.enable = mkOption {
-        description = "Enable the network indicator";
-        type = types.bool;
-        default = false;
-      };
+      volume.enable = mkOptionBool "Enable the volume indicator" false;
+      brightness.enable = mkOptionBool "Enable the brightness indicator" false;
+      network.enable = mkOptionBool "Enable the network indicator" false;
+      tray.enable = mkOptionBool "Enable the system tray" false;
 
       bluetooth = {
-        enable = mkOption {
-          description = "Enable the bluetooth indicator";
-          type = types.bool;
-          default = false;
-        };
-
-        controller = mkOption {
-          description = "Specify which Bluetooth controller to monitor";
-          type = types.str;
-          default = "";
-        };
+        enable = mkOptionBool "Enable the bluetooth indicator" false;
+        controller = mkOptionStr "Specify which Bluetooth controller to monitor" "";
       };
 
       battery = {
-        enable = mkOption {
-          description = "Enable the battery indicator";
-          type = types.bool;
-          default = false;
-        };
-
-        bat = mkOption {
-          description = "Specify which battery to monitor";
-          type = types.str;
-          default = "BAT0";
-        };
-      };
-
-      tray.enable = mkOption {
-        description = "Enable the system tray";
-        type = types.bool;
-        default = false;
+        enable = mkOptionBool "Enable the battery indicator" false;
+        bat = mkOptionStr "Specify which battery to monitor" "BAT0";
       };
     };
   };
@@ -72,10 +37,10 @@ in
       with pkgs;
       builtins.concatLists [
         [ playerctl ]
-        (if cfg.modules.bluetooth.enable then [ blueman ] else [ ])
-        (if cfg.modules.volume.enable then [ pavucontrol ] else [ ])
-        (if cfg.modules.brightness.enable then [ playerctl ] else [ ])
-        (if cfg.modules.network.enable then [ ] else [ ])
+        (mkIfList cfg.modules.bluetooth.enable [ blueman ])
+        (mkIfList cfg.modules.volume.enable [ pavucontrol ])
+        (mkIfList cfg.modules.brightness.enable [ playerctl ])
+        (mkIfList cfg.modules.network.enable [ ])
       ];
 
     programs.waybar = {
@@ -143,12 +108,12 @@ in
           modules-center = [ "clock" ];
           modules-right = (
             builtins.concatLists [
-              (if cfg.modules.brightness.enable then [ "backlight" ] else [ ])
-              (if cfg.modules.volume.enable then [ "pulseaudio" ] else [ ])
-              (if cfg.modules.battery.enable then [ "battery" ] else [ ])
-              (if cfg.modules.bluetooth.enable then [ "bluetooth" ] else [ ])
-              (if cfg.modules.network.enable then [ "network" ] else [ ])
-              (if cfg.modules.tray.enable then [ "tray" ] else [ ])
+              (mkIfList cfg.modules.brightness.enable [ "backlight" ])
+              (mkIfList cfg.modules.volume.enable [ "pulseaudio" ])
+              (mkIfList cfg.modules.battery.enable [ "battery" ])
+              (mkIfList cfg.modules.bluetooth.enable [ "bluetooth" ])
+              (mkIfList cfg.modules.network.enable [ "network" ])
+              (mkIfList cfg.modules.tray.enable [ "tray" ])
             ]
           );
 
@@ -245,7 +210,7 @@ in
           };
 
           clock = with config.colorScheme.palette; {
-            format = "<span color='#${base0E}'>{:%a</span>%e %b <span color='#${base0E}'>%H</span>:%M}";
+            format = "<span color='#${base0E}'>{:%a</span> %e %b <span color='#${base0E}'>%H</span>:%M}";
             interval = 5;
             tooltip = false;
           };

@@ -1,11 +1,13 @@
 {
   config,
-  lib,
-  pkgs,
   user,
+  lib,
+  myLib,
+  pkgs,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.cmd.git;
 
@@ -61,6 +63,14 @@ in
         _1password
         _1password-gui
       ];
+
+    programs.ssh = {
+      enable = true;
+      extraConfig = mkIfStr cfg.use1PasswordSigning ''
+        Host *
+          IdentityAgent ~/.1password/agent.sock
+      '';
+    };
 
     programs.git = {
       enable = true;

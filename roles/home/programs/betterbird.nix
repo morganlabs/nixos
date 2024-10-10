@@ -1,10 +1,12 @@
 {
   config,
   lib,
+  myLib,
   pkgs,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.programs.betterbird;
 in

@@ -1,5 +1,11 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  myLib,
+  ...
+}:
 with lib;
+with myLib;
 let
   cfg = config.roles.desktop.hypridle;
 in
@@ -8,16 +14,8 @@ in
     enable = mkEnableOption "Enable Hypridle";
 
     timeoutUntil = {
-      lock = mkOption {
-        type = types.int;
-        description = "How many seconds until the device auto-locks";
-        default = 600;
-      };
-      sleep = mkOption {
-        type = types.int;
-        description = "How many seconds until the device auto-sleeps";
-        default = 1200;
-      };
+      lock = mkOptionInt "How many seconds until the device auto-locks" 600;
+      sleep = mkOptionInt "How many seconds until the device auto-sleeps" 1200;
     };
   };
 

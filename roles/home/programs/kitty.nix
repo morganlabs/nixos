@@ -1,5 +1,11 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  myLib,
+  ...
+}:
 with lib;
+with myLib;
 let
   cfg = config.roles.programs.kitty;
 in

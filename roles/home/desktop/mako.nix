@@ -1,10 +1,12 @@
 {
-  pkgs,
   config,
   lib,
+  myLib,
+  pkgs,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.desktop.mako;
 in

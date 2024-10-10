@@ -1,5 +1,11 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  myLib,
+  ...
+}:
 with lib;
+with myLib;
 let
   cfg = config.roles.cmd.zsh;
 
@@ -49,15 +55,15 @@ let
     HISTTIMEFORMAT = "[%F %T]";
   };
 
-  finalAliases =
-    if cfg.aliases.default.enable then defaultAliases // cfg.aliases.extra else cfg.aliases.extra;
-  finalPlugins =
-    if cfg.plugins.default.enable then defaultPlugins ++ cfg.plugins.extra else cfg.plugins.extra;
-  finalSessionVariables =
-    if cfg.sessionVariables.default.enable then
-      defaultSessionVariables // cfg.sessionVariables.extra
-    else
-      cfg.sessionVariables.extra;
+  finalAliases = mkIfElse cfg.aliases.default.enable (
+    defaultAliases // cfg.aliases.extra
+  ) cfg.aliases.extra;
+  finalPlugins = mkIfElse cfg.plugins.default.enable (
+    defaultPlugins ++ cfg.plugins.extra
+  ) cfg.plugins.extra;
+  finalSessionVariables = mkIfElse cfg.sessionVariables.default.enable (
+    defaultSessionVariables // cfg.sessionVariables.extra
+  ) cfg.sessionVariables.extra;
 in
 {
   imports = [
@@ -69,45 +75,18 @@ in
     enable = mkEnableOption "Enable ZSH";
 
     aliases = {
-      default.enable = mkOption {
-        type = types.bool;
-        description = "Include default aliases";
-        default = true;
-      };
-
-      extra = mkOption {
-        type = types.attrs;
-        description = "Additional/custom aliases";
-        default = { };
-      };
+      default.enable = mkOptionBool "Include default aliases" true;
+      extra = mkOptionAttrs "Additional/custom aliases" { };
     };
 
     plugins = {
-      default.enable = mkOption {
-        type = types.bool;
-        description = "Include default plugins";
-        default = true;
-      };
-
-      extra = mkOption {
-        type = types.listOf types.str;
-        description = "Additional/custom plugins";
-        default = [ ];
-      };
+      default.enable = mkOptionBool "Include default plugins" true;
+      extra = mkOptionListOf types.str "Additional/custom plugins" [ ];
     };
 
     sessionVariables = {
-      default.enable = mkOption {
-        type = types.bool;
-        description = "Include default session variables";
-        default = true;
-      };
-
-      extra = mkOption {
-        type = types.attrs;
-        description = "Additional/custom session variables";
-        default = { };
-      };
+      default.enable = mkOptionBool "Include default session variables" true;
+      extra = mkOptionAttrs "Additional/custom session variables" { };
     };
   };
 

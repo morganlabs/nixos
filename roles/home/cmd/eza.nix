@@ -1,9 +1,11 @@
 {
   config,
   lib,
+  myLib,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.cmd.eza;
 in

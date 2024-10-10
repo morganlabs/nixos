@@ -1,34 +1,31 @@
 {
   inputs = {
+    # Base
     nixpkgs.url = "nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-colors.url = "github:misterio77/nix-colors";
 
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Customisation
+    nix-colors.url = "github:misterio77/nix-colors";
+
     # Neovim Plugins
-    plugin-scroll-eof-nvim = {
+    nvim-plugin-scroll-eof = {
       url = "github:Aasim-A/scrollEOF.nvim";
       flake = false;
     };
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      nur,
-      ...
-    }@inputs:
+    { nixpkgs, home-manager, ... }@inputs:
     let
-      lib = nixpkgs.lib;
 
       user = {
         username = "morgan";
@@ -40,43 +37,35 @@
         {
           hostname,
           system ? "x86_64-linux",
+          includeBase ? true,
         }:
         let
-          overlays = [
-            nur.overlay
-            (_: prev: {
-              vimPlugins = prev.vimPlugins // {
-                scroll-eof-nvim = prev.vimUtils.buildVimPlugin {
-                  name = "scroll-eof-nvim";
-                  src = inputs.plugin-scroll-eof-nvim;
-                };
-              };
-            })
-          ];
-
           pkgs = import nixpkgs {
-            inherit system overlays;
+            inherit system;
+            overlays = (import ./overlays.nix { inherit inputs; });
             config.allowUnfree = true;
           };
 
+          myLib = import ./myLib/default.nix { inherit (pkgs) lib; };
         in
-        lib.nixosSystem {
+        with pkgs.lib;
+        with myLib;
+        nixpkgs.lib.nixosSystem {
           inherit system pkgs;
 
           specialArgs = {
-            inherit inputs system user;
+            inherit
+              inputs
+              system
+              myLib
+              user
+              hostname
+              ;
           };
 
           modules = [
+            (mkIfList includeBase ./hosts/_base/configuration.nix)
             (./hosts + "/${hostname}/configuration.nix")
-            (
-              { ... }:
-              {
-                environment.systemPackages = with pkgs; [ git ];
-                networking.hostName = hostname;
-                nix.registry.nixpkgs.flake = nixpkgs;
-              }
-            )
 
             home-manager.nixosModules.home-manager
             {
@@ -85,18 +74,17 @@
                 useUserPackages = true;
 
                 extraSpecialArgs = {
-                  inherit inputs system user;
+                  inherit
+                    inputs
+                    system
+                    user
+                    myLib
+                    ;
                 };
 
-                users.${user.username} = lib.mkMerge [
+                users.${user.username} = mkMerge [
                   (./hosts + "/${hostname}/home.nix")
-                  (
-                    { ... }:
-                    {
-                      imports = [ ./roles/home ];
-                      roles.cmd.git.enable = lib.mkDefault true;
-                    }
-                  )
+                  (mkIfElse includeBase ./hosts/_base/home.nix "")
                 ];
               };
             }

@@ -1,10 +1,12 @@
 {
   config,
   lib,
+  myLib,
   user,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.misc.security;
 in
@@ -31,7 +33,7 @@ in
     security = {
       rtkit.enable = true;
       polkit.enable = true;
-      sudo.enable = if (cfg.features.doas.enable && cfg.features.doas.replaceSudo) then false else true;
+      sudo.enable = mkIfElse (cfg.features.doas.enable && cfg.features.doas.replaceSudo) false true;
       doas = mkIf cfg.features.doas.enable {
         enable = true;
         extraRules = [

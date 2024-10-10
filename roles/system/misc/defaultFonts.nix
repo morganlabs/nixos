@@ -1,10 +1,12 @@
 {
   config,
-  lib,
   pkgs,
+  lib,
+  myLib,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.misc.defaultFonts;
 in

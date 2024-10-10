@@ -1,10 +1,12 @@
 {
   config,
-  pkgs,
   lib,
+  myLib,
+  pkgs,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.cmd.nvim;
 

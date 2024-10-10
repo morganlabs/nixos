@@ -1,11 +1,13 @@
 {
   config,
-  lib,
   pkgs,
   user,
+  lib,
+  myLib,
   ...
 }:
 with lib;
+with myLib;
 let
   cfg = config.roles.defaultUser;
 in
