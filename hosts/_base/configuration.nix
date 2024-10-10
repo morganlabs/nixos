@@ -15,7 +15,10 @@
     defaultUser.enable = true;
 
     bootloader.grub.enable = true;
-    sound.pipewire.enable = true;
+    sound = {
+      pipewire.enable = true;
+      noisetorch.enable = true;
+    };
 
     misc = {
       defaultFonts.enable = true;

@@ -18,7 +18,6 @@
     homeDirectory = "/home/${user.username}";
 
     packages = with pkgs; [
-      discord
       # vimv
       # unzip
       # man
@@ -27,8 +26,6 @@
       # joshuto
       # nextcloud-client
       # obsidian
-      # _1password
-      # _1password-gui
     ];
   };
 
@@ -40,6 +37,7 @@
       firefox.enable = true;
       betterbird.enable = true;
       _1password.enable = true;
+      discord.enable = true;
     };
 
     cmd = {

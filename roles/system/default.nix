@@ -4,6 +4,7 @@
     ./defaultUser.nix
 
     ./sound/pipewire.nix
+    ./sound/noisetorch.nix
 
     ./bootloader/grub.nix
 
