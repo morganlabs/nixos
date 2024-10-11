@@ -8,7 +8,7 @@
 with lib;
 with myLib;
 let
-  cfg = config.roles.cmd.zsh;
+  cfg = config.roles.programs.zsh;
 
   defaultPlugins = with pkgs; [
     "${zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
@@ -72,7 +72,7 @@ in
     ./bat.nix
   ];
 
-  options.roles.cmd.zsh = {
+  options.roles.programs.zsh = {
     enable = mkEnableOption "Enable ZSH";
 
     aliases = {
@@ -92,7 +92,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    roles.cmd = {
+    roles.programs = {
       eza.enable = true;
       bat.enable = true;
     };

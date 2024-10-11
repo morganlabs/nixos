@@ -7,10 +7,10 @@
 with lib;
 with myLib;
 let
-  cfg = config.roles.cmd.bat;
+  cfg = config.roles.programs.bat;
 in
 {
-  options.roles.cmd.bat = {
+  options.roles.programs.bat = {
     enable = mkEnableOption "Enable Bat";
   };
 

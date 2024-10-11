@@ -223,6 +223,7 @@ in
               "- (.*)" = "$1";
               "Mozilla (.*)" = "$1";
               ".* - Discord" = "Discord";
+              ".* - Lunar Client" = "Lunar Client";
               kitty = "Kitty";
             };
           };

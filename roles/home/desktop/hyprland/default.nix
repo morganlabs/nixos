@@ -15,13 +15,15 @@ let
     "exec-once = [workspace 2 silent] firefox"
     "exec-once = [workspace 3 silent] obsidian"
     "exec-once = [workspace special:discord silent] discord"
+    "exec-once = [workspace special:slack silent] slack"
     "exec-once = [workspace special:mail silent] betterbird"
     "exec-once=systemctl --user start plasma-polkit-agent"
   ];
 
   defaultExtraBinds = [
     "bind = $mainMod, code:49, togglespecialworkspace, discord"
-    "bind = $mainMod SHIFT, code:49, togglespecialworkspace, mail"
+    "bind = ALT, code:49, togglespecialworkspace, slack"
+    "bind = Control_L, code:49, togglespecialworkspace, mail"
   ];
 in
 {

@@ -17,16 +17,10 @@
     username = user.username;
     homeDirectory = "/home/${user.username}";
 
-    packages = with pkgs; [
-      # vimv
-      # unzip
-      # man
-      # wl-clipboard
-      # element
-      # joshuto
-      # nextcloud-client
-      # obsidian
-    ];
+    packages =
+      with pkgs;
+      [
+      ];
   };
 
   roles = {
@@ -38,13 +32,16 @@
       betterbird.enable = true;
       _1password.enable = true;
       discord.enable = true;
-    };
-
-    cmd = {
       git.enable = true;
       nvim.enable = true;
       zsh.enable = true;
       pfetch.enable = true;
+      vimv.enable = true;
+      unzip.enable = true;
+      man.enable = true;
+      joshuto.enable = true;
+      obsidian.enable = true;
+      slack.enable = true;
     };
 
     desktop.waybar.modules = {

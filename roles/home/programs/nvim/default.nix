@@ -8,7 +8,7 @@
 with lib;
 with myLib;
 let
-  cfg = config.roles.cmd.nvim;
+  cfg = config.roles.programs.nvim;
 
   toLua = str: "lua << EOF\n${str}\nEOF\n";
   toLuaFile = file: toLua (builtins.readFile file);
@@ -24,7 +24,7 @@ let
   };
 in
 {
-  options.roles.cmd.nvim = {
+  options.roles.programs.nvim = {
     enable = mkEnableOption "Enable Neovim";
   };
 

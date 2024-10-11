@@ -18,7 +18,7 @@ in
     programs.kitty = {
       enable = true;
 
-      shellIntegration.enableZshIntegration = config.roles.cmd.zsh.enable;
+      shellIntegration.enableZshIntegration = config.roles.programs.zsh.enable;
       font.name = "BlexMono Nerd Font";
       themeFile = "gruvbox-dark";
 

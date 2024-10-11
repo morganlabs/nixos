@@ -7,10 +7,10 @@
 with lib;
 with myLib;
 let
-  cfg = config.roles.cmd.eza;
+  cfg = config.roles.programs.eza;
 in
 {
-  options.roles.cmd.eza = {
+  options.roles.programs.eza = {
     enable = mkEnableOption "Enable Eza";
   };
 

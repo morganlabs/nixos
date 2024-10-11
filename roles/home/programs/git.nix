@@ -9,7 +9,7 @@
 with lib;
 with myLib;
 let
-  cfg = config.roles.cmd.git;
+  cfg = config.roles.programs.git;
 
   defaults = {
     username = user.name;
@@ -18,7 +18,7 @@ let
   };
 in
 {
-  options.roles.cmd.git = {
+  options.roles.programs.git = {
     enable = mkEnableOption "Enable Git";
 
     defaultBranch = mkOption {

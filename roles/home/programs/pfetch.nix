@@ -8,10 +8,10 @@
 with lib;
 with myLib;
 let
-  cfg = config.roles.cmd.pfetch;
+  cfg = config.roles.programs.pfetch;
 in
 {
-  options.roles.cmd.pfetch = {
+  options.roles.programs.pfetch = {
     enable = mkEnableOption "Enable pfetch";
     features.zsh.autoRun.enable = mkOptionBool "Automatically run `pfetch` when zsh starts" true;
   };

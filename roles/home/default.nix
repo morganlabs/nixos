@@ -1,14 +1,21 @@
 { ... }:
 {
   imports = [
-    ./cmd/zsh.nix
-    ./cmd/git.nix
-    ./cmd/pfetch.nix
-    ./cmd/nvim
-
+    ./programs/zsh.nix
+    ./programs/git.nix
+    ./programs/pfetch.nix
+    ./programs/nvim
     ./programs/kitty.nix
     ./programs/betterbird.nix
     ./programs/1password.nix
+
+    ./programs/vimv.nix
+    ./programs/unzip.nix
+    ./programs/man.nix
+    ./programs/joshuto.nix
+    ./programs/obsidian.nix
+    ./programs/slack.nix
+
     ./programs/discord
     ./programs/firefox
 
