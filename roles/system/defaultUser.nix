@@ -14,37 +14,13 @@ in
 {
   options.roles.defaultUser = {
     enable = mkEnableOption "SSH";
-
-    features = {
-      autologin.enable = mkOption {
-        type = types.bool;
-        description = "Enable autologin";
-        default = true;
-      };
-    };
-
-    shell = mkOption {
-      type = types.package;
-      description = "The user's shell";
-      default = pkgs.zsh;
-    };
-
-    packages = mkOption {
-      type = types.listOf types.str;
-      description = "The user's packages";
-      default = [ ];
-    };
-
-    extra = {
-      groups = mkOption {
-        type = types.listOf types.str;
-        description = "The groups that the user is present in";
-        default = [
-          "networkmanager"
-          "wheel"
-        ];
-      };
-    };
+    features.autologin.enable = mkOptionBool "Enable autologin" true;
+    shell = mkOptionPackage "The user's shell" pkgs.zsh;
+    packages = mkOptionListOf types.str "The user's packages" [ ];
+    extra.groups = mkOptionListOf types.str "The groups that the user is present in" [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   config = mkIf cfg.enable {

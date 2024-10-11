@@ -12,18 +12,8 @@ in
 {
   options.roles.bootloader.grub = {
     enable = mkEnableOption "Enable the GRUB bootloader";
-
-    configurationLimit = mkOption {
-      type = types.int;
-      description = "The configuration limit";
-      default = 10;
-    };
-
-    features.osProber.enable = mkOption {
-      type = types.bool;
-      description = "Enable OS Prober";
-      default = false;
-    };
+    configurationLimit = mkOptionInt "The configuration limit" 10;
+    features.osProber.enable = mkOptionBool "Enable OS Prober" false;
   };
 
   config = mkIf cfg.enable {

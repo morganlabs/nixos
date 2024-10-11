@@ -2,7 +2,7 @@
 (
   description: default:
   lib.mkOption {
-    type = lib.types.attrs;
+    type = lib.types.package;
     inherit description default;
   }
 )

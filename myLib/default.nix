@@ -9,4 +9,5 @@
   mkOptionListOf = import ./mkOption/mkOptionListOf.nix { inherit lib; };
   mkOptionInt = import ./mkOption/mkOptionInt.nix { inherit lib; };
   mkOptionStr = import ./mkOption/mkOptionStr.nix { inherit lib; };
+  mkOptionPackage = import ./mkOption/mkOptionPackage.nix { inherit lib; };
 }
