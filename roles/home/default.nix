@@ -24,6 +24,7 @@
     ./desktop/hyprlock.nix
     ./desktop/waybar.nix
     ./desktop/rofi.nix
+    ./desktop/mako.nix
 
     ./games/minecraft.nix
   ];

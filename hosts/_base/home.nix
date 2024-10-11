@@ -1,9 +1,12 @@
 {
-  pkgs,
   inputs,
   user,
+  lib,
+  myLib,
   ...
 }:
+with lib;
+with myLib;
 {
   imports = [
     ../../roles/home
@@ -16,16 +19,9 @@
   home = {
     username = user.username;
     homeDirectory = "/home/${user.username}";
-
-    packages =
-      with pkgs;
-      [
-      ];
   };
 
   roles = {
-    desktop.windowManager.hyprland.enable = true;
-
     programs = {
       kitty.enable = true;
       firefox.enable = true;
@@ -44,13 +40,44 @@
       slack.enable = true;
     };
 
-    desktop.waybar.modules = {
-      volume.enable = true;
-      brightness.enable = true;
-      network.enable = true;
-      bluetooth.enable = true;
-      battery.enable = true;
-      tray.enable = true;
+    desktop = {
+      hyprland = {
+        enable = true;
+
+        extra.binds = [
+          "bind = $mainMod, code:49, togglespecialworkspace, discord"
+          "bind = ALT, code:49, togglespecialworkspace, slack"
+          "bind = Control_L, code:49, togglespecialworkspace, mail"
+        ];
+
+        features = {
+          startOnLogin.enable = true;
+          screenshot.enable = true;
+          autostart = [
+            "exec-once = systemctl --user start plasma-polkit-agent"
+            "exec-once = [workspace 1 silent] kitty"
+            "exec-once = [workspace 2 silent] firefox"
+            "exec-once = [workspace 3 silent] obsidian"
+            "exec-once = [workspace special:discord silent] discord"
+            "exec-once = [workspace special:slack silent] slack"
+            "exec-once = [workspace special:mail silent] betterbird"
+          ];
+        };
+      };
+
+      hypridle.enable = true;
+      hyprlock.enable = true;
+      rofi.enable = true;
+      mako.enable = true;
+      waybar = {
+        enable = true;
+        modules = {
+          volume.enable = true;
+          network.enable = true;
+          bluetooth.enable = true;
+          tray.enable = true;
+        };
+      };
     };
   };
 

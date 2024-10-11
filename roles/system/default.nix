@@ -22,5 +22,7 @@
     ./laptop/powerManagement.nix
 
     ./programs/1password.nix
+
+    ./desktop/hyprland.nix
   ];
 }

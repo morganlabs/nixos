@@ -13,6 +13,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Desktop/Window Managers
+    hyprland.url = "github:hyprwm/Hyprland";
+
     # Customisation
     nix-colors.url = "github:misterio77/nix-colors";
 
