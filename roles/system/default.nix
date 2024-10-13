@@ -14,8 +14,8 @@
 
     ./connectivity/ssh.nix
     ./connectivity/firewall.nix
-    ./connectivity/networkmanager.nix
     ./connectivity/bluetooth.nix
+    ./connectivity/networkmanager
 
     ./security/keyring.nix
 
