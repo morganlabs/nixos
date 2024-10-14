@@ -122984,5 +122984,5 @@
     "zpu.samsungelectronics.com"
     "zqtk.net"
     "zy16eoat1w.com"
-  ]
+  ];
 }
