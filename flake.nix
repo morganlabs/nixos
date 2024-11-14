@@ -1,15 +1,15 @@
 {
-  description = "A very basic flake";
+  description = "Morgan's System Configurations using Nix";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: {
-
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
-
+  outputs = { nixpkgs, ... }@inputs: let
+    mkSystem = import ./mkSystem inputs;
+  in {
+    nixosConfigurations = nixpkgs.lib.foldl' (a: b: a // b) {} [
+      (mkSystem "satellites" "x86_64-linux" {})
+    ];
   };
 }
