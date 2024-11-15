@@ -1,6 +1,8 @@
 { inputs, ... }:
 {
   imports = with inputs; [
+    ./base/xdgUserDirs.nix
+
     ./desktop/hyprland
 
     ./programs/nvim

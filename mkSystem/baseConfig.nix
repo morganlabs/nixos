@@ -34,10 +34,7 @@ with lib;
     isNormalUser = mkForce true;
     description = mkForce vars.user.name;
     shell = mkForce pkgs.zsh;
-    extraGroups = mkDefault [
-      "wheel"
-      "networkmanager"
-    ];
+    extraGroups = mkDefault [ "wheel" ];
   };
 
   # i18n

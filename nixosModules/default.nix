@@ -10,5 +10,10 @@ with inputs;
     ./programs/1password.nix
 
     ./security/gnome-keyring.nix
+
+    ./connectivity/networkmanager
+    ./connectivity/bluetooth.nix
+    ./connectivity/firewall.nix
+    ./connectivity/ssh.nix
   ];
 }

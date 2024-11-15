@@ -1,6 +1,7 @@
 { ... }:
 {
   homeManagerModules = {
+    base.xdgUserDirs.enable = true;
     desktop.hyprland.enable = true;
 
     programs = {
