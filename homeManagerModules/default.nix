@@ -11,5 +11,10 @@
     ./programs/firefox
     ./programs/git.nix
     ./programs/kitty.nix
+    ./programs/pfetch.nix
+    ./programs/bat.nix
+    ./programs/btop.nix
+    ./programs/eza.nix
+    ./programs/fzf.nix
   ];
 }

@@ -10,6 +10,11 @@
       kitty.enable = true;
       nvim.enable = true;
       zsh.enable = true;
+      pfetch.enable = true;
+      bat.enable = true;
+      btop.enable = true;
+      eza.enable = true;
+      fzf.enable = true;
     };
   };
 

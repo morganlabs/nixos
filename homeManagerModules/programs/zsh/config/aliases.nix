@@ -4,7 +4,6 @@ let
   aliases = {
     mkdir = "mkdir -p";
     c = "clear";
-    l = "ls";
     e = "exit";
     src = "source $HOME/.zshrc";
   };
