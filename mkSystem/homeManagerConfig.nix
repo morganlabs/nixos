@@ -11,6 +11,7 @@ with lib;
 
     users.${vars.user.username}.imports = with inputs; [
       (../hosts + "/${config.networking.hostName}/home.nix")
+      ../homeManagerModules
     ];
   };
 }
