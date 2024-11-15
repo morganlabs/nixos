@@ -5,6 +5,7 @@
   nixosModules = {
     desktop.hyprland.enable = true;
     decoration.stylix.enable = true;
+    programs._1password.enable = true;
   };
 
   # Bootloader.

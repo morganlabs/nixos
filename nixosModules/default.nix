@@ -5,5 +5,9 @@ with inputs; {
 
     ./decoration/stylix
     stylix.nixosModules.stylix
+
+    ./programs/1password.nix
+
+    ./security/gnome-keyring.nix
   ];
 }
