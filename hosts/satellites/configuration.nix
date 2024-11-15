@@ -4,6 +4,7 @@
 
   nixosModules = {
     desktop.hyprland.enable = true;
+    decoration.stylix.enable = true;
   };
 
   # Bootloader.
