@@ -3,6 +3,7 @@ with inputs; let
   mkSystem = hostname: system: luksDevice: {}: let
     vars = import ../vars.nix;
     baseConfig = import ./baseConfig.nix { inherit hostname luksDevice; };
+    homeManagerConfig = import ./homeManagerConfig.nix;
 
     pkgs = import nixpkgs {
       inherit system;
@@ -16,6 +17,7 @@ with inputs; let
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
         baseConfig
+	homeManagerConfig
       ];
     };
   };
