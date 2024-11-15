@@ -1,8 +1,8 @@
 inputs:
 with inputs; let
-  mkSystem = hostname: system: {}: let
+  mkSystem = hostname: system: luksDevice: {}: let
     vars = import ../vars.nix;
-    baseConfig = import ./baseConfig.nix hostname;
+    baseConfig = import ./baseConfig.nix { inherit hostname luksDevice; };
 
     pkgs = import nixpkgs {
       inherit system;
