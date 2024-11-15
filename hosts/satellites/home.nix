@@ -3,6 +3,7 @@
     desktop.hyprland.enable = true;
 
     programs = {
+      firefox.enable = true;
       git.enable = true;
       kitty.enable = true;
     };

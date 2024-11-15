@@ -5,6 +5,5 @@ with lib;
     ./windowActions.nix
     ./workspaceActions.nix
     ./exec.nix
-    ./autostart.nix
   ];
 }

@@ -2,11 +2,12 @@ inputs:
 with inputs; let
   mkSystem = hostname: system: luksDevice: {}: let
     vars = import ../vars.nix;
+    overlays = import ./overlays.nix inputs;
     baseConfig = import ./baseConfig.nix { inherit hostname luksDevice; };
     homeManagerConfig = import ./homeManagerConfig.nix;
 
     pkgs = import nixpkgs {
-      inherit system;
+      inherit system overlays;
       config.allowUnfree = true;
     };
 

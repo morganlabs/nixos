@@ -17,6 +17,7 @@ with lib;
     ./config/env.nix
     ./config/input.nix
     ./config/windowRules.nix
+    ./config/autostart.nix
     ./config/decoration
     ./config/binds
   ];
