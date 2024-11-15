@@ -8,6 +8,8 @@ with inputs;
     stylix.nixosModules.stylix
 
     ./programs/1password.nix
+    ./programs/spotify.nix
+    spicetify-nix.nixosModules.default
 
     ./security/gnome-keyring.nix
 

@@ -23,7 +23,7 @@ with lib;
   imports = [
     ./config/env.nix
     ./config/input.nix
-    ./config/windowRules.nix
+    ./config/rules.nix
     ./config/autostart.nix
     ./config/decoration
     ./config/binds

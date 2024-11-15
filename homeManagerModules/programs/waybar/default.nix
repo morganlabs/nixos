@@ -12,7 +12,7 @@ with lib;
 {
   options.homeManagerModules.programs.waybar = {
     enable = mkEnableOption "Enable programs.waybar";
-    autostart.hyprland.enable = mkBoolOption "Autostart on Hyprland" true;
+    features.autostart.hyprland.enable = mkBoolOption "Autostart on Hyprland" true;
 
     modules = {
       clock.enable = mkBoolOption "Enable the clock module" true;
@@ -38,7 +38,9 @@ with lib;
   imports = [ ./bar.nix ];
 
   config = mkIf cfg.enable {
-    wayland.windowManager.hyprland.settings.exec-once = [ "${pkgs.waybar}/bin/waybar" ];
+    wayland.windowManager.hyprland.settings.exec-once =
+      mkIfList cfg.features.autostart.hyprland.enable
+        [ "${pkgs.waybar}/bin/waybar" ];
 
     programs.waybar = {
       enable = true;

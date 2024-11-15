@@ -11,7 +11,7 @@ with lib;
 {
   options.homeManagerModules.programs.rofi = {
     enable = mkEnableOption "Enable programs.rofi";
-    binds.hyprland.enable = mkBoolOption "Enable Hyprland bind" true;
+    features.binds.hyprland.enable = mkBoolOption "Enable Hyprland bind" true;
   };
 
   config = mkIf cfg.enable {
@@ -24,6 +24,8 @@ with lib;
       extraConfig = import ./config.nix;
     };
 
-    wayland.windowManager.hyprland.settings.bind = [ "$mod, d, exec, rofi -show drun" ];
+    wayland.windowManager.hyprland.settings.bind = mkIfList cfg.features.binds.hyprland.enable [
+      "$mod, d, exec, rofi -show drun"
+    ];
   };
 }

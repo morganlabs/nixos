@@ -1,11 +1,15 @@
-{ config, pkgs, ... }:
+{ ... }:
 {
   imports = [ ./hardware-configuration.nix ];
 
   nixosModules = {
     desktop.hyprland.enable = true;
     decoration.stylix.enable = true;
-    programs._1password.enable = true;
+
+    programs = {
+      _1password.enable = true;
+      spotify.enable = true;
+    };
 
     connectivity = {
       networkmanager.enable = true;

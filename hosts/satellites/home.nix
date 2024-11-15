@@ -18,6 +18,7 @@
       btop.enable = true;
       eza.enable = true;
       fzf.enable = true;
+      element.enable = true;
     };
   };
 

@@ -18,5 +18,6 @@
     ./programs/btop.nix
     ./programs/eza.nix
     ./programs/fzf.nix
+    ./programs/element.nix
   ];
 }
