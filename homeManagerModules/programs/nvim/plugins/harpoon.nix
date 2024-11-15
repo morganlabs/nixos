@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 with lib.nvim;
 {
   programs.nixvim.plugins.lazy.plugins = [

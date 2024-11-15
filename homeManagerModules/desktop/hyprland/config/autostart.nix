@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   hmModules = config.homeManagerModules;
   mkSilentWorkspace = ws: exec: "[workspace ${builtins.toString ws} silent] ${exec}";
@@ -8,6 +14,8 @@ with lib;
 {
   wayland.windowManager.hyprland.settings.exec-once = [
     (mkIfStr hmModules.programs.kitty.enable mkSilentWorkspace 1 "${pkgs.kitty}/bin/kitty")
-    (mkIfStr hmModules.programs.kitty.enable mkSilentWorkspace 2 "${firefoxNightly}/bin/firefox-nightly")
+    (mkIfStr hmModules.programs.kitty.enable mkSilentWorkspace 2
+      "${firefoxNightly}/bin/firefox-nightly"
+    )
   ];
 }

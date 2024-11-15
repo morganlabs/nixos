@@ -1,3 +1,1 @@
-inputs: with inputs; [
-  nur.overlay
-]
+inputs: with inputs; [ nur.overlay ]

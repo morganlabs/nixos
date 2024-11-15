@@ -1,4 +1,8 @@
-{ lib, inputs, pkgs }:
+{
+  lib,
+  inputs,
+  pkgs,
+}:
 let
   nixvim = inputs.nixvim.lib.${pkgs.system}.helpers;
 in
@@ -14,7 +18,7 @@ in
   mkStrOption = import ./mkOption/mkStrOption.nix { inherit lib; };
   mkPkgOption = import ./mkOption/mkPkgOption.nix { inherit lib; };
 
-  importWith = import ./importWith.nix {};
+  importWith = import ./importWith.nix { };
 
   nvim = with inputs; {
     mkLazyKeys = import ./nvim/mkLazyKeys.nix { inherit lib nixvim; };

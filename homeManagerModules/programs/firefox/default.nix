@@ -1,4 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 let
   cfg = config.homeManagerModules.programs.firefox;
 
@@ -15,9 +21,7 @@ with lib;
     enable = mkEnableOption "Enable programs.firefox";
   };
 
-  imports = [
-    (import ./profiles/personal.nix defaultPlugins)
-  ];
+  imports = [ (import ./profiles/personal.nix defaultPlugins) ];
 
   config = mkIf cfg.enable {
     programs.firefox = {

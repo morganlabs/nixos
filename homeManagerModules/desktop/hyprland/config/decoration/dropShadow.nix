@@ -1,4 +1,5 @@
-{ lib, config, ... }: {
+{ lib, config, ... }:
+{
   wayland.windowManager.hyprland.settings.decoration = {
     shadow = {
       enabled = true;

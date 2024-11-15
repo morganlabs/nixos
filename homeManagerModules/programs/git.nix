@@ -1,4 +1,11 @@
-{ config, osConfig, pkgs, lib, vars, ... }:
+{
+  config,
+  osConfig,
+  pkgs,
+  lib,
+  vars,
+  ...
+}:
 let
   cfg = config.homeManagerModules.programs.git;
 in
@@ -15,7 +22,7 @@ with lib;
       userEmail = mkForce user.email.work;
       extraConfig = mkMerge [
         { init.defaultBranch = mkForce "main"; }
-	(mkIf osConfig.programs._1password-gui.enable {
+        (mkIf osConfig.programs._1password-gui.enable {
           user.signingkey = vars.git.ssh.pubkey;
           commit.gpgsign = true;
           gpg = {

@@ -1,4 +1,5 @@
-defaultPlugins: { pkgs, ... }:
+defaultPlugins:
+{ pkgs, ... }:
 {
   programs.firefox.profiles.personal = {
     name = "Personal";

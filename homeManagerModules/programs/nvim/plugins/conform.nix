@@ -36,16 +36,16 @@ with lib.nvim;
         format_on_save.timeout_ms = 500;
 
         formatters_by_ft = {
-          svelte = "prettierd";
-          astro = "prettierd";
-          javascript = "prettierd";
-          typescript = "prettierd";
-          javascriptreact = "prettierd";
-          typescriptreact = "prettierd";
-          json = "prettierd";
-          markdown = "prettierd";
-          css = "prettierd";
-          scss = "prettierd";
+          svelte = [ "prettierd" ];
+          astro = [ "prettierd" ];
+          javascript = [ "prettierd" ];
+          typescript = [ "prettierd" ];
+          javascriptreact = [ "prettierd" ];
+          typescriptreact = [ "prettierd" ];
+          json = [ "prettierd" ];
+          markdown = [ "prettierd" ];
+          css = [ "prettierd" ];
+          scss = [ "prettierd" ];
           lua = [ "stylua" ];
           html = [ "htmlbeautifier" ];
           bash = [ "beautysh" ];

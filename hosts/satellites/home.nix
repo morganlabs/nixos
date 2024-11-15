@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   homeManagerModules = {
     desktop.hyprland.enable = true;
 

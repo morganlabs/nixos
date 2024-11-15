@@ -14,6 +14,6 @@ in
 {
   home.packages = pluginPkgs;
   programs.zsh.initExtraBeforeCompInit = builtins.concatStringsSep "\n" (
-    map (item: "source \"${item}\"") pluginStrs
+    map (item: ''source "${item}"'') pluginStrs
   );
 }

@@ -1,4 +1,10 @@
-{ config, pkgs, lib, vars, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  vars,
+  ...
+}:
 with lib;
 let
   cfg = config.homeManagerModules.programs.nvim;

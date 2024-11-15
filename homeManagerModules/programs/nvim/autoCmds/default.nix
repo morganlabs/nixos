@@ -1,3 +1,1 @@
-[
-  (import ./highlightOnYank.nix)
-]
+[ (import ./highlightOnYank.nix) ]

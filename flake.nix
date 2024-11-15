@@ -27,11 +27,16 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, ... }@inputs: let
-    mkSystem = import ./mkSystem inputs;
-  in {
-    nixosConfigurations = nixpkgs.lib.foldl' (a: b: a // b) {} [
-      (mkSystem "satellites" "x86_64-linux" "9866131b-c6ff-4473-a466-df2b602bce9c" {})
-    ];
-  };
+  outputs =
+    { nixpkgs, ... }@inputs:
+    let
+      mkSystem = import ./mkSystem inputs;
+    in
+    {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+
+      nixosConfigurations = nixpkgs.lib.foldl' (a: b: a // b) { } [
+        (mkSystem "satellites" "x86_64-linux" "9866131b-c6ff-4473-a466-df2b602bce9c" { })
+      ];
+    };
 }

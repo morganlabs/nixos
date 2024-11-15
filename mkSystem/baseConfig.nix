@@ -33,21 +33,17 @@ with lib;
   users.users.${vars.user.username} = {
     isNormalUser = mkForce true;
     description = mkForce vars.user.name;
+    shell = mkForce pkgs.zsh;
     extraGroups = mkDefault [
       "wheel"
       "networkmanager"
     ];
-    shell = mkForce pkgs.zsh;
   };
 
   # i18n
+  services.xserver.xkb.layout = "gb";
   time.timeZone = "Europe/London";
   console.keyMap = "uk";
-
-  services.xserver.xkb = {
-    layout = "gb";
-    variant = "";
-  };
 
   i18n = {
     defaultLocale = "en_GB.UTF-8";

@@ -1,4 +1,11 @@
-{ config, pkgs, lib, vars, osConfig, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  vars,
+  osConfig,
+  ...
+}:
 let
   cfg = config.homeManagerModules.desktop.hyprland;
 
@@ -32,4 +39,3 @@ with lib;
     };
   };
 }
-

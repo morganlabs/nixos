@@ -1,5 +1,6 @@
-{ inputs, ... }: 
-with inputs; {
+{ inputs, ... }:
+with inputs;
+{
   imports = [
     ./desktop/hyprland.nix
 
