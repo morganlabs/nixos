@@ -3,6 +3,7 @@
   lib,
   vars,
   pkgs,
+  config,
   ...
 }:
 with lib;
@@ -20,7 +21,14 @@ with lib;
   ];
 
   # User Config
-  services.getty.autologinUser = mkIfStr (luksDevice != "") mkDefault "morgan"; # TODO: Make this only happen on first tty
+  systemd.services."getty@tty1" = mkIfStr (luksDevice != "") (mkDefault ({
+    overrideStrategy = "asDropin";
+    serviceConfig.ExecStart = [
+      ""
+      "@${pkgs.util-linux}/sbin/agetty agetty --login-program ${config.services.getty.loginProgram} --autologin ${vars.user.username} --noclear --keep-baud %I 115200,38400,9600 $TERM"
+    ];
+  }));
+
   programs.zsh.enable = mkDefault true;
   users.users.${vars.user.username} = {
     isNormalUser = mkForce true;
