@@ -47,17 +47,6 @@
   # Configure console keymap
   console.keyMap = "uk";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.morgan = {
-    isNormalUser = true;
-    description = "Morgan Jones";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "morgan";
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
