@@ -16,6 +16,7 @@ with inputs; let
       
       modules = [
         (../hosts + "/${hostname}/configuration.nix")
+	../nixosModules
         baseConfig
 	homeManagerConfig
       ];
