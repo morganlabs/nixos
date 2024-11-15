@@ -8,6 +8,8 @@
     ./programs/nvim
     nixvim.homeManagerModules.nixvim
     ./programs/zsh
+    ./programs/waybar
+    ./programs/rofi
     ./programs/firefox
     ./programs/git.nix
     ./programs/kitty.nix

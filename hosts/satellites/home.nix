@@ -5,6 +5,9 @@
     desktop.hyprland.enable = true;
 
     programs = {
+      waybar.enable = true;
+      rofi.enable = true;
+
       firefox.enable = true;
       git.enable = true;
       kitty.enable = true;
