@@ -13,12 +13,22 @@ with lib;
     enable = mkEnableOption "Enable desktop.hyprland";
   };
 
+  imports = [
+    ./config/env.nix
+    ./config/input.nix
+    ./config/windowRules.nix
+
+    ./config/decoration
+    (import ./config/binds cfg)
+  ];
+
   config = mkIf cfg.enable {
-    stylix.targets.hyprland.enable = true;
-    home.sessionVariables.NIXOS_OZONE_WL = "1";
+    stylix.targets.hyprland.enable = mkDefault true;
+    home.sessionVariables.NIXOS_OZONE_WL = mkForce "1";
 
     wayland.windowManager.hyprland = {
-      enable = true;
+      enable = mkForce true;
+      settings = variables;
     };
   };
 }
