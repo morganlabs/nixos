@@ -1,5 +1,7 @@
 { ... }: {
   homeManagerModules = {
+    desktop.hyprland.enable = true;
+
     programs = {
       git.enable = true;
     };
