@@ -1,7 +1,6 @@
 { lib, inputs, pkgs }:
-with pkgs.system;
 let
-  nixvim = inputs.nixvim.lib.${system}.helpers;
+  nixvim = inputs.nixvim.lib.${pkgs.system}.helpers;
 in
 {
   mkIfElse = import ./mkIf/mkIfElse.nix;

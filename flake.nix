@@ -18,6 +18,11 @@
     # Programs
     firefox-nightly.url = "github:nix-community/flake-firefox-nightly";
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Customisation
     stylix.url = "github:danth/stylix";
   };
