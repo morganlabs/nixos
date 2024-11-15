@@ -1,4 +1,4 @@
-cfg: { config, lib, ... }:
+{ config, lib, ... }:
 with lib;
 {
   wayland.windowManager.hyprland.settings = {

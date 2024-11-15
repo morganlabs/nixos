@@ -1,8 +1,10 @@
-cfg: { config, lib, ... }:
+{ config, lib, ... }:
 with lib;
 {
   imports = [
-    (import ./windowActions.nix cfg)
-    (import ./workspaceActions.nix cfg)
+    ./windowActions.nix
+    ./workspaceActions.nix
+    ./exec.nix
+    ./autostart.nix
   ];
 }

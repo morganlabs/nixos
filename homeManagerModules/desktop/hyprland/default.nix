@@ -17,9 +17,8 @@ with lib;
     ./config/env.nix
     ./config/input.nix
     ./config/windowRules.nix
-
     ./config/decoration
-    (import ./config/binds cfg)
+    ./config/binds
   ];
 
   config = mkIf cfg.enable {
