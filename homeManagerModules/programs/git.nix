@@ -8,7 +8,6 @@
 }:
 let
   cfg = config.homeManagerModules.programs.git;
-
   aliases = {
     gi = "git init";
     ga = "git add";
@@ -33,9 +32,8 @@ with lib;
     enable = mkEnableOption "Enable programs.git";
     features.aliases.enable = mkBoolOption "Enable Aliases for all shells" true;
   };
-
   config = mkIf cfg.enable {
-    programs =
+    programs = mkMerge [
       {
         git = with vars; {
           enable = mkForce true;
@@ -53,7 +51,6 @@ with lib;
             })
           ];
         };
-
         ssh = mkIf osConfig.programs._1password-gui.enable {
           enable = true;
           extraConfig = ''
@@ -61,11 +58,11 @@ with lib;
               IdentityAgent ~/.1password/agent.sock
           '';
         };
-
       }
-      // (mkIf cfg.features.aliases.enable {
+      (mkIf cfg.features.aliases.enable {
         bash.shellAliases = mkIf osConfig.programs.bash.enable aliases;
         zsh.shellAliases = mkIf osConfig.programs.zsh.enable aliases;
-      });
+      })
+    ];
   };
 }
