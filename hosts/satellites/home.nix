@@ -21,6 +21,7 @@
       element.enable = true;
       signal.enable = true;
       unzip.enable = true;
+      obsidian.enable = true;
     };
   };
 

@@ -21,5 +21,6 @@
     ./programs/element.nix
     ./programs/signal.nix
     ./programs/unzip.nix
+    ./programs/obsidian.nix
   ];
 }
