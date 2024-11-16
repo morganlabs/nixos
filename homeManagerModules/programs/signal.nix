@@ -17,8 +17,8 @@ with lib;
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ signal-desktop ];
     wayland.windowManager.hyprland.settings = mkIf cfg.features.hyprland.enable {
-      exec-once = [ "[workspace special:2 silent] ${pkgs.signal-desktop}/bin/signal-desktop" ];
-      windowrulev2 = [ "workspace special:2, class:(signal)" ];
+      exec-once = [ "[workspace special:s2 silent] ${pkgs.signal-desktop}/bin/signal-desktop" ];
+      windowrulev2 = [ "workspace special:s2, class:(signal)" ];
     };
   };
 }

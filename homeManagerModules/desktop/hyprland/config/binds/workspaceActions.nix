@@ -53,14 +53,14 @@ with lib;
 
     # Switch between special workspaces
     # ONLY do this if there is not a pre-existing Alt+{0-9} binding
-    "$alt, 1, togglespecialworkspace, 1"
-    "$alt, 2, togglespecialworkspace, 2"
-    "$alt, 3, togglespecialworkspace, 3"
-    "$alt, 4, togglespecialworkspace, 4"
-    "$alt, 5, togglespecialworkspace, 5"
-    "$alt, 6, togglespecialworkspace, 6"
-    "$alt, 7, togglespecialworkspace, 7"
-    "$alt, 8, togglespecialworkspace, 9"
-    "$alt, 0, togglespecialworkspace, 10"
+    "$alt, 1, togglespecialworkspace, s1"
+    "$alt, 2, togglespecialworkspace, s2"
+    "$alt, 3, togglespecialworkspace, s3"
+    "$alt, 4, togglespecialworkspace, s4"
+    "$alt, 5, togglespecialworkspace, s5"
+    "$alt, 6, togglespecialworkspace, s6"
+    "$alt, 7, togglespecialworkspace, s7"
+    "$alt, 8, togglespecialworkspace, s9"
+    "$alt, 0, togglespecialworkspace, s10"
   ];
 }

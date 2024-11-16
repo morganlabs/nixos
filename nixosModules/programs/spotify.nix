@@ -27,8 +27,8 @@ with lib;
     home-manager.users.${vars.user.username}.wayland.windowManager.hyprland.settings =
       mkIf cfg.features.hyprland.enable
         {
-          exec-once = [ "[workspace special:3 silent] spotify" ];
-          windowrulev2 = [ "workspace special:3, class:(spotify)" ];
+          exec-once = [ "[workspace special:s3 silent] spotify" ];
+          windowrulev2 = [ "workspace special:s3, class:(spotify)" ];
         };
   };
 }
