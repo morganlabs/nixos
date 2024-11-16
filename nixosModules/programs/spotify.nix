@@ -8,6 +8,7 @@
 }:
 let
   cfg = config.nixosModules.programs.spotify;
+  spicetify = inputs.spicetify-nix.nixosModules.spicetify;
 in
 with lib;
 {
@@ -26,8 +27,8 @@ with lib;
     home-manager.users.${vars.user.username}.wayland.windowManager.hyprland.settings =
       mkIf cfg.features.hyprland.enable
         {
-          exec-once = [ "[workspace special:1 silent] ${pkgs.spotify}/bin/spotify" ];
-          windowrulev2 = [ "workspace special:1, class:(spotify)" ];
+          exec-once = [ "[workspace special:3 silent] spotify" ];
+          windowrulev2 = [ "workspace special:3, class:(spotify)" ];
         };
   };
 }

@@ -19,5 +19,6 @@
     ./programs/eza.nix
     ./programs/fzf.nix
     ./programs/element.nix
+    ./programs/signal.nix
   ];
 }

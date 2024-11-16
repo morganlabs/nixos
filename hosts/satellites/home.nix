@@ -19,6 +19,7 @@
       eza.enable = true;
       fzf.enable = true;
       element.enable = true;
+      signal.enable = true;
     };
   };
 
