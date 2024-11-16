@@ -11,11 +11,7 @@ with lib;
 {
   options.nixosModules.connectivity.networkmanager = {
     enable = mkEnableOption "Enable connectivity.networkmanager";
-
-    features = {
-      controld.enable = mkBoolOption "Use the ControlD DNS" true;
-      tethering.iOS.enable = mkBoolOption "Enable iOS USB tethering" true;
-    };
+    features.controld.enable = mkBoolOption "Use the ControlD DNS" true;
 
     wifi = {
       enable = mkBoolOption "Enable WiFi support" false;
