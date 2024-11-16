@@ -24,7 +24,10 @@ with lib;
       mkIf cfg.features.hyprland.enable
         {
           exec-once = [ "[workspace special:10 silent] ${pkgs._1password-gui}/bin/1password" ];
-          windowrulev2 = [ "workspace special:10, class:(1Password)" ];
+          windowrulev2 = [
+            "workspace special:10, class:(1Password), floating:0"
+            "pin, class:(1Password), title:(1Password), floating:1"
+          ];
         };
 
     programs = {
