@@ -20,5 +20,6 @@
     ./programs/fzf.nix
     ./programs/element.nix
     ./programs/signal.nix
+    ./programs/unzip.nix
   ];
 }
