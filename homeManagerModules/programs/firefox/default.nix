@@ -13,6 +13,7 @@ let
     ublock-origin
     clearurls
     facebook-container
+    don-t-fuck-with-paste
   ];
 in
 with lib;

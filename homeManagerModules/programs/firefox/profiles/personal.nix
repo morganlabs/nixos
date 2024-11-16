@@ -1,11 +1,15 @@
 defaultPlugins:
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
+  stylix.targets.firefox = {
+    enable = true;
+    profileNames = [ "personal" ];
+  };
+
   programs.firefox.profiles.personal = {
     name = "Personal";
     isDefault = true;
     extraConfig = builtins.readFile ../user.js;
-    userChrome = import ../defaultChrome.nix;
 
     settings.extensions.autoDisableScopes = 0;
     extensions =
