@@ -17,9 +17,8 @@ with lib;
   config = mkIf cfg.enable {
     home.packages = with pkgs; [ element-desktop ];
     wayland.windowManager.hyprland.settings = mkIf cfg.features.hyprland.enable {
-      exec-once = [ "[workspace special:matrix silent] ${pkgs.element-desktop}/bin/element-desktop" ];
-      windowrulev2 = [ "workspace special:matrix, class:(Element)" ];
-      bind = [ "$alt, 2, togglespecialworkspace, matrix" ];
+      exec-once = [ "[workspace special:2 silent] ${pkgs.element-desktop}/bin/element-desktop" ];
+      windowrulev2 = [ "workspace special:2, class:(Element)" ];
     };
   };
 }

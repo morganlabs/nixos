@@ -50,5 +50,17 @@ with lib;
 
     "$mod, 0, workspace, 10"
     "$mod, 0, exec, ${close-special}/bin/close-special"
+
+    # Switch between special workspaces
+    # ONLY do this if there is not a pre-existing Alt+{0-9} binding
+    "$alt, 1, togglespecialworkspace, 1"
+    "$alt, 2, togglespecialworkspace, 2"
+    "$alt, 3, togglespecialworkspace, 3"
+    "$alt, 4, togglespecialworkspace, 4"
+    "$alt, 5, togglespecialworkspace, 5"
+    "$alt, 6, togglespecialworkspace, 6"
+    "$alt, 7, togglespecialworkspace, 7"
+    "$alt, 8, togglespecialworkspace, 9"
+    "$alt, 0, togglespecialworkspace, 10"
   ];
 }
