@@ -22,5 +22,6 @@
     ./programs/signal.nix
     ./programs/unzip.nix
     ./programs/obsidian.nix
+    ./programs/nextcloud-client.nix
   ];
 }

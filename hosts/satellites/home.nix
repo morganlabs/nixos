@@ -22,6 +22,7 @@
       signal.enable = true;
       unzip.enable = true;
       obsidian.enable = true;
+      nextcloud-client.enable = true;
     };
   };
 
