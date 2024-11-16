@@ -42,9 +42,10 @@ with lib;
       mkIfList cfg.features.autostart.hyprland.enable
         [ "${pkgs.waybar}/bin/waybar" ];
 
+    stylix.targets.waybar.enable = true;
     programs.waybar = {
       enable = true;
-      style = import ./style.nix config;
+      # style = import ./style.nix config;
     };
   };
 }

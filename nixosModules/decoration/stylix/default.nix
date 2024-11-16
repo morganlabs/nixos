@@ -41,7 +41,7 @@ with lib;
           mkFont = package: name: { inherit package name; };
         in
         {
-          monospace = mkFont monaspace "MonaspaceKr Nerd Font Mono";
+          monospace = mkFont monaspace "MonaspiceKr Nerd Font Mono";
           serif = config.stylix.fonts.monospace;
           sansSerif = config.stylix.fonts.monospace;
           emoji = config.stylix.fonts.monospace;

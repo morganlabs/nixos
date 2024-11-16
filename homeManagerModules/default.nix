@@ -23,5 +23,6 @@
     ./programs/unzip.nix
     ./programs/obsidian.nix
     ./programs/nextcloud-client.nix
+    ./programs/mako.nix
   ];
 }
