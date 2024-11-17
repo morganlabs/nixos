@@ -1,6 +1,8 @@
 { inputs, ... }:
 {
   imports = with inputs; [
+    ./base/xdgUserDirs.nix
+
     ./connectivity/networkmanager
     ./connectivity/bluetooth.nix
     ./connectivity/firewall.nix

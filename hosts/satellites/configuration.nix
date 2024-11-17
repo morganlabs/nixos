@@ -3,6 +3,7 @@
   imports = [ ./hardware-configuration.nix ];
 
   modules = {
+    base.xdgUserDirs.enable = true;
     decoration.stylix.enable = true;
     desktop.hyprland.enable = true;
     shells.zsh.enable = true;
