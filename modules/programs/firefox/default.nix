@@ -8,6 +8,7 @@
 }:
 let
   cfg = config.modules.programs.firefox;
+  nightly = inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin;
 
   defaultPlugins = with pkgs.nur.repos.rycee.firefox-addons; [
     onepassword-password-manager
@@ -23,6 +24,7 @@ with lib;
 
   options.modules.programs.firefox = {
     enable = mkEnableOption "Enable programs.firefox";
+    features.hyprland.enable = mkBoolOption "Enable Autostart, Window Rules and Binds for Hyprland" true;
   };
 
   config = mkIf cfg.enable {
@@ -30,7 +32,12 @@ with lib;
       imports = [ (import ./profiles/personal defaultPlugins) ];
       programs.firefox = {
         enable = true;
-        package = inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin;
+        package = nightly;
+      };
+
+      wayland.windowManager.hyprland.settings = {
+        exec-once = [ "[workspace 2 silent] ${nightly}/bin/firefox-nightly" ];
+        windowrulev2 = [ "workspace 2, class:(firefox-nightly)" ];
       };
     };
   };
