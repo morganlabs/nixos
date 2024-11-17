@@ -6,6 +6,10 @@
     decoration.stylix.enable = true;
     desktop.hyprland.enable = true;
 
+    programs = {
+      nvim.enable = true;
+    };
+
     connectivity = {
       networkmanager.enable = true;
       bluetooth.enable = true;
