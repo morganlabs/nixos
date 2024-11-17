@@ -29,12 +29,17 @@ defaultPlugins:
 
       engines = {
         "Bing".metaData.hidden = true;
+        "DuckDuckGo".metaData.hidden = true;
+        "eBay".metaData.hidden = true;
+        "Wikipedia (en)".metaData.hidden = true;
         "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
 
         "Startpage" = import ../../engines/startpage.nix;
         "Nix Packages" = import ../../engines/nixPackages.nix { inherit pkgs; };
         "NixOS Settings" = import ../../engines/nixOSSettings.nix { inherit pkgs; };
-        "Home Manager Settings" = import ../../engines/homeManagerSettings.nix { inherit pkgs; };
+        "Home Manager Settings" = import ../../engines/homeManagerSettings.nix;
+        "GitHub" = import ../../engines/github.nix;
+        "YouTube" = import ../../engines/youtube.nix;
       };
     };
   };

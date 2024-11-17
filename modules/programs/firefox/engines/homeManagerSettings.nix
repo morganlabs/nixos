@@ -1,4 +1,3 @@
-{ pkgs }:
 {
   urls = [
     {
@@ -16,6 +15,6 @@
     }
   ];
 
-  icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+  iconUpdateURL = "https://home-manager-options.extranix.com/images/favicon.png";
   definedAliases = [ "@hm" ];
 }

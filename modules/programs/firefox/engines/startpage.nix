@@ -15,6 +15,6 @@
     }
   ];
 
-  # icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+  iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-96x96.png";
   definedAliases = [ "@sp" ];
 }
