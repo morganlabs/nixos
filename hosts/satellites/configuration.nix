@@ -8,6 +8,7 @@
     desktop.hyprland.enable = true;
     shells.zsh.enable = true;
     security.gnome-keyring.enable = true;
+    graphics.amdgpu.enable = true;
 
     programs = {
       nvim.enable = true;

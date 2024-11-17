@@ -8,6 +8,8 @@
     ./connectivity/firewall.nix
     ./connectivity/ssh.nix
 
+    ./graphics/amdgpu.nix
+
     ./security/gnome-keyring.nix
 
     ./desktop/hyprland
