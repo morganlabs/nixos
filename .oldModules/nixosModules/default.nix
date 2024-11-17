@@ -2,7 +2,7 @@
 with inputs;
 {
   imports = [
-    ./desktop/hyprland.nix
+    ./desktop/hyprland
 
     ./decoration/stylix
     stylix.nixosModules.stylix

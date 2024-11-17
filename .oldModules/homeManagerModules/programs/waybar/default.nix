@@ -20,8 +20,8 @@ with lib;
       network.enable = mkBoolOption "Enable the network module" osConfig.networking.networkmanager.enable;
       pulseaudio.enable = mkBoolOption "Enable the pulseaudio module" osConfig.services.pipewire.pulse.enable;
       tray.enable = mkBoolOption "Enable the tray module" true;
-      workspaces.enable = mkBoolOption "Enable the Hyprland workspaces module" config.homeManagerModules.desktop.hyprland.enable;
-      window.enable = mkBoolOption "Enable the Hyprland window title module" config.homeManagerModules.desktop.hyprland.enable;
+      workspaces.enable = mkBoolOption "Enable the Hyprland workspaces module" config.nixosModules.desktop.hyprland.enable;
+      window.enable = mkBoolOption "Enable the Hyprland window title module" config.nixosModules.desktop.hyprland.enable;
 
       battery = {
         enable = mkBoolOption "Enable the battery module" false;

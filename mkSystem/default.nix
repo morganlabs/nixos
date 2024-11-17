@@ -30,7 +30,7 @@ let
 
         modules = [
           (../hosts + "/${hostname}/configuration.nix")
-          ../nixosModules
+          ../modules
           baseConfig
           homeManagerConfig
         ];
