@@ -16,5 +16,12 @@
     ./programs/hyprlock.nix
     ./programs/hypridle.nix
     ./programs/kitty.nix
+    ./programs/bat.nix
+    ./programs/fzf.nix
+    ./programs/git.nix
+    ./programs/btop.nix
+    ./programs/unzip.nix
+    ./programs/eza.nix
+    ./programs/pfetch.nix
   ];
 }

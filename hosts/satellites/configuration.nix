@@ -10,6 +10,13 @@
     programs = {
       nvim.enable = true;
       kitty.enable = true;
+      bat.enable = true;
+      fzf.enable = true;
+      git.enable = true;
+      btop.enable = true;
+      unzip.enable = true;
+      eza.enable = true;
+      pfetch.enable = true;
     };
 
     connectivity = {
