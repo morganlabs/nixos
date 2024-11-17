@@ -19,7 +19,11 @@ with lib;
 
   options.modules.desktop.hyprland = {
     enable = mkEnableOption "Enable desktop.hyprland";
-    features.hyprlock.enable = mkBoolOption "Enable Hyprlock and Hypridle" true;
+    features = {
+      hyprlock.enable = mkBoolOption "Enable Hyprlock and Hypridle" true;
+      polkit.enable = mkBoolOption "Enable Polkit" true;
+      autostart.enable = mkBoolOption "Autostart Hyprland on tty login" true;
+    };
   };
 
   config = mkIf cfg.enable {
@@ -28,11 +32,13 @@ with lib;
       xwayland.enable = mkDefault true;
     };
 
-    modules.programs = mkIf cfg.features.hyprlock.enable {
-      hypridle.enable = true;
-      hyprlock.enable = true;
-      hyprpolkitagent.enable = true;
-    };
+    modules.programs = mkMerge [
+      (mkIf cfg.features.polkit.enable { hyprpolkitagent.enable = true; })
+      (mkIf cfg.features.hyprlock.enable {
+        hypridle.enable = true;
+        hyprlock.enable = true;
+      })
+    ];
 
     home-manager.users.${vars.user.username} = {
       imports = [
@@ -50,6 +56,12 @@ with lib;
         enable = mkForce true;
         settings = variables;
       };
+
+      programs.zsh.initExtra = mkIf cfg.features.autostart.enable ''
+        if [ -z "''${WAYLAND_DISPLAY}" ] && [ "''${XDG_VTNR}" -eq 1 ]; then
+          dbus-run-session Hyprland
+        fi
+      '';
     };
   };
 }
