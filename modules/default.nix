@@ -17,6 +17,7 @@
     ./decoration/stylix
 
     ./programs/nvim
+    ./programs/rofi
     ./programs/hyprlock.nix
     ./programs/hypridle.nix
     ./programs/kitty.nix

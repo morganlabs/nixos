@@ -25,6 +25,7 @@
       obsidian.enable = true;
       signal.enable = true;
       element.enable = true;
+      rofi.enable = true;
     };
 
     connectivity = {
