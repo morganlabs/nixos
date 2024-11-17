@@ -4,6 +4,7 @@
 
   modules = {
     decoration.stylix.enable = true;
+    desktop.hyprland.enable = true;
 
     connectivity = {
       networkmanager.enable = true;

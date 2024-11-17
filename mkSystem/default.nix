@@ -8,7 +8,7 @@ let
       vars = import ../vars.nix;
       overlays = import ./overlays.nix inputs;
       baseConfig = import ./baseConfig.nix { inherit hostname luksDevice; };
-      homeManagerConfig = import ./homeManagerConfig.nix;
+      homeManagerConfig = import ./homeManagerConfig.nix hostname;
 
       pkgs = import nixpkgs {
         inherit system overlays;

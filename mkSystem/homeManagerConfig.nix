@@ -1,3 +1,4 @@
+hostname:
 {
   inputs,
   vars,
@@ -14,8 +15,8 @@ with lib;
       inherit inputs vars;
     };
 
-    # users.${vars.user.username}.imports = with inputs; [
-    #   (../hosts + "/${config.networking.hostName}/home.nix")
-    # ];
+    users.${vars.user.username}.imports = with inputs; [
+      (../hosts + "/${hostname}/home.nix")
+    ];
   };
 }
