@@ -1,3 +1,4 @@
+cfg:
 {
   lib,
   pkgs,
@@ -6,7 +7,6 @@
 }:
 with lib;
 let
-  cfg = config.homeManagerModules.programs.waybar;
   modules = cfg.modules;
 in
 {
@@ -19,6 +19,7 @@ in
         pamixer
       ])
     ];
+
   programs.waybar.settings = [
     {
       layer = "top";

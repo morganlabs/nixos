@@ -18,6 +18,7 @@
 
     ./programs/nvim
     ./programs/rofi
+    ./programs/waybar
     ./programs/hyprlock.nix
     ./programs/hypridle.nix
     ./programs/kitty.nix

@@ -26,6 +26,7 @@
       signal.enable = true;
       element.enable = true;
       rofi.enable = true;
+      waybar.enable = true;
     };
 
     connectivity = {
