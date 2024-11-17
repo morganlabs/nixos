@@ -1,15 +1,18 @@
 {
   config,
   lib,
+  inputs,
   vars,
   ...
 }:
 let
-  cfg = config.nixosModules.connectivity.ssh;
+  cfg = config.modules.connectivity.ssh;
 in
 with lib;
 {
-  options.nixosModules.connectivity.ssh = {
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
+
+  options.modules.connectivity.ssh = {
     enable = mkEnableOption "Enable connectivity.ssh";
   };
 

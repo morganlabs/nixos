@@ -10,7 +10,7 @@ let
 in
 with lib;
 {
-  imports = [ inputs.home-manager.modules.home-manager ];
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   options.modules.scope.program = {
     enable = mkEnableOption "Enable scope.program";

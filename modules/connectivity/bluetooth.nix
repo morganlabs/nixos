@@ -1,10 +1,18 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  inputs,
+  vars,
+  ...
+}:
 let
-  cfg = config.nixosModules.connectivity.bluetooth;
+  cfg = config.modules.connectivity.bluetooth;
 in
 with lib;
 {
-  options.nixosModules.connectivity.bluetooth = {
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
+
+  options.modules.connectivity.bluetooth = {
     enable = mkEnableOption "Enable connectivity.bluetooth";
 
     features = {

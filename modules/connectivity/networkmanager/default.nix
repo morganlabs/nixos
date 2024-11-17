@@ -1,15 +1,21 @@
 {
   config,
   lib,
+  inputs,
   vars,
   ...
 }:
 let
-  cfg = config.nixosModules.connectivity.networkmanager;
+  cfg = config.modules.connectivity.networkmanager;
 in
 with lib;
 {
-  options.nixosModules.connectivity.networkmanager = {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    (import ./controld.nix cfg)
+  ];
+
+  options.modules.connectivity.networkmanager = {
     enable = mkEnableOption "Enable connectivity.networkmanager";
     features.controld.enable = mkBoolOption "Use the ControlD DNS" true;
 
@@ -18,10 +24,6 @@ with lib;
       useIwd = mkBoolOption "Use IWD over wpa_supplicant for WiFi" true;
     };
   };
-
-  imports = [
-    (import ./controld.nix cfg)
-  ];
 
   config = mkIf cfg.enable {
     users.users.${vars.user.username}.extraGroups = mkDefault [ "networkmanager" ];
