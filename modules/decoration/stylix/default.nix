@@ -3,6 +3,7 @@
   lib,
   inputs,
   pkgs,
+  vars,
   ...
 }:
 let
@@ -52,6 +53,10 @@ with lib;
           sansSerif = config.stylix.fonts.monospace;
           emoji = config.stylix.fonts.monospace;
         };
+    };
+
+    home-manager.users.${vars.user.username}.stylix.targets = {
+      xresources.enable = true;
     };
   };
 }
