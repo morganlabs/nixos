@@ -8,6 +8,8 @@
     ./connectivity/firewall.nix
     ./connectivity/ssh.nix
 
+    ./security/gnome-keyring.nix
+
     ./desktop/hyprland
 
     ./shells/zsh

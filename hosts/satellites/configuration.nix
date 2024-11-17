@@ -7,6 +7,7 @@
     decoration.stylix.enable = true;
     desktop.hyprland.enable = true;
     shells.zsh.enable = true;
+    security.gnome-keyring.enable = true;
 
     programs = {
       nvim.enable = true;

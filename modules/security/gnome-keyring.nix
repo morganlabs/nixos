@@ -1,15 +1,10 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 let
-  cfg = config.nixosModules.security.gnome-keyring;
+  cfg = config.modules.security.gnome-keyring;
 in
 with lib;
 {
-  options.nixosModules.security.gnome-keyring = {
+  options.modules.security.gnome-keyring = {
     enable = mkEnableOption "Enable security.gnome-keyring";
     features.unlockOnLogin = mkBoolOption "Unlock GNOME Keyring on Login" true;
   };
