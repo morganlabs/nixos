@@ -137,6 +137,7 @@ in
         rewrite = {
           kitty = "Kitty";
           ".* - Discord" = "Discord";
+          ".* - Obsidian v.*" = "Obsidian";
           " - (.*)" = "$1";
           "- (.*)" = "$1";
           "Mozilla (.*)" = "$1";
