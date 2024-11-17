@@ -1,5 +1,5 @@
 defaultPlugins:
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   stylix.targets.firefox = {
     enable = true;
@@ -9,9 +9,12 @@ defaultPlugins:
   programs.firefox.profiles.personal = {
     name = "Personal";
     isDefault = true;
-    extraConfig = builtins.readFile ../user.js;
+    settings = (
+      (import ../../user.nix) true {
+        "browser.uiCustomization.state" = import ./layout.nix;
+      }
+    );
 
-    settings.extensions.autoDisableScopes = 0;
     extensions =
       with pkgs.nur.repos.rycee.firefox-addons;
       [
@@ -28,10 +31,10 @@ defaultPlugins:
         "Bing".metaData.hidden = true;
         "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
 
-        "Startpage" = import ../engines/startpage.nix;
-        "Nix Packages" = import ../engines/nixPackages.nix { inherit pkgs; };
-        "NixOS Settings" = import ../engines/nixOSSettings.nix { inherit pkgs; };
-        "Home Manager Settings" = import ../engines/homeManagerSettings.nix { inherit pkgs; };
+        "Startpage" = import ../../engines/startpage.nix;
+        "Nix Packages" = import ../../engines/nixPackages.nix { inherit pkgs; };
+        "NixOS Settings" = import ../../engines/nixOSSettings.nix { inherit pkgs; };
+        "Home Manager Settings" = import ../../engines/homeManagerSettings.nix { inherit pkgs; };
       };
     };
   };

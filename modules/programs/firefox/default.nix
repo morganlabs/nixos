@@ -27,7 +27,7 @@ with lib;
 
   config = mkIf cfg.enable {
     home-manager.users.${vars.user.username} = {
-      imports = [ (import ./profiles/personal.nix defaultPlugins) ];
+      imports = [ (import ./profiles/personal defaultPlugins) ];
       programs.firefox = {
         enable = true;
         package = inputs.firefox-nightly.packages.${pkgs.system}.firefox-nightly-bin;
