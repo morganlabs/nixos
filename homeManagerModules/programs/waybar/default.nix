@@ -45,7 +45,34 @@ with lib;
     stylix.targets.waybar.enable = true;
     programs.waybar = {
       enable = true;
-      # style = import ./style.nix config;
+      style = with config.stylix.base16Scheme; ''
+        * {
+          color: #${base04};
+        }
+
+        .modules-center * .module,
+        .modules-right * .module {
+          margin: 0 8px;
+        }
+
+        .modules-left #workspaces {
+          margin-right: 8px;
+        }
+
+        .modules-left #workspaces button.active.visible.hosting-monitor.flat {
+          border: none;
+          border-radius: 0;
+          background-color: #${base0E};
+        }
+
+        .modules-left #workspaces button.active.visible.hosting-monitor.flat * {
+          color: #${base00};
+        }
+
+        #window {
+          padding: 0 16px;
+        }
+      '';
     };
   };
 }
