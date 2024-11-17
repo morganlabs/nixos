@@ -15,10 +15,20 @@ with lib;
   # Basic Settings
   programs.git.enable = mkForce true;
   networking.hostName = mkForce hostname;
-  nix.settings.experimental-features = mkDefault [
-    "nix-command"
-    "flakes"
-  ];
+
+  nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = mkDefault [
+        "nix-command"
+        "flakes"
+      ];
+    };
+  };
 
   # User Config
   systemd.services."getty@tty1" = mkIfStr (luksDevice != "") (mkDefault ({
