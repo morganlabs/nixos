@@ -21,6 +21,10 @@
       pfetch.enable = true;
       _1password.enable = true;
       spotify.enable = true;
+      nextcloud-client.enable = true;
+      obsidian.enable = true;
+      signal.enable = true;
+      element.enable = true;
     };
 
     connectivity = {

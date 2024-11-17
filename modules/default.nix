@@ -29,5 +29,9 @@
     ./programs/pfetch.nix
     ./programs/spotify.nix
     ./programs/1password.nix
+    ./programs/nextcloud-client.nix
+    ./programs/obsidian.nix
+    ./programs/signal.nix
+    ./programs/element.nix
   ];
 }
