@@ -5,9 +5,11 @@
   modules = {
     decoration.stylix.enable = true;
     desktop.hyprland.enable = true;
+    shells.zsh.enable = true;
 
     programs = {
       nvim.enable = true;
+      kitty.enable = true;
     };
 
     connectivity = {

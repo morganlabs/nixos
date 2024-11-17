@@ -43,7 +43,6 @@ with lib;
   users.users.${vars.user.username} = {
     isNormalUser = mkForce true;
     description = mkForce vars.user.name;
-    shell = mkForce pkgs.zsh;
     extraGroups = mkDefault [ "wheel" ];
   };
 
