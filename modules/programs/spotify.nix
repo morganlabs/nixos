@@ -1,23 +1,25 @@
 {
   config,
   lib,
-  pkgs,
   vars,
   inputs,
   ...
 }:
 let
-  cfg = config.nixosModules.programs.spotify;
-  spicetify = inputs.spicetify-nix.nixosModules.spicetify;
+  cfg = config.modules.programs.spotify;
+  spicetify = inputs.spicetify-nix.modules.spicetify;
 in
 with lib;
 {
-  options.nixosModules.programs.spotify = {
+  options.modules.programs.spotify = {
     enable = mkEnableOption "Enable programs.spotify";
     features.hyprland.enable = mkBoolOption "Enable Autostart, Window Rules and Binds for Hyprland" true;
   };
 
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    inputs.spicetify-nix.nixosModules.default
+  ];
 
   config = mkIf cfg.enable {
     stylix.targets.spicetify.enable = true;

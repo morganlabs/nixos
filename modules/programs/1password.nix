@@ -7,11 +7,11 @@
   ...
 }:
 let
-  cfg = config.nixosModules.programs._1password;
+  cfg = config.modules.programs._1password;
 in
 with lib;
 {
-  options.nixosModules.programs._1password = {
+  options.modules.programs._1password = {
     enable = mkEnableOption "Enable programs._1password";
     features.hyprland.enable = mkBoolOption "Enable Autostart, Window Rules and Binds for Hyprland" true;
   };
@@ -19,7 +19,7 @@ with lib;
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   config = mkIf cfg.enable {
-    nixosModules.security.gnome-keyring.enable = mkForce true;
+    modules.security.gnome-keyring.enable = mkForce true;
     home-manager.users.${vars.user.username}.wayland.windowManager.hyprland.settings =
       mkIf cfg.features.hyprland.enable
         {

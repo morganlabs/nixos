@@ -19,6 +19,8 @@
       unzip.enable = true;
       eza.enable = true;
       pfetch.enable = true;
+      _1password.enable = true;
+      spotify.enable = true;
     };
 
     connectivity = {

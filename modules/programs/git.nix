@@ -3,6 +3,7 @@
   lib,
   inputs,
   vars,
+  pkgs,
   ...
 }:
 let

@@ -27,5 +27,7 @@
     ./programs/unzip.nix
     ./programs/eza.nix
     ./programs/pfetch.nix
+    ./programs/spotify.nix
+    ./programs/1password.nix
   ];
 }
