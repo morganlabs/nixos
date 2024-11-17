@@ -29,7 +29,7 @@
     };
 
     # Customisation
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:morganlabs-forks/stylix";
   };
 
   outputs =

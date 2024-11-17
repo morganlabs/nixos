@@ -24,5 +24,7 @@
     ./programs/obsidian.nix
     ./programs/nextcloud-client.nix
     ./programs/mako.nix
+    ./programs/hypridle.nix
+    ./programs/hyprlock.nix
   ];
 }

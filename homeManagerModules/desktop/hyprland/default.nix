@@ -18,6 +18,7 @@ with lib;
 {
   options.homeManagerModules.desktop.hyprland = {
     enable = mkEnableOption "Enable desktop.hyprland";
+    features.hyprlock.enable = mkBoolOption "Enable Hyprlock and Hypridle" true;
   };
 
   imports = [
@@ -32,6 +33,11 @@ with lib;
   config = mkIf cfg.enable {
     stylix.targets.hyprland.enable = mkDefault true;
     home.sessionVariables.NIXOS_OZONE_WL = mkForce "1";
+
+    homeManagerModules.programs = {
+      hypridle.enable = true;
+      hyprlock.enable = true;
+    };
 
     wayland.windowManager.hyprland = {
       enable = mkForce true;

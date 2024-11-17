@@ -672,15 +672,15 @@
         "tinted-tmux": "tinted-tmux"
       },
       "locked": {
-        "lastModified": 1731657386,
-        "narHash": "sha256-Mm/JL8tFUS1SOmmZDPcswExUxzw0VpHcEyZI1h58CGA=",
-        "owner": "danth",
+        "lastModified": 1731803277,
+        "narHash": "sha256-8Ylv/faVkdpD5HSZn9JTdGiG1mkXF4SUz+3HFXE55GM=",
+        "owner": "morganlabs-forks",
         "repo": "stylix",
-        "rev": "5ab1207b2fdeb5a022f2dd7cccf6be760f1b150f",
+        "rev": "a8e9b296742a306ac91bf910fc8a9d90bf9e1d70",
         "type": "github"
       },
       "original": {
-        "owner": "danth",
+        "owner": "morganlabs-forks",
         "repo": "stylix",
         "type": "github"
       }
