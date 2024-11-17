@@ -1,10 +1,16 @@
 let
   defaultOptions = {
+    # Misc.
     "middlemouse.paste" = false;
+    "browser.toolbars.bookmarks.visibility" = "never";
+    "browser.startup.homepage" = "chrome://browser/content/blanktab.html";
+    "browser.newtabpage.enabled" = false;
 
     # Enable vertical tabs
     "sidebar.revamp" = true;
     "sidebar.verticalTabs" = true;
+    "sidebar.position_start" = false;
+    "sidebar.main.tools" = "";
 
     # Betterfox <https:#github.com/yokoffing/Betterfox>
 
