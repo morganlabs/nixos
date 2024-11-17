@@ -31,6 +31,7 @@ with lib;
     modules.programs = mkIf cfg.features.hyprlock.enable {
       hypridle.enable = true;
       hyprlock.enable = true;
+      hyprpolkitagent.enable = true;
     };
 
     home-manager.users.${vars.user.username} = {

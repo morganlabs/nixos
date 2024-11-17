@@ -24,6 +24,7 @@
     ./programs/firefox
     ./programs/hyprlock.nix
     ./programs/hypridle.nix
+    ./programs/hyprpolkitagent.nix
     ./programs/kitty.nix
     ./programs/bat.nix
     ./programs/fzf.nix
