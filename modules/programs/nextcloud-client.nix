@@ -22,7 +22,7 @@ with lib;
     environment.systemPackages = with pkgs; [ nextcloud-client ];
     home-manager.users.${vars.user.username} = {
       wayland.windowManager.hyprland.settings = mkIf cfg.features.hyprland.enable {
-        exec-once = [ "${pkgs.nextcloud-client}/bin/nextcloud-client" ];
+        exec-once = [ "${pkgs.nextcloud-client}/bin/nextcloud" ];
         windowrulev2 = [
           "pin, class:(com.nextcloud.desktopclient.nextcloud)"
           "float, class:(com.nextcloud.desktopclient.nextcloud)"
