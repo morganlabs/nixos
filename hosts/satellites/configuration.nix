@@ -27,6 +27,7 @@
       element.enable = true;
       rofi.enable = true;
       waybar.enable = true;
+      firefox.enable = true;
     };
 
     connectivity = {

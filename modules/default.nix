@@ -19,6 +19,7 @@
     ./programs/nvim
     ./programs/rofi
     ./programs/waybar
+    ./programs/firefox
     ./programs/hyprlock.nix
     ./programs/hypridle.nix
     ./programs/kitty.nix
