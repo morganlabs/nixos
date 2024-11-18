@@ -14,6 +14,14 @@
       desktop.enable = true;
       sound.enable = true;
     };
+
+    programs.waybar.modules = {
+      backlight.enable = true;
+      battery = {
+        enable = true;
+        bat = "BAT0";
+      };
+    };
   };
 
   # Bootloader.
