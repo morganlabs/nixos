@@ -13,6 +13,7 @@
       connectivity.enable = true;
       hyprland.enable = true;
       desktop.enable = true;
+      sound.enable = true;
     };
   };
 

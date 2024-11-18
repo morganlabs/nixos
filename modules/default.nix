@@ -5,6 +5,7 @@
     ./bundles/connectivity.nix
     ./bundles/hyprland.nix
     ./bundles/desktop.nix
+    ./bundles/sound.nix
 
     ./base/user.nix
     ./base/locale.nix
@@ -14,6 +15,9 @@
     ./connectivity/bluetooth.nix
     ./connectivity/firewall.nix
     ./connectivity/ssh.nix
+
+    ./sound/pipewire.nix
+    ./sound/noisetorch.nix
 
     ./graphics/amdgpu.nix
 
