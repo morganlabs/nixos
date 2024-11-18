@@ -22,20 +22,21 @@ with lib;
 
     hardware = {
       graphics = {
+        enable = mkForce true;
         enable32Bit = mkDefault true;
         extraPackages = with pkgs; mkDefault [ rocmPackages.clr.icd ];
       };
 
       amdgpu = {
-        opencl.enable = mkDefault true;
+        opencl.enable = mkForce true;
         amdvlk = {
-          enable = mkDefault true;
+          enable = mkForce true;
           support32Bit.enable = mkDefault true;
         };
       };
     };
 
-    systemd.tmpfiles.rules = mkDefault [
+    systemd.tmpfiles.rules = mkForce [
       "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
     ];
   };

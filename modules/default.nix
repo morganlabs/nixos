@@ -6,6 +6,7 @@
     ./bundles/hyprland.nix
     ./bundles/desktop.nix
     ./bundles/sound.nix
+    ./bundles/gaming.nix
 
     ./base/user.nix
     ./base/locale.nix
@@ -50,5 +51,6 @@
     ./programs/obsidian.nix
     ./programs/signal.nix
     ./programs/element.nix
+    ./programs/steam.nix
   ];
 }
