@@ -3,7 +3,7 @@
   imports = [ ./hardware-configuration.nix ];
 
   modules = {
-    base.xdgUserDirs.enable = true;
+    base.user.features.autologin.enable = true;
     decoration.stylix.enable = true;
     desktop.hyprland.enable = true;
     shells.zsh.enable = true;

@@ -18,6 +18,7 @@ with lib;
   };
 
   config = mkIf cfg.enable {
+    programs.zsh.enable = true;
     users.users.${vars.user.username}.shell = pkgs.zsh;
     home-manager.users.${vars.user.username} = {
       imports = [

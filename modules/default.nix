@@ -1,6 +1,8 @@
 { inputs, ... }:
 {
   imports = with inputs; [
+    ./base/user.nix
+    ./base/locale.nix
     ./base/xdgUserDirs.nix
 
     ./connectivity/networkmanager
