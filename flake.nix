@@ -42,6 +42,7 @@
 
       nixosConfigurations = nixpkgs.lib.foldl' (a: b: a // b) { } [
         (mkSystem "satellites" "x86_64-linux" "9866131b-c6ff-4473-a466-df2b602bce9c" { })
+        (mkSystem "canals" "x86_64-linux" "ee252afe-bb5f-465d-a398-bf13dfbeb680" { })
       ];
     };
 }
