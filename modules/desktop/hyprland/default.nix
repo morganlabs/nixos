@@ -19,11 +19,7 @@ with lib;
 
   options.modules.desktop.hyprland = {
     enable = mkEnableOption "Enable desktop.hyprland";
-    features = {
-      hyprlock.enable = mkBoolOption "Enable Hyprlock and Hypridle" true;
-      polkit.enable = mkBoolOption "Enable Polkit" true;
-      autostart.enable = mkBoolOption "Autostart Hyprland on tty login" true;
-    };
+    features.autostart.enable = mkBoolOption "Autostart Hyprland on tty login" true;
   };
 
   config = mkIf cfg.enable {
@@ -31,14 +27,6 @@ with lib;
       enable = mkForce true;
       xwayland.enable = mkDefault true;
     };
-
-    modules.programs = mkMerge [
-      (mkIf cfg.features.polkit.enable { hyprpolkitagent.enable = true; })
-      (mkIf cfg.features.hyprlock.enable {
-        hypridle.enable = true;
-        hyprlock.enable = true;
-      })
-    ];
 
     home-manager.users.${vars.user.username} = {
       imports = [

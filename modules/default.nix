@@ -1,6 +1,11 @@
 { inputs, ... }:
 {
   imports = with inputs; [
+    ./bundles/shell.nix
+    ./bundles/connectivity.nix
+    ./bundles/hyprland.nix
+    ./bundles/desktop.nix
+
     ./base/user.nix
     ./base/locale.nix
     ./base/xdgUserDirs.nix
