@@ -16,6 +16,12 @@
       gaming.enable = true;
       sound.enable = true;
     };
+
+    functions = {
+      screenshot.enable = true;
+      volume.enable = true;
+      music.enable = true;
+    };
   };
 
   # Bootloader.

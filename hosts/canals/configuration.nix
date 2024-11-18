@@ -22,6 +22,13 @@
         bat = "BAT0";
       };
     };
+
+    functions = {
+      screenshot.enable = true;
+      backlight.enable = true;
+      volume.enable = true;
+      music.enable = true;
+    };
   };
 
   # Bootloader.

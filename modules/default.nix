@@ -12,6 +12,11 @@
     ./base/locale.nix
     ./base/xdgUserDirs.nix
 
+    ./functions/screenshot
+    ./functions/volume.nix
+    ./functions/music.nix
+    ./functions/backlight.nix
+
     ./connectivity/networkmanager
     ./connectivity/bluetooth.nix
     ./connectivity/firewall.nix
