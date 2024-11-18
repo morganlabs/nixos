@@ -24,6 +24,7 @@ with lib;
         hyprpolkitagent.enable = mkDefault true;
 
         rofi.enable = mkDefault true;
+        mako.enable = mkDefault true;
         waybar.enable = mkDefault true;
         kitty.enable = mkDefault true;
         firefox.enable = mkDefault true;

@@ -39,6 +39,7 @@
     ./programs/rofi
     ./programs/waybar
     ./programs/firefox
+    ./programs/mako.nix
     ./programs/hyprlock.nix
     ./programs/hypridle.nix
     ./programs/hyprpolkitagent.nix
