@@ -16,6 +16,9 @@ let
     clearurls
     facebook-container
     don-t-fuck-with-paste
+    profile-switcher
+    sponsorblock
+    youtube-shorts-block
   ];
 in
 with lib;
@@ -29,7 +32,12 @@ with lib;
 
   config = mkIf cfg.enable {
     home-manager.users.${vars.user.username} = {
-      imports = [ (import ./profiles/personal defaultPlugins) ];
+      imports = [
+        (import ./profiles/personal.nix defaultPlugins)
+        (import ./profiles/college.nix defaultPlugins)
+        (import ./profiles/work.nix defaultPlugins)
+      ];
+
       programs.firefox = {
         enable = true;
         package = nightly;

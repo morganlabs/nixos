@@ -1,11 +1,4 @@
-{
-  lib,
-  inputs,
-  pkgs,
-}:
-let
-  nixvim = inputs.nixvim.lib.${pkgs.system}.helpers;
-in
+{ lib, ... }:
 {
   mkIfElse = import ./mkIf/mkIfElse.nix;
   mkIfList = import ./mkIf/mkIfList.nix;
@@ -20,7 +13,7 @@ in
 
   importWith = import ./importWith.nix { };
 
-  nvim = with inputs; {
-    mkLazyKeys = import ./nvim/mkLazyKeys.nix { inherit lib nixvim; };
+  firefox = {
+    mkBookmark = import ./firefox/mkBookmark.nix;
   };
 }
