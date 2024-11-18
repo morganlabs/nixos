@@ -1,74 +1,91 @@
 {
-  pkgs,
-  lib,
-  nixvim,
-  ...
-}:
-with lib.nvim;
-{
-  programs.nixvim.plugins.lazy.plugins = [
-    {
-      name = "nvim-cmp";
-      pkg = pkgs.vimPlugins.nvim-cmp;
+  programs.nixvim.plugins = {
+    lsp = {
+      enable = true;
+      inlayHints = true;
+      servers = {
+        ts_ls.enable = true;
+        bashls.enable = true;
+        nixd.enable = true;
+      };
 
-      opts = {
+      keymaps = {
+        diagnostic."<leader>vd" = "open_float";
+        lspBuf = {
+          "gd" = "definition";
+          "K" = "hover";
+          "<leader>ca" = "code_action";
+          "<leader>rn" = "rename";
+          "<leader>re" = "references";
+        };
+      };
+    };
+
+    cmp = {
+      enable = true;
+      autoEnableSources = true;
+      settings = {
+        snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+
         sources = [
           { name = "nvim_lsp"; }
           { name = "luasnip"; }
+          { name = "path"; }
+          { name = "buffer"; }
         ];
-        # mapping = nixvim.mkRaw ''
-        #   function()
-        #     local cmp = require("cmp")
-        #     return cmp.mapping.preset.insert({
-        #       ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
-        #       ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
-        #       ["<S-Tab>"] = cmp.mapping.confirm({ select = true }),
-        #       ["<C-Space>"] = cmp.mapping.complete(),
-        #     })
-        #   end
-        # '';
+
+        mapping = {
+          "<C-j>" = "cmp.mapping.select_next_item(cmp_select)";
+          "<C-k>" = "cmp.mapping.select_prev_item(cmp_select)";
+          "<S-Tab>" = "cmp.mapping.confirm({ select = true })";
+          "<C-Space>" = "cmp.mapping.complete()";
+        };
+
+        formatting = {
+          fields = [
+            "kind"
+            "abbr"
+            "menu"
+          ];
+
+          format = ''
+            function(_, vim_item)
+              local kind_icons = {
+              	Text = "",
+              	Method = "󰆧",
+              	Function = "󰊕",
+              	Constructor = "",
+              	Field = "󰇽",
+              	Variable = "󰂡",
+              	Class = "󰠱",
+              	Interface = "",
+              	Module = "",
+              	Property = "󰜢",
+              	Unit = "",
+              	Value = "󰎠",
+              	Enum = "",
+              	Keyword = "󰌋",
+              	Snippet = "",
+              	Color = "󰏘",
+              	File = "󰈙",
+              	Reference = "",
+              	Folder = "󰉋",
+              	EnumMember = "",
+              	Constant = "󰏿",
+              	Struct = "",
+              	Event = "",
+              	Operator = "󰆕",
+              	TypeParameter = "󰅲",
+              }
+
+              local kind = vim_item.kind
+              vim_item.kind = (kind_icons[kind] or "?") .. " "
+              vim_item.menu = " (" .. kind .. ")"
+              return vim_item
+            end
+          '';
+        };
       };
-
-      config = ''
-        function(_, opts)
-          require("cmp").setup(opts)
-        end
-      '';
-    }
-    {
-      name = "nvim-lspconfig";
-      pkg = pkgs.vimPlugins.nvim-lspconfig;
-      dependencies = with pkgs.vimPlugins; [
-        cmp-nvim-lsp
-        lsp-zero-nvim
-      ];
-
-      opts = { };
-
-      config = ''
-        function(_, opts)
-          local lspconfig_defaults = require('lspconfig').util.default_config
-          lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-            'force',
-            lspconfig_defaults.capabilities,
-            require('cmp_nvim_lsp').default_capabilities()
-          )
-        end
-      '';
-
-      init = ''
-        function()
-          local opts = { buffer = bufnr, noremap = true }
-          local set = vim.keymap.set
-
-          set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-          set("n", "K", function() vim.lsp.buf.hover() end, opts)
-          set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts) -- Diagnostics
-          set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts) -- Code Actions
-          set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts) -- Rename
-          set("n", "<leader>re", function() vim.lsp.buf.references() end, opts) -- References
-        end
-      '';
-    }
-  ];
+    };
+  };
 }

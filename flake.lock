@@ -623,6 +623,22 @@
         "type": "github"
       }
     },
+    "nvim-plugin-scroll-eof": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1710122089,
+        "narHash": "sha256-n36L6mtayKtXI/orwf0B72sFpgAKZ0HU4vv2UxKexvU=",
+        "owner": "Aasim-A",
+        "repo": "scrollEOF.nvim",
+        "rev": "38fd5880021e90c15dc61fa325f714bd8077f0a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Aasim-A",
+        "repo": "scrollEOF.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "firefox-nightly": "firefox-nightly",
@@ -630,6 +646,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
         "nur": "nur",
+        "nvim-plugin-scroll-eof": "nvim-plugin-scroll-eof",
         "spicetify-nix": "spicetify-nix",
         "stylix": "stylix"
       }
