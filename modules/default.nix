@@ -58,5 +58,6 @@
     ./programs/signal.nix
     ./programs/element.nix
     ./programs/steam.nix
+    ./programs/libresprite.nix
   ];
 }

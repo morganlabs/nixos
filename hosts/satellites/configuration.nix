@@ -7,6 +7,7 @@
     graphics.amdgpu.enable = true;
     security.gnome-keyring.enable = true;
     decoration.stylix.enable = true;
+    programs.libresprite.enable = true;
 
     bundles = {
       shell.enable = true;
