@@ -1,12 +1,12 @@
-{ inputs, ... }:
 {
-  imports = with inputs; [
+  imports = [
     ./bundles/shell.nix
     ./bundles/connectivity.nix
     ./bundles/hyprland.nix
     ./bundles/desktop.nix
     ./bundles/sound.nix
     ./bundles/gaming.nix
+    ./bundles/gamedev.nix
 
     ./base/user.nix
     ./base/locale.nix
@@ -59,5 +59,6 @@
     ./programs/element.nix
     ./programs/steam.nix
     ./programs/libresprite.nix
+    ./programs/godot.nix
   ];
 }
