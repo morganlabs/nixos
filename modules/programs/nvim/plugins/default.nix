@@ -7,6 +7,7 @@
     ./luasnip.nix
     ./autopairs.nix
     ./scrollEOF.nix
+    ./treesitter.nix
 
     ./lsp.nix
     ./conform.nix

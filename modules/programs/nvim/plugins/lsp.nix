@@ -4,9 +4,13 @@
       enable = true;
       inlayHints = true;
       servers = {
+        nixd.enable = true;
         ts_ls.enable = true;
         bashls.enable = true;
-        nixd.enable = true;
+        gdscript = {
+          enable = true;
+          package = null;
+        };
       };
 
       keymaps = {
