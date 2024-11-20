@@ -5,6 +5,7 @@
       nixfmt-rfc-style
       prettierd
       beautysh
+      gdtoolkit_4
     ];
     plugins.conform-nvim = {
       enable = true;
@@ -27,6 +28,7 @@
           css = [ "prettierd" ];
           scss = [ "prettierd" ];
           bash = [ "beautysh" ];
+          gdscript = [ "gdformat" ];
         };
 
         format_on_save = {

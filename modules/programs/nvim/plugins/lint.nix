@@ -5,6 +5,7 @@
       deadnix
       eslint_d
       vale
+      gdtoolkit_4
     ];
 
     plugins.lint = {
@@ -30,6 +31,7 @@
         typescriptreact = [ "eslint_d" ];
         svelte = [ "eslint_d" ];
         markdown = [ "vale" ];
+        gdscript = [ "gdlint" ];
       };
     };
   };
