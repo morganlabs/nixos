@@ -9,6 +9,10 @@
           value = "packages";
         }
         {
+          name = "channe";
+          value = "unstable";
+        }
+        {
           name = "query";
           value = "{searchTerms}";
         }
