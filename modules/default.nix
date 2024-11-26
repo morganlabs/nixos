@@ -53,12 +53,12 @@
     ./programs/pfetch.nix
     ./programs/tidal.nix
     ./programs/1password.nix
-    ./programs/nextcloud-client.nix
     ./programs/obsidian.nix
     ./programs/signal.nix
     ./programs/element.nix
     ./programs/steam.nix
     ./programs/libresprite.nix
     ./programs/godot.nix
+    ./programs/pcloud.nix
   ];
 }

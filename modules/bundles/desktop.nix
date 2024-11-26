@@ -24,7 +24,7 @@ with lib;
       obsidian.enable = mkDefault true;
       signal.enable = mkDefault true;
       tidal.enable = mkDefault true;
-      nextcloud-client.enable = mkDefault true;
+      pcloud.enable = mkDefault true;
     };
   };
 }
