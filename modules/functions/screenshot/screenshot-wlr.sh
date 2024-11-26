@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SAVE_TO="$HOME/Pictures/Screenshots/$(date +'%Y/%m/Screenshot_%d-%H-%M-%S.png')"
 mkdir -p "$(dirname "$SAVE_TO")"

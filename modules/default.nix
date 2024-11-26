@@ -13,7 +13,7 @@
     ./base/xdgUserDirs.nix
 
     ./functions/screenshot
-    ./functions/volume.nix
+    ./functions/volume
     ./functions/music.nix
     ./functions/backlight.nix
 

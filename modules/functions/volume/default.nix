@@ -8,6 +8,7 @@
 }:
 let
   cfg = config.modules.functions.volume;
+  volume = pkgs.writeShellScriptBin "volume" (builtins.readFile ./volume.sh);
 in
 with lib;
 {
@@ -19,12 +20,16 @@ with lib;
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ pamixer ];
+    environment.systemPackages = with pkgs; [
+      pamixer
+      volume
+    ];
+
     home-manager.users.${vars.user.username}.wayland.windowManager.hyprland.settings.bind =
       mkIf cfg.features.hyprland.enable
         [
-          ", XF86AudioRaiseVolume, exec, ${pkgs.pamixer}/bin/pamixer -i 5"
-          ", XF86AudioLowerVolume, exec, ${pkgs.pamixer}/bin/pamixer -d 5"
+          ", XF86AudioRaiseVolume, exec, ${volume}/bin/volume inc"
+          ", XF86AudioLowerVolume, exec, ${volume}/bin/volume dec"
           ", XF86AudioMute, exec, ${pkgs.pamixer}/bin/pamixer --toggle-mute"
         ];
   };

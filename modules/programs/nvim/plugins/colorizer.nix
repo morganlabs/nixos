@@ -2,7 +2,6 @@
   programs.nixvim.plugins.nvim-colorizer = {
     enable = true;
     userDefaultOptions = {
-      sass.enable = true;
       RGB = true;
       RRGGBB = true;
       names = true;
