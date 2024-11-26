@@ -23,7 +23,7 @@ with lib;
       kitty.enable = mkDefault true;
       obsidian.enable = mkDefault true;
       signal.enable = mkDefault true;
-      spotify.enable = mkDefault true;
+      tidal.enable = mkDefault true;
       nextcloud-client.enable = mkDefault true;
     };
   };

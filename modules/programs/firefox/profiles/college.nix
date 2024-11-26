@@ -19,7 +19,6 @@ defaultPlugins:
         toolbar = true;
         bookmarks = [
           (mkBookmark "Profiles" "about:profiles")
-          (mkBookmark "Profiles" "about:profiles")
           (mkBookmark "Classroom" "https://classroom.google.com")
           (mkBookmark "Drive" "https://drive.google.com")
           (mkBookmark "Moodle" "https://moodle.gllm.ac.uk")

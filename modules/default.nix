@@ -51,7 +51,7 @@
     ./programs/unzip.nix
     ./programs/eza.nix
     ./programs/pfetch.nix
-    ./programs/spotify.nix
+    ./programs/tidal.nix
     ./programs/1password.nix
     ./programs/nextcloud-client.nix
     ./programs/obsidian.nix

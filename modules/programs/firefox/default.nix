@@ -16,7 +16,6 @@ let
     clearurls
     facebook-container
     don-t-fuck-with-paste
-    profile-switcher
     sponsorblock
     youtube-shorts-block
   ];

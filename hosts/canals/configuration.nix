@@ -14,6 +14,7 @@
       hyprland.enable = true;
       desktop.enable = true;
       sound.enable = true;
+      gamedev.enable = true;
     };
 
     programs.waybar.modules = {
