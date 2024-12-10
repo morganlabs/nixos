@@ -9,7 +9,7 @@ with pkgs;
 
     function nix() {
       if [[ "$1" == "develop" ]]; then
-        ${nix}/bin/nix develop -c "$SHELL" "$@"
+        ${nix}/bin/nix develop -c "$(which $SHELL)" "''${@:2}"
       else
         ${nix}/bin/nix "$@"
       fi
