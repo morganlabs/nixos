@@ -27,6 +27,7 @@ with lib;
         fzf.enable = mkDefault true;
         pfetch.enable = mkDefault true;
         unzip.enable = mkDefault true;
+        tmux.enable = mkDefault true;
       };
     };
   };
