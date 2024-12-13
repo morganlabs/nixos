@@ -3,10 +3,11 @@
   programs.nixvim = {
     extraPackages = with pkgs; [
       nixfmt-rfc-style
-      prettierd
+      nodePackages_latest.prettier
       beautysh
       gdtoolkit_4
     ];
+
     plugins.conform-nvim = {
       enable = true;
       settings = {
@@ -17,16 +18,16 @@
             "trim_newlines"
           ];
           nix = [ "nixfmt" ];
-          svelte = [ "prettierd" ];
-          astro = [ "prettierd" ];
-          javascript = [ "prettierd" ];
-          typescript = [ "prettierd" ];
-          javascriptreact = [ "prettierd" ];
-          typescriptreact = [ "prettierd" ];
-          json = [ "prettierd" ];
-          markdown = [ "prettierd" ];
-          css = [ "prettierd" ];
-          scss = [ "prettierd" ];
+          svelte = [ "prettier" ];
+          astro = [ "prettier" ];
+          javascript = [ "prettier" ];
+          typescript = [ "prettier" ];
+          javascriptreact = [ "prettier" ];
+          typescriptreact = [ "prettier" ];
+          json = [ "prettier" ];
+          markdown = [ "prettier" ];
+          css = [ "prettier" ];
+          scss = [ "prettier" ];
           bash = [ "beautysh" ];
           gdscript = [ "gdformat" ];
         };

@@ -7,6 +7,7 @@
         nixd.enable = true;
         ts_ls.enable = true;
         bashls.enable = true;
+        astro.enable = true;
         gdscript = {
           enable = true;
           package = null;
