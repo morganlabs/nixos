@@ -28,6 +28,7 @@
     ./graphics/amdgpu.nix
 
     ./security/gnome-keyring.nix
+    ./security/sudo.nix
 
     ./desktop/hyprland
 
