@@ -25,6 +25,7 @@ with lib;
       signal.enable = mkDefault true;
       tidal.enable = mkDefault true;
       pcloud.enable = mkDefault true;
+      onlyoffice.enable = mkDefault true;
     };
   };
 }

@@ -61,5 +61,6 @@
     ./programs/libresprite.nix
     ./programs/godot.nix
     ./programs/pcloud.nix
+    ./programs/onlyoffice.nix
   ];
 }
