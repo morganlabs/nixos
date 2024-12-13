@@ -18,8 +18,8 @@ with lib;
   config = mkIf cfg.enable {
     modules = {
       shells.zsh.enable = mkDefault true;
+      security.sudo.enable = mkDefault true;
       programs = {
-        sudo.enable = mkDefault true;
         nvim.enable = mkDefault true;
         btop.enable = mkDefault true;
         eza.enable = mkDefault true;

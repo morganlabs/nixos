@@ -2,17 +2,18 @@
   config,
   lib,
   inputs,
+  pkgs,
   ...
 }:
 let
-  cfg = config.modules.program.onlyoffice;
+  cfg = config.modules.programs.onlyoffice;
 in
 with lib;
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
 
-  options.modules.program.onlyoffice = {
-    enable = mkEnableOption "Enable program.onlyoffice";
+  options.modules.programs.onlyoffice = {
+    enable = mkEnableOption "Enable programs.onlyoffice";
   };
 
   config = mkIf cfg.enable {
