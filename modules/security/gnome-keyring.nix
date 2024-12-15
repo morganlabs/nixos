@@ -14,10 +14,12 @@ with lib;
     features = {
       unlockOnLogin = mkBoolOption "Unlock GNOME Keyring on Login" true;
       autostart = mkBoolOption "Automatically run the Keyring Daemon" true;
+      withSeahorse = mkBoolOption "Install Seahorse" true;
     };
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [ seahorse ];
     services.gnome.gnome-keyring.enable = true;
     security.pam.services.login.enableGnomeKeyring = cfg.features.unlockOnLogin;
 
@@ -26,7 +28,7 @@ with lib;
       description = "GNOME Keyring Daemon";
       wantedBy = [ "default.target" ];
       serviceConfig = {
-        ExecStart = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets,ssh,gpg";
+        ExecStart = "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets";
         RuntimeDirectory = "keyring";
         RuntimeDirectoryMode = "0700";
         LimitMEMLOCK = "16380";
