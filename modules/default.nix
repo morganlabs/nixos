@@ -41,6 +41,7 @@
     ./programs/waybar
     ./programs/firefox
     ./programs/tmux
+    ./programs/logiops
     ./programs/mako.nix
     ./programs/hyprlock.nix
     ./programs/hypridle.nix

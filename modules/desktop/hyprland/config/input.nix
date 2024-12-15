@@ -5,6 +5,7 @@
     kb_options = "caps:escape";
     follow_mouse = true;
     sensitivity = 0;
+    # natural_scroll = true;
     touchpad.natural_scroll = true;
   };
 }
