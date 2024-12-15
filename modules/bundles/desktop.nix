@@ -26,6 +26,7 @@ with lib;
       tidal.enable = mkDefault true;
       pcloud.enable = mkDefault true;
       onlyoffice.enable = mkDefault true;
+      cider2.enable = mkDefault true;
     };
   };
 }

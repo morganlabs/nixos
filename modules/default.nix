@@ -42,6 +42,7 @@
     ./programs/firefox
     ./programs/tmux
     ./programs/logiops
+    ./programs/cider2
     ./programs/mako.nix
     ./programs/hyprlock.nix
     ./programs/hypridle.nix
