@@ -37,7 +37,7 @@ let
 
       meta = {
         description = "A new look into listening and enjoying Apple Music in style and performance.";
-        homepage = "https://cider.sh/";
+        homepage = "https://cider.sh";
         platforms = [ "x86_64-linux" ];
       };
     };
@@ -48,11 +48,18 @@ with lib;
 
   options.modules.programs.cider2 = {
     enable = mkEnableOption "Enable programs.cider2";
+    features.hyprland.enable = mkBoolOption "Enable Autostart, Window Rules and Binds for Hyprland" true;
   };
 
   config = mkIf cfg.enable {
     environment.systemPackages = [ cider2 ];
 
-    home-manager.users.${vars.user.username}.home.file.".config/sh.cider.electron/spa-config.yml".text = import ./config.nix config.stylix.base16Scheme;
+    home-manager.users.${vars.user.username} = {
+      home.file.".config/sh.cider.electron/spa-config.yml".text = import ./config.nix config.stylix.base16Scheme;
+      wayland.windowManager.hyprland.settings = mkIfList cfg.features.hyprland.enable {
+        exec-once = [ "${cider2}/bin/cider" ];
+        windowrulev2 = [ "workspace special:s3, class:(Cider)" ];
+      };
+    };
   };
 }
