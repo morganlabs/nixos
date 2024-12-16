@@ -41,7 +41,6 @@
     ./programs/waybar
     ./programs/firefox
     ./programs/tmux
-    ./programs/logiops
     ./programs/cider2
     ./programs/mako.nix
     ./programs/hyprlock.nix
@@ -65,5 +64,6 @@
     ./programs/godot.nix
     ./programs/pcloud.nix
     ./programs/onlyoffice.nix
+    ./programs/solaar.nix
   ];
 }

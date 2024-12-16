@@ -16,13 +16,16 @@ with lib;
   };
 
   config = mkIf cfg.enable {
-    modules.connectivity = {
-      networkmanager.enable = mkDefault true;
-      firewall.enable = mkDefault true;
-      ssh.enable = mkDefault true;
-      bluetooth = {
-        enable = mkDefault true;
-        features.blueman.enable = mkDefault true;
+    modules = {
+      programs.solaar.enable = mkDefault true;
+      connectivity = {
+        networkmanager.enable = mkDefault true;
+        firewall.enable = mkDefault true;
+        ssh.enable = mkDefault true;
+        bluetooth = {
+          enable = mkDefault true;
+          features.blueman.enable = mkDefault true;
+        };
       };
     };
   };

@@ -6,7 +6,6 @@
     base.user.features.autologin.enable = true;
     security.gnome-keyring.enable = true;
     decoration.stylix.enable = true;
-    programs.logiops.enable = true;
 
     bundles = {
       shell.enable = true;
