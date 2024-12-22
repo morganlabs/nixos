@@ -23,7 +23,7 @@ with lib;
   config = mkIf cfg.enable {
     stylix = {
       enable = true;
-      image = ./wallpaper.jpg;
+      image = ./wallpaper.png;
       polarity = "dark";
       autoEnable = false;
 
