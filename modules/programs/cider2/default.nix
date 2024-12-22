@@ -55,7 +55,8 @@ with lib;
     environment.systemPackages = [ cider2 ];
 
     home-manager.users.${vars.user.username} = {
-      home.file.".config/sh.cider.electron/spa-config.yml".text = import ./config.nix config.stylix.base16Scheme;
+      home.file.".config/sh.cider.electron/spa-config.yml".text =
+        import ./config.nix config.stylix.base16Scheme;
       wayland.windowManager.hyprland.settings = mkIfList cfg.features.hyprland.enable {
         exec-once = [ "${cider2}/bin/cider" ];
         windowrulev2 = [ "workspace special:s3, class:(Cider)" ];

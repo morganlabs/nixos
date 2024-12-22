@@ -3,7 +3,7 @@ with lib;
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      # Window Actions 
+      # Window Actions
       "$mod Shift, Q, killactive,"
       "$mod Shift, Space, togglefloating,"
       "$mod, F, fullscreen, 1" # Maximize
