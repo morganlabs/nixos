@@ -44,7 +44,7 @@ with lib;
 
       fonts =
         let
-          monaspace = pkgs.nerdfonts.override { fonts = [ "Monaspace" ]; };
+          monaspace = pkgs.nerd-fonts.monaspace;
           mkFont = package: name: { inherit package name; };
         in
         {

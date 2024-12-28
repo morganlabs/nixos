@@ -3,7 +3,6 @@ with inputs;
 let
   mkSystem =
     hostname: system: luksDevice:
-    { }:
     let
       vars = import ../vars.nix;
       overlays = import ./overlays.nix inputs;
@@ -19,6 +18,7 @@ let
         inherit (pkgs) lib;
         inherit pkgs inputs;
       };
+
       lib = pkgs.lib.extend (_: prev: home-manager.lib // prev // myLib);
     in
     {

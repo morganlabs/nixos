@@ -1,5 +1,5 @@
 inputs: with inputs; [
-  nur.overlay
+  nur.overlays.default
 
   (_: prev: {
     vimPlugins = prev.vimPlugins // {

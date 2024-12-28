@@ -12,12 +12,12 @@ let
   # https://git.nvds.be/NicolaiVdS/Nix-Cider2/src/branch/main/default.nix
   cider2 =
     let
-      pname = "cider";
-      version = "0.0.0";
+      pname = "Cider";
+      version = "2.6.0";
       src = pkgs.requireFile {
         url = "https://cidercollective.itch.io/cider";
-        name = "Cider-linux-appimage-x64.AppImage";
-        sha256 = "1f07c1c98f1abf502f23eb7bc2768d6e10cb5c1c60cd129888b1b584f52da3da";
+        name = "Cider-linux-x64.AppImage";
+        sha256 = "abdba55d885ae4f4996d867fa313af1af2b95c69f44e50063329a3bb97d7c265";
       };
     in
     with pkgs;
@@ -59,7 +59,7 @@ with lib;
         import ./config.nix config.stylix.base16Scheme;
       wayland.windowManager.hyprland.settings = mkIfList cfg.features.hyprland.enable {
         exec-once = [ "${cider2}/bin/cider" ];
-        windowrulev2 = [ "workspace special:s3, class:(Cider)" ];
+        windowrulev2 = [ "workspace special:s3, class:(cider)" ];
       };
     };
   };
