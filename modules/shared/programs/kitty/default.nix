@@ -4,14 +4,27 @@
   inputs,
   vars,
   pkgs,
+  isDarwin,
+  isLinux,
   ...
 }:
+with lib;
 let
   cfg = config.modules.programs.kitty;
+
+  homeManagerModule =
+    mkIfElse isDarwin inputs.home-manager.darwinModules.home-manager
+      inputs.home-manager.nixosModules.home-manager;
+
+  platformConfigs = mkIfElse isLinux (import ./linux.nix { inherit lib cfg vars; }) (
+    import ./darwin.nix { inherit lib cfg vars; }
+  );
 in
-with lib;
 {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  imports = [
+    homeManagerModule
+    platformConfigs
+  ];
 
   options.modules.programs.kitty = {
     enable = mkEnableOption "Enable programs.kitty";
@@ -19,25 +32,19 @@ with lib;
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [ kitty ];
     home-manager.users.${vars.user.username} = {
-      stylix.targets.kitty.enable = true;
       programs.kitty = {
         enable = true;
+        font.size = 12;
         settings = {
           window_padding_width = 8;
-          window_padding_height = 5;
           enable_audio_bell = false;
         };
 
         shellIntegration.enableBashIntegration = config.programs.bash.enable;
         shellIntegration.enableZshIntegration = config.programs.zsh.enable;
         shellIntegration.enableFishIntegration = config.programs.fish.enable;
-      };
-
-      wayland.windowManager.hyprland.settings = mkIf cfg.features.hyprland.enable {
-        exec-once = [ "[workspace 1 silent] ${pkgs.kitty}/bin/kitty" ];
-        windowrulev2 = [ "workspace 1, class:(kitty), floating:0" ];
-        bind = [ "$mod, Return, exec, ${pkgs.kitty}/bin/kitty" ];
       };
     };
   };
