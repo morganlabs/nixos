@@ -5,7 +5,7 @@ let
     hostname: system: luksDevice:
     let
       vars = import ../vars.nix;
-      overlays = import ./overlays.nix inputs;
+      overlays = import ../overlays.nix inputs;
       baseConfig = import ./baseConfig.nix { inherit hostname luksDevice; };
       homeManagerConfig = import ./homeManagerConfig.nix hostname;
 

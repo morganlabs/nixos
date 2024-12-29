@@ -4,6 +4,10 @@ with lib;
 {
   modules = {
     base.user.enable = mkForce true;
+
+    programs = {
+      nvim.enable = true;
+   };
   };
 
   # Basic Settings

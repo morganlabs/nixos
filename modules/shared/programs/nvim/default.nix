@@ -3,16 +3,25 @@
   pkgs,
   lib,
   inputs,
+  isDarwin,
   ...
 }:
+with lib;
 let
   cfg = config.modules.programs.nvim;
+
+  nixvimModule =
+    mkIfElse isDarwin inputs.nixvim.nixDarwinModules.nixvim
+      inputs.nixvim.nixosModules.nixvim;
+
+  platformConfigs = mkIfElse isDarwin (import ./darwin.nix { inherit cfg lib; }) (
+    import ./linux.nix { inherit cfg lib; }
+  );
 in
-with lib;
 {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
-    inputs.nixvim.nixosModules.nixvim
+    nixvimModule
+    platformConfigs
     ./plugins
   ];
 
@@ -21,22 +30,7 @@ with lib;
   };
 
   config = mkIf cfg.enable {
-    environment = {
-      sessionVariables.EDITOR = "nvim";
-      systemPackages = with pkgs; [
-        wl-clipboard
-        ripgrep
-      ];
-    };
-
-    stylix.targets.nixvim = {
-      enable = true;
-      transparentBackground = {
-        main = true;
-        signColumn = true;
-      };
-    };
-
+    environment.systemPackages = with pkgs; [ ripgrep ];
     programs.nixvim = {
       enable = true;
       viAlias = true;

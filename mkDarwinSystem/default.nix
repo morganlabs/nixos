@@ -5,11 +5,12 @@ let
     hostname: system:
     let
       vars = import ../vars.nix;
+      overlays = import ../overlays.nix inputs;
       baseConfig = import ./baseConfig.nix { inherit system; };
       homeManagerConfig = import ./homeManagerConfig.nix hostname;
 
       pkgs = import nixpkgs {
-        inherit system;
+        inherit system overlays;
         config.allowUnfree = true;
       };
 
@@ -25,11 +26,14 @@ let
         inherit system pkgs;
         specialArgs = {
           inherit inputs vars lib;
+          isDarwin = true;
+          isLinux = false;
         };
 
         modules = [
           (../hosts + "/${hostname}/configuration.nix")
           ../modules/darwin
+          ../modules/shared
           baseConfig
           homeManagerConfig
         ];
@@ -37,4 +41,3 @@ let
     };
 in
 mkSystem
-

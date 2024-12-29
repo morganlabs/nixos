@@ -36,7 +36,6 @@
 
     ./decoration/stylix
 
-    ./programs/nvim
     ./programs/rofi
     ./programs/waybar
     ./programs/firefox

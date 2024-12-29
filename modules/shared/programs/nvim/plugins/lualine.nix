@@ -1,6 +1,13 @@
-{ config, ... }:
+{
+  lib,
+  config,
+  vars,
+  isDarwin,
+  ...
+}:
+with lib;
 let
-  inherit (config.lib) nixvim;
+  colorscheme = mkIfElse isDarwin vars.colorscheme config.stylix.base16Scheme;
 in
 {
   programs.nixvim.plugins = {
@@ -18,7 +25,7 @@ in
           lualine_b = [
             "branch"
             {
-              __unkeyed-1.__raw = with config.stylix.base16Scheme; ''
+              __unkeyed-1.__raw = with colorscheme; ''
                 "diff",
                 symbols = { added = " ", modified = "󰝶 ", removed = " " },
                 diff_color = {
