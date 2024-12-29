@@ -5,8 +5,8 @@ let
     hostname: system:
     let
       vars = import ../vars.nix;
-      baseConfig = import ./baseConfig.nix { inherit hostname system; };
-      # homeManagerConfig = import ./homeManagerConfig.nix hostname;
+      baseConfig = import ./baseConfig.nix { inherit system; };
+      homeManagerConfig = import ./homeManagerConfig.nix hostname;
 
       pkgs = import nixpkgs {
         inherit system;
@@ -29,9 +29,9 @@ let
 
         modules = [
           (../hosts + "/${hostname}/configuration.nix")
-          # ../modules
+          ../modules/darwin
           baseConfig
-          # homeManagerConfig
+          homeManagerConfig
         ];
       };
     };
