@@ -5,6 +5,11 @@
     # Core
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,14 +41,20 @@
   outputs =
     { nixpkgs, ... }@inputs:
     let
-      mkSystem = import ./mkSystem inputs;
+      mkNixosSystem = import ./mkNixosSystem inputs;
+      mkDarwinSystem = import ./mkDarwinSystem inputs;
+      mkConfigurations = configurations: nixpkgs.lib.foldl' (a: b: a // b) { } configurations;
     in
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
 
-      nixosConfigurations = nixpkgs.lib.foldl' (a: b: a // b) { } [
-        (mkSystem "satellites" "x86_64-linux" "9866131b-c6ff-4473-a466-df2b602bce9c")
-        (mkSystem "canals" "x86_64-linux" "ee252afe-bb5f-465d-a398-bf13dfbeb680")
+      nixosConfigurations = mkConfigurations [
+        (mkNixosSystem "satellites" "x86_64-linux" "9866131b-c6ff-4473-a466-df2b602bce9c")
+        (mkNixosSystem "canals" "x86_64-linux" "ee252afe-bb5f-465d-a398-bf13dfbeb680")
+      ];
+
+      darwinConfigurations = mkConfigurations [
+        (mkDarwinSystem "Goldfish" "x86_64-darwin")
       ];
     };
 }
