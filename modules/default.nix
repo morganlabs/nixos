@@ -23,6 +23,7 @@
     ./programs/rofi
     ./programs/waybar
     ./programs/zen-browser
+    ./programs/steam
     ./programs/bat.nix
     ./programs/btop.nix
     ./programs/eza.nix
@@ -32,7 +33,6 @@
     ./programs/spotify.nix
     ./programs/cider2.nix
     ./programs/obsidian.nix
-    ./programs/steam.nix
     ./programs/bitwarden.nix
 
     ./security/sudo-rs.nix
