@@ -70,6 +70,7 @@
 
       nixosConfigurations = nixpkgs.lib.attrsets.mergeAttrsList [
         (mkSystem "Earth" "Morgan's Laptop" "x86_64-linux")
+        (mkSystem "Jupiter" "Morgan's Gaming Computer" "x86_64-linux")
       ];
     };
 }
