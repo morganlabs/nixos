@@ -1,7 +1,22 @@
-inputs: hostname: prettyName: system: {
+inputs: hostname: prettyName: system: let
+  vars = import ./vars.nix // { inherit hostname prettyName; };
+  overlays = import ./overlays.nix inputs;
+
+  pkgs = import inputs.nixpkgs {
+    inherit system overlays;
+    config.allowUnfree = true;
+  };
+
+  myLib = import ../lib pkgs.lib;
+
+  lib = pkgs.lib.extend(_: prev: prev // myLib) ;
+in {
   "${hostname}" = inputs.nixpkgs.lib.nixosSystem {
+    inherit system pkgs;
+
+    specialArgs = { inherit vars lib inputs; };
     modules = [
-      (../hosts/${hostname}/config.nix)
+      ../hosts/${hostname}/config.nix
     ];
   };
 }

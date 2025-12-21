@@ -1,15 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, vars, ... }:
 
 {
   imports = [ ./hardware.nix ];
 
-  nix.settings.trusted-users = [ "morgan" ];
+  nix.settings.trusted-users = [ vars.user.username ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "Mending";
+  networking.hostName = vars.hostname;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -42,17 +42,11 @@
   console.keyMap = "uk";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.morgan = {
+  users.users.${vars.user.username} = {
     isNormalUser = true;
-    description = "Morgan Jones";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    description = vars.user.fullName;
+    extraGroups = [ "wheel" ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [ ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
