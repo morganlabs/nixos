@@ -29,7 +29,7 @@ Don't currently have this laptop, just setting up the configuration inside of a 
   - [ ] Fail2Ban
   - [ ] Endlessh
   - [ ] Only enable SSH when on home network? idk if thats a thing)
-- [ ] Sops-nix
+- [ ] Agenix
 - [ ] zsh
 - [ ] Nixvim
 - [ ] Keyring

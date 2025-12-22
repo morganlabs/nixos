@@ -17,6 +17,17 @@ in {
     specialArgs = { inherit vars lib inputs; };
     modules = [
       ../hosts/${hostname}/config.nix
+      ../modules
+      inputs.home-manager.nixosModules.home-manager {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+
+          users.${vars.user.username} = {
+            imports = [ (../hosts + "/${vars.hostname}/home.nix") ];
+          };
+        };
+      }
     ];
   };
 }
