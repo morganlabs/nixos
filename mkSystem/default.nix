@@ -1,5 +1,5 @@
-inputs: hostname: prettyName: system: let
-  vars = import ./vars.nix // { inherit hostname prettyName; };
+inputs: hostname: prettyName: system: sshKey: let
+  vars = import ./vars.nix // { inherit hostname prettyName sshKey; };
   overlays = import ./overlays.nix inputs;
 
   pkgs = import inputs.nixpkgs {
