@@ -3,6 +3,12 @@
 {
   imports = [ ./hardware.nix ];
 
+  modules = {
+    programs = {
+      git.enable = true;
+    };
+  };
+
   nix.settings.trusted-users = [ vars.user.username ];
 
   # Bootloader.

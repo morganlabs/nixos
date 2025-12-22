@@ -18,8 +18,8 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 
 - [x] `mkSystem`
 - [x] Library helper functions
-- [ ] Home Manager
-- [ ] Configure git
+- [x] Home Manager
+- [x] Configure git
 - [ ] Configure trusted users
 - [ ] Bootloader (Secure Boot)
 - [ ] Pick a kernel (probably linux-zen)
