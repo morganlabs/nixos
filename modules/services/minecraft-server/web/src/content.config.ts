@@ -1,9 +1,11 @@
-import { defineCollection } from 'astro:content';
-import { file } from 'astro/loaders';
-import { z } from 'astro/zod';
+import { defineCollection } from "astro:content";
+import { file } from "astro/loaders";
+import { z } from "astro/zod";
 
 const mods = defineCollection({
-  loader: file("src/data/catalogue.json", { parser: (text) => JSON.parse(text).mods }),
+  loader: file("src/data/catalogue.json", {
+    parser: (text) => JSON.parse(text).mods,
+  }),
   schema: z.object({
     source: z.string(),
     id: z.string(),
@@ -15,15 +17,17 @@ const mods = defineCollection({
     role: z.string(),
     file: z.string(),
     sha512: z.string(),
-    dependencies: z.array(z.string())
-  })
+    dependencies: z.array(z.string()),
+  }),
 });
 
 const resourcePacks = defineCollection({
-  loader: file("src/data/catalogue.json", { parser: (text) => JSON.parse(text).resourcePacks }),
+  loader: file("src/data/catalogue.json", {
+    parser: (text) => JSON.parse(text).resourcePacks,
+  }),
   schema: z.object({
-    id: z.string()
-  })
+    id: z.string(),
+  }),
 });
 
 export const collections = { mods, resourcePacks };

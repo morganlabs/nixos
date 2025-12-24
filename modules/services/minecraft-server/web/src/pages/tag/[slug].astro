@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ModItem from "@components/ModItem.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+    const mods = (await getCollection("mods")).sort(
+        ({ data: a }, { data: b }) => a.title.localeCompare(b.title),
+    );
+    const allTags = [...new Set(mods.map(({ data: mod }) => mod.tags).flat())];
+    const tagPaths = [];
+
+    for (const tag of allTags) {
+        tagPaths.push({
+            params: { slug: tag.replace(/ /g, "-").toLowerCase() },
+            props: { tag },
+        });
+    }
+
+    return tagPaths;
+}
+
+const { tag } = Astro.props;
+
+const mods = (await getCollection("mods"))
+    .filter(({ data: mod }) => mod.tags.includes(tag))
+    .sort(({ data: a }, { data: b }) => a.title.localeCompare(b.title));
+---
+
+<BaseLayout title="Low-Power Server Catalogue">
+    <div class="mods">
+        {mods.map((mod) => <ModItem showTags={false} {mod} />)}
+    </div>
+</BaseLayout>
+
+<style>
+    .mods {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .downloadButtons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-block: 0.5rem;
+    }
+</style>

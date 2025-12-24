@@ -23,6 +23,7 @@ in
 {
   imports = [
     inputs.nix-minecraft.nixosModules.minecraft-servers
+    (import ./website.nix catalogue)
     (import ./mods.nix catalogue.mods)
   ];
 
@@ -39,10 +40,7 @@ in
       with ports;
       mkIf cfg.exposePorts {
         allowedTCPPorts = [ minecraft ];
-        allowedUDPPorts = [
-          minecraft
-          voice-chat
-        ];
+        allowedUDPPorts = [ minecraft voice-chat ];
       };
 
     services.minecraft-servers = {

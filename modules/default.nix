@@ -11,6 +11,7 @@
 
     ./services/ssh
     ./services/minecraft-server
+    ./services/traefik.nix
 
     ./programs/git.nix
     ./programs/node.nix

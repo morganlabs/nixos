@@ -3,23 +3,29 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ModItem from "@components/ModItem.astro";
 import { getCollection } from "astro:content";
 
-const mods = await getCollection("mods");
-const simplifiedMods = mods.map(({ data: mod }) => ([mod.role, mod.title, mod.file, mod.tags.includes("Performance Enhancement")]))
+const mods = (await getCollection("mods")).sort(({ data: a }, { data: b }) =>
+    a.title.localeCompare(b.title),
+);
 ---
 
-<BaseLayout>
-    <h1>The Low-Powered Server</h1>
-    <p>The server that tries it's best!</p>
-
-    <button class="primary" id="download-all-recommended">Download All Recommended Mods</button>
-    <button class="secondary" id="download-required">Download All Required Mods</button>
-    <button class="secondary" id="download-performance">Download All Client Performance Mods</button>
-    <button class="secondary" id="download-all">Download All Mods (Including server mods!)</button>
+<BaseLayout title="Low-Power Server Catalogue">
+    <div class="downloadButtons">
+        <a class="button primary" href="/mods/recommended-mods.zip" download
+            >Recommended Mods</a
+        >
+        <a class="button secondary" href="/mods/required-mods.zip" download
+            >Required Mods</a
+        >
+        <a class="button secondary" href="/mods/server-mods.zip" download
+            >Server Mods</a
+        >
+        <a class="button secondary" href="/mods/all-mods.zip" download
+            >All Mods</a
+        >
+    </div>
 
     <div class="mods">
-    {mods.map((mod) => (
-      <ModItem {...mod} />
-    ))}
+        {mods.map((mod) => <ModItem showTags={true} {mod} />)}
     </div>
 </BaseLayout>
 
@@ -30,77 +36,11 @@ const simplifiedMods = mods.map(({ data: mod }) => ([mod.role, mod.title, mod.fi
         flex-direction: column;
         gap: 1rem;
     }
+
+    .downloadButtons {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin-block: 0.5rem;
+    }
 </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-
-<script id="zipper" data-mods={JSON.stringify(simplifiedMods)}>
-    const thisScript = document.getElementById("zipper");
-
-    const downloadAll = document.getElementById("download-all");
-    const downloadAllRec = document.getElementById("download-all-recommended");
-    const downloadReq = document.getElementById("download-required");
-    const downloadPerf = document.getElementById("download-performance");
-    
-    const allMods = JSON.parse(thisScript.dataset.mods)
-    const recommendedMods = allMods.filter(([role]) => (["client-optional", "client-required", "both-optional", "both-required"].includes(role)))
-    const requiredMods = allMods.filter(([role]) => (["client-required", "both-required"].includes(role)))
-    const performanceMods = allMods.filter(([,,, performance]) => performance)
-
-
-    downloadAll.addEventListener("click", async () => {
-        console.log("Downloading all mods (including server mods!)")
-        downloadAll.innerText = "Downloading..."
-        await downloadZip(allMods, "all")
-        downloadAll.innerText = "Done!"
-    })
-
-    downloadAllRec.addEventListener("click", async () => {
-        console.log("Downloading all recommended mods.")
-        downloadAllRec.innerText = "Downloading..."
-        await downloadZip(recommendedMods, "recommended")
-        downloadAllRec.innerText = "Done!"
-    })
-
-    downloadReq.addEventListener("click", async () => {
-        console.log("Downloading required mods.")
-        downloadReq.innerText = "Downloading..."
-        await downloadZip(requiredMods, "required")
-        downloadReq.innerText = "Done!"
-    })
-
-    downloadPerf.addEventListener("click", async () => {
-        console.log("Downloading performance mods.")
-        downloadPerf.innerText = "Downloading..."
-        await downloadZip(performanceMods, "performance")
-        downloadPerf.innerText = "Done!"
-    })
-
-
-    async function downloadZip(modsToDownload, role) {
-        const zip = new JSZip();
-        const responses = await Promise.all(modsToDownload.map(([_, title, file]) => fetchMod(title, file)))
-
-        for (const { title, res } of responses) {
-          if (!res.ok) {
-            throw new Error(`Failed to fetch mod ${title}.`)
-            alert(`Failed to fetch mod ${title}.`)
-          }
-          
-          const blob = await res.blob();
-          const filename = title.replace(/ /g, "-") + `.jar`
-          zip.file(filename, blob);
-        }
-
-        const zipBlob = await zip.generateAsync({ type: "blob" })
-
-        saveAs(zipBlob, `mods-${role}.zip`)
-    }
-
-    async function fetchMod(title, file) {
-        console.log(`Fetching mod ${title}...`)
-        const res = await fetch(file)
-        return { title, res }
-    }
-</script>

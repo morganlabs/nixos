@@ -202,6 +202,12 @@ id = "EltpO5cN"
 tags = [ "Quality of Life" ]
 
 [[mods.client.optional]]
+# Sodium Extra
+source = "modrinth"
+id = "atHH8NyV"
+tags = [ "Performance Enhancement" ]
+
+[[mods.client.optional]]
 # Legendary Tooltips
 source = "modrinth"
 id = "atHH8NyV"
@@ -339,12 +345,6 @@ tags = [ "Support Mod" ]
 source = "modrinth"
 id = "uKjKoMsj"
 tags = [ "Ambience" ]
-
-[[mods.client.optional]]
-# First-Person Model
-source = "modrinth"
-id = "H5XMjpHi"
-tags = [ "Quality of Life" ]
 
 [[mods.client.required]]
 # Entity Texture Features

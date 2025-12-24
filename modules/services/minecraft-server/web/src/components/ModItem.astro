@@ -1,49 +1,68 @@
 ---
+import type { CollectionEntry } from "astro:content";
+
 const {
-  id,
-  data: {
-    source,
-    title,
-    description,
-    icon,
-    published,
-    tags,
-    role,
-    file, dependencies
-  }
+    mod: {
+        id,
+        data: {
+            source,
+            title,
+            description,
+            icon,
+            published,
+            tags,
+            role,
+            file,
+            dependencies,
+        },
+    },
+    showTags = true,
 } = Astro.props;
 
-const prettyRoles = {
-    "server": ["Server-side"],
-    "client-required": ["Client-side (Required)"],
-    "client-optional": ["Server-side (Optional)"],
-    "both-required": ["Server-side", "Client-side (Required)"],
-    "both-optional": ["Server-side", "Client-side (Optional)"],
-}[role];
+interface Props {
+    showTags: boolean;
+    mod: CollectionEntry<"mods">;
+}
 ---
 
 <article class="mod">
     <div class="modInfo">
-        <img class="image" src={icon} alt={`Icon for the ${title} mod.`} />
-        <h2 class="title">{title}</h2>
+        <div class="modHeader">
+            <img class="image" src={icon} alt={`Icon for the ${title} mod.`} />
+            <div class="titleAndTags">
+                {
+                    showTags && (
+                        <ul class="tags">
+                            {tags.map((t: string) => (
+                                <li>
+                                    <a
+                                        class="tag"
+                                        href={`/tag/${t.replace(/ /g, "-").toLowerCase()}`}
+                                    >
+                                        {t}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    )
+                }
+
+                <h2 class="title">{title}</h2>
+            </div>
+        </div>
     </div>
-        <ul class="roles">
-            {prettyRoles.map((r) => <li><span class="role">{r}</span></li>)}
-        </ul>
-        <ul class="tags">
-            {tags.map((t) => <li><a class="tag" href={`/tags/${t.replace(" ", "-").toLowerCase()}`}>{t}</a></li>)}
-        </ul>
     <p class="description">{description}</p>
     <div class="buttons">
         <a class="primary button" href={file}>Download</a>
-        <a class="secondary button" href={`https://modrinth.com/mod/${id}`}>Go to Mod Page</a>
+        <a class="secondary button" href={`https://modrinth.com/mod/${id}`}
+            >Go to Mod Page</a
+        >
     </div>
 </article>
 
 <style>
-    .modInfo {
-        display: grid;
-        grid-template-columns: auto 100%;
+    .modHeader {
+        display: flex;
         align-items: center;
         gap: 1rem;
     }
@@ -55,19 +74,19 @@ const prettyRoles = {
         background-color: black;
     }
 
-    .tags, .roles {
-        margin-block: 0.5rem;
+    .tags {
         display: flex;
         gap: 0.5rem;
         list-style: none;
     }
 
-    .tag, .role {
-        display: inline-block;
-        background-color: gray;
+    .tag {
         color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        text-decoration: none;
+        opacity: 0.5;
+    }
+
+    .description,
+    .buttons {
+        margin-top: 0.5rem;
     }
 </style>
