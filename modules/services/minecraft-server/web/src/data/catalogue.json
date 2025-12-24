@@ -1,0 +1,129 @@
+{
+  "mods": [
+    {
+      "source": "modrinth",
+      "id": "XNlO7sBv",
+      "title": "YUNG's Better Desert Temples",
+      "description": "A complete redesign of Minecraft's desert temples!",
+      "icon": "https://cdn.modrinth.com/data/XNlO7sBv/32fc82949e922ad9281ac9a8fe965afc04261848_96.webp",
+      "published": "2025-03-07T22:28:47.425742Z",
+      "tags": ["Structure Generation"],
+      "role": "server",
+      "file": "https://cdn.modrinth.com/data/XNlO7sBv/versions/M6eeDRkC/YungsBetterDesertTemples-1.21.1-Fabric-4.1.5.jar",
+      "sha512": "2bed532391cd1f2e5ed7986220f3b4c23d0c1302366b61baf1ca62a9620000bd58964cfd9a62fc52abbc95e76c1b3a4f85fbe88ca0a4006612f0493585c99084",
+      "config": [
+        {
+          "directory": "config",
+          "filename": "betterdeserttemples-fabric-1_21.toml",
+          "content": "[general]\ndisableVanillaPyramids = false\napplyMiningFatigue = true\n"
+        }
+      ],
+      "dependencies": ["P7dR8mSH", "Ua7DFN59", "9s6osm5g"]
+    },
+    {
+      "source": "modrinth",
+      "id": "fQEb0iXm",
+      "title": "Krypton",
+      "description": "A mod to optimize the Minecraft networking stack",
+      "icon": "https://cdn.modrinth.com/data/fQEb0iXm/3ea60899d060a9286e03b87bfa9e71d0cbe2dde7_96.webp",
+      "published": "2024-06-22T23:06:40.497411Z",
+      "tags": ["Performance Enhancement"],
+      "role": "both-optional",
+      "file": "https://cdn.modrinth.com/data/fQEb0iXm/versions/Acz3ttTp/krypton-0.2.8.jar",
+      "sha512": "5f8cf96c79bfd4d893f1d70da582e62026bed36af49a7fa7b1e00fb6efb28d9ad6a1eec147020496b4fe38693d33fe6bfcd1eebbd93475612ee44290c2483784",
+      "config": [],
+      "dependencies": []
+    },
+    {
+      "source": "modrinth",
+      "id": "BVzZfTc1",
+      "title": "[ETF] Entity Texture Features",
+      "description": "Emissive, Random & Custom texture support for entities in resourcepacks just like Optifine but for Fabric",
+      "icon": "https://cdn.modrinth.com/data/BVzZfTc1/af683d206d50b05258d865b0d6e4aa2f2cee12f2_96.webp",
+      "published": "2025-11-22T15:07:17.572781Z",
+      "tags": ["Support Mod"],
+      "role": "client-required",
+      "file": "https://cdn.modrinth.com/data/BVzZfTc1/versions/j4aOsQzM/entity_texture_features_1.21-fabric-7.0.6.jar",
+      "sha512": "3c87ae99ac2df55f3ccb559c6336a88a8778f526f04c112f9d0aaaad74b5119ce63d8c78060495da229e4a6a142e647a5187d5ecf2cbfcd2ef23d3c3864f7a92",
+      "config": [],
+      "dependencies": []
+    },
+    {
+      "source": "modrinth",
+      "id": "gQIpdGQl",
+      "title": "Fancy Door Animations",
+      "description": "Adds smooth animated effects to door opening and closing in Minecraft, enhancing movement and visual immersion",
+      "icon": "https://cdn.modrinth.com/data/gQIpdGQl/1f7b7632e177964d94218f3b923d336d19d5ff32_96.webp",
+      "published": "2025-10-19T20:52:34.748639Z",
+      "tags": ["Animations", "Quality of Life"],
+      "role": "client-optional",
+      "file": "https://cdn.modrinth.com/data/gQIpdGQl/versions/zdszacvQ/fancy-door-anim-1.0.2.jar",
+      "sha512": "4ecb0aababf3edd14bb15ca2c5456886dbd00af3b63b00baf7a8ce253febd5dfec1d8e40ac8f5cbdd0c01bfdb694fa92f1ea36f63458cbe3ca90cfee58407457",
+      "config": [],
+      "dependencies": ["P7dR8mSH"]
+    },
+    {
+      "source": "modrinth",
+      "id": "b8kG1VGq",
+      "title": "Aileron",
+      "description": "An expansive overhaul to Minecraft's Elytra.",
+      "icon": "https://cdn.modrinth.com/data/b8kG1VGq/7ee046278d6884fe7fb7c4e72cf35eae22ecd4a2_96.webp",
+      "published": "2025-09-23T21:03:17.057680Z",
+      "tags": ["Quality of Life"],
+      "role": "both-required",
+      "file": "https://cdn.modrinth.com/data/b8kG1VGq/versions/wX06GzSb/aileron-1.21.1-fabric-1.1.4.jar",
+      "sha512": "2716e85c2cf3e848b5f586aee23272cfa7f672de7738da4ebddf6352377e42583d16b0cd4c8c36f97766de27ebafe0a21dd9cfb10019a05f3dd8d75685ecef72",
+      "config": [
+        {
+          "directory": "config",
+          "filename": "aileron.json",
+          "content": "{\n  \"fireworkUseBehaviour\": \"NORMAL\",\n  \"doCameraRoll\": true,\n  \"cameraRollScale\": 1.0,\n  \"cameraRollSpeed\": 0.1,\n  \"cloudskipperSpeedMultiplier\": 1.0,\n  \"cloudskipperCloudLevel\": 192.0,\n  \"smokestackAirRecharge\": true,\n  \"smokestackChargeTicks\": 20,\n  \"campfiresPushPlayers\": true,\n  \"campfirePushMaxStrength\": 24.0,\n  \"campfirePushBaseStrength\": 10.0\n}\n"
+        }
+      ],
+      "dependencies": []
+    },
+    {
+      "source": "modrinth",
+      "id": "P7dR8mSH",
+      "title": "Fabric API",
+      "description": "Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.",
+      "icon": "https://cdn.modrinth.com/data/P7dR8mSH/icon.png",
+      "published": "2025-10-08T08:08:32.073948Z",
+      "tags": ["Support Mod"],
+      "role": "both-required",
+      "file": "https://cdn.modrinth.com/data/P7dR8mSH/versions/m6zu1K31/fabric-api-0.116.7%2B1.21.1.jar",
+      "sha512": "0d7bf97e516cfdb742d7e37a456ed51f96c46eac060c0f2b80338089670b38aba2f7a9837e5e07a6bdcbf732e902014fb1202f6e18e00d6d2b560a84ddf9c024",
+      "config": [],
+      "dependencies": []
+    },
+    {
+      "source": "modrinth",
+      "id": "Ua7DFN59",
+      "title": "YUNG's API",
+      "description": "Library mod for YUNG's mods.",
+      "icon": "https://cdn.modrinth.com/data/Ua7DFN59/0fab1c351bf00926a8e1c91dc64b7c88832c3e1f_96.webp",
+      "published": "2025-07-01T07:08:03.374433Z",
+      "tags": ["Support Mod"],
+      "role": "both-required",
+      "file": "https://cdn.modrinth.com/data/Ua7DFN59/versions/9aZPNrZC/YungsApi-1.21.1-Fabric-5.1.6.jar",
+      "sha512": "fc05fb3941851cfa5c8e89f98704938a5b0581f66fe3b1b0d83b2f46f1cb903e1e1070f40c92a82da91813b36452358d6b2df7dc42a275f459dc5030ea467cb6",
+      "config": [],
+      "dependencies": ["P7dR8mSH"]
+    },
+    {
+      "source": "modrinth",
+      "id": "9s6osm5g",
+      "title": "Cloth Config API",
+      "description": "Configuration Library for Minecraft Mods",
+      "icon": "https://cdn.modrinth.com/data/9s6osm5g/ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp",
+      "published": "2024-09-16T17:17:55.762416Z",
+      "tags": ["Support Mod"],
+      "role": "both-required",
+      "file": "https://cdn.modrinth.com/data/9s6osm5g/versions/HpMb5wGb/cloth-config-15.0.140-fabric.jar",
+      "sha512": "1b3f5db4fc1d481704053db9837d530919374bf7518d7cede607360f0348c04fc6347a3a72ccfef355559e1f4aef0b650cd58e5ee79c73b12ff0fc2746797a00",
+      "config": [],
+      "dependencies": []
+    }
+  ],
+  "resourcePacks": []
+}

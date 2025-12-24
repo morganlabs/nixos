@@ -67,7 +67,7 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 ## Servers
 
 - [x] Minecraft Fabric server
-  - [ ] Mods/Resources/Shaders website
+  - [x] Mods/Resources/Shaders website
 - [ ] Navidrome
 - [ ] Nextcloud
 - [ ] Jellyfin
