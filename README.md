@@ -8,7 +8,7 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 
 * Framework Laptop 13
 * Ryzen 5 7640U
-* 16GB RAM
+* 16GB RAM (Planning to upgrade soon)
 * 256GB NVMe SSD (Planning to upgrade soon)
 * 13.5" 2.2K 60Hz Display
 
