@@ -73,7 +73,7 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 - [ ] Nextcloud
 - [ ] Jellyfin
 - [ ] Dashboard
-- [ ] Traefik
+- [x] Traefik
 - [ ] Uptime Kuma
 - [ ] PiHole DNS
 - [ ] Portainer
