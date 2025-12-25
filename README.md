@@ -68,6 +68,7 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 
 - [x] Minecraft Fabric server
   - [x] Mods/Resources/Shaders website
+  - [ ] Online admin/RCON panel
 - [ ] Navidrome
 - [ ] Nextcloud
 - [ ] Jellyfin
