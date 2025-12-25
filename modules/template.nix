@@ -1,4 +1,10 @@
-{ config, lib, inputs, vars, ... }:
+{
+  config,
+  lib,
+  inputs,
+  vars,
+  ...
+}:
 with lib;
 let
   cfg = config.modules.SCOPE.NAME;

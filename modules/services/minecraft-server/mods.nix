@@ -9,7 +9,14 @@ with lib;
 let
   cfg = config.modules.services.minecraft-server.mods;
 
-  serverMods = filter (m: elem m.role [ "server" "both-optional" "both-required" ]) mods;
+  serverMods = filter (
+    m:
+    elem m.role [
+      "server"
+      "both-optional"
+      "both-required"
+    ]
+  ) mods;
 
   ### ALL MODS ###
   serverModsAttrset = listToAttrs (
@@ -25,10 +32,14 @@ let
   modsDerivation = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues serverModsAttrset);
 
   ### CONFIGS ###
-  modConfigs = listToAttrs (map (cfg: with cfg; {
-    name = "${directory}/${filename}";
-    value = pkgs.writeText filename content;
-  }) (concatMap (mod: mod.config or []) mods));
+  modConfigs = listToAttrs (
+    map (
+      cfg: with cfg; {
+        name = "${directory}/${filename}";
+        value = pkgs.writeText filename content;
+      }
+    ) (concatMap (mod: mod.config or [ ]) mods)
+  );
 in
 {
   options.modules.services.minecraft-server.mods = {

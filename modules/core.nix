@@ -1,7 +1,13 @@
-{ config, lib, inputs, vars, ... }:
+{
+  config,
+  lib,
+  inputs,
+  vars,
+  ...
+}:
 with lib;
 let
-cfg = config.modules.core;
+  cfg = config.modules.core;
 in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];

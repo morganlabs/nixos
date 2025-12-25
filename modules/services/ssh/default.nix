@@ -6,7 +6,10 @@ let
   port = 32107;
 in
 {
-  imports = [ ./fail2ban.nix ./endlessh.nix ];
+  imports = [
+    ./fail2ban.nix
+    ./endlessh.nix
+  ];
 
   options.modules.services.ssh = {
     enable = mkEnableOption "Enable services.ssh";

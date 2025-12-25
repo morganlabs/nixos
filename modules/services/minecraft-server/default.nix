@@ -40,7 +40,10 @@ in
       with ports;
       mkIf cfg.exposePorts {
         allowedTCPPorts = [ minecraft ];
-        allowedUDPPorts = [ minecraft voice-chat ];
+        allowedUDPPorts = [
+          minecraft
+          voice-chat
+        ];
       };
 
     services.minecraft-servers = {
