@@ -92,11 +92,15 @@ in
 {
   options.modules.services.minecraft-server.website = {
     enable = mkEnableOption "Enable services.minecraft-server.website";
+    addToDash = mkEnableOption "Add the website to the dashboard";
     traefik.enable = mkEnableOption "Enable Traefik routing";
   };
 
   config = mkIf cfg.enable {
-    modules.services.minecraft-server.website.traefik.enable = true;
+    modules.services.minecraft-server.website = {
+      addToDash = mkDefault true;
+      traefik.enable = mkDefault true;
+    };
 
     services.nginx = {
       enable = mkForce true;

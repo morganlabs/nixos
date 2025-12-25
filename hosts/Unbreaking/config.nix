@@ -22,6 +22,7 @@
 
     services = {
       traefik.enable = true;
+      flame.enable = true;
       minecraft-server = {
         enable = true;
         website.enable = true;
