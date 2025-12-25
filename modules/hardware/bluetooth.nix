@@ -1,4 +1,4 @@
-{ config, lib, inputs, vars, ... }:
+{ config, lib, ... }:
 with lib;
 let
   cfg = config.modules.hardware.bluetooth;
