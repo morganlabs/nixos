@@ -10,8 +10,6 @@ let
   cfg = config.modules.core;
 in
 {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
-
   options.modules.core = {
     enable = mkEnableOption "Enable core";
   };
@@ -32,8 +30,17 @@ in
 
     environment.systemPackages = [ inputs.agenix.packages.${vars.system}.default ];
 
+    age = {
+      identityPaths = mkBefore [ "/home/${vars.user.username}/.ssh/id_ed25519" ];
+      secrets = {
+        user-password.file = mkForce ../secrets/${vars.hostname}/user-password.age;
+        root-password.file = mkForce ../secrets/${vars.hostname}/root-password.age;
+      };
+    };
+
     console.keyMap = "uk";
     time.timeZone = "Europe/London";
+    services.xserver.xkb.layout = "gb";
     i18n = {
       defaultLocale = "en_GB.UTF-8";
       extraLocaleSettings = {
@@ -49,19 +56,20 @@ in
       };
     };
 
-    services.xserver.xkb = {
-      layout = "gb";
-      variant = "";
-    };
+    users = {
+      # Allows me to enforce hashedPasswordFile
+      mutableUsers = mkDefault false;
 
-    # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.${vars.user.username} = {
-      isNormalUser = true;
-      description = vars.user.fullName;
-      extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keys = [ vars.sshKey ];
+      users = {
+        root.hashedPasswordFile = mkForce config.age.secrets.root-password.path;
+        ${vars.user.username} = {
+          isNormalUser = mkForce true;
+          description = mkForce vars.user.fullName;
+          extraGroups = mkBefore [ "wheel" ];
+          openssh.authorizedKeys.keys = mkBefore [ vars.sshKey ];
+          hashedPasswordFile = mkForce config.age.secrets.user-password.path;
+        };
+      };
     };
-
-    home-manager.users.${vars.user.username} = { };
   };
 }
