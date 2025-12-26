@@ -1,5 +1,5 @@
-{ ... }:
-{
+{ lib, ... }:
+with lib; {
   imports = [
     ./hardware.nix
     ./networking.nix
@@ -12,7 +12,7 @@
       systemd-boot.enable = false;
       grub = {
         enable = true;
-        device = "/dev/sda";
+	devices = [ "/dev/sda" "/dev/sdb" ];
       };
     };
 
@@ -35,8 +35,16 @@
     };
   };
 
-  boot.tmp.cleanOnBoot = true;
-  zramSwap.enable = true;
+  boot = {
+    swraid.enable = true;
+    kernelParams = ["boot.shell_on_fail"];
+    swraid.mdadmConf = ''HOMEHOST <ignore>'';
+  };
+
+  systemd.services.mdmonitor = {
+    wantedBy = mkForce [ ];
+    requires = mkForce [ ];
+  };
 
   system.stateVersion = "25.05";
 }

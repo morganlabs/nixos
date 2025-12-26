@@ -6,12 +6,12 @@ in
 {
   options.modules.bootloader.grub = {
     enable = mkEnableOption "Enable bootloader.grub";
-    device = mkStringOption "The Device for GRUB to use" "";
+    devices = mkListOption "str" "The Devices for GRUB to use" [];
   };
 
   config = mkIf cfg.enable {
     boot.loader.grub = {
-      inherit (cfg) device;
+      inherit (cfg) devices;
       enable = mkForce true;
     };
   };
