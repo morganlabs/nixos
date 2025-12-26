@@ -30,6 +30,8 @@ in
     nix.settings.trusted-users = [ vars.user.username ];
     networking.hostName = vars.hostname;
 
+    environment.systemPackages = [ inputs.agenix.packages.${vars.system}.default ];
+
     console.keyMap = "uk";
     time.timeZone = "Europe/London";
     i18n = {

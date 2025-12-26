@@ -23,7 +23,6 @@
     services = {
       traefik.enable = true;
       flame.enable = true;
-      jellyfin.enable = true;
       minecraft-server = {
         enable = true;
         website.enable = true;

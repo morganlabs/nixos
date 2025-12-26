@@ -1,5 +1,13 @@
-inputs: hostname: prettyName: system: sshKey: let
-  vars = import ./vars.nix // { inherit hostname prettyName sshKey; };
+inputs: hostname: prettyName: system: sshKey:
+let
+  vars = import ./vars.nix // {
+    inherit
+      hostname
+      prettyName
+      sshKey
+      system
+      ;
+  };
   overlays = import ./overlays.nix inputs;
 
   pkgs = import inputs.nixpkgs {
@@ -9,8 +17,9 @@ inputs: hostname: prettyName: system: sshKey: let
 
   myLib = import ../lib pkgs.lib;
 
-  lib = pkgs.lib.extend(_: prev: prev // myLib) ;
-in {
+  lib = pkgs.lib.extend (_: prev: prev // myLib);
+in
+{
   "${hostname}" = inputs.nixpkgs.lib.nixosSystem {
     inherit system pkgs;
 
@@ -18,7 +27,9 @@ in {
     modules = [
       ../hosts/${hostname}/config.nix
       ../modules
-      inputs.home-manager.nixosModules.home-manager {
+      inputs.agenix.nixosModules.default
+      inputs.home-manager.nixosModules.home-manager
+      {
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
