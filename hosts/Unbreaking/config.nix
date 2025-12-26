@@ -1,5 +1,6 @@
-{ lib, ... }:
-with lib; {
+{ lib, pkgs, ... }:
+with lib;
+{
   imports = [
     ./hardware.nix
     ./networking.nix
@@ -12,7 +13,10 @@ with lib; {
       systemd-boot.enable = false;
       grub = {
         enable = true;
-	devices = [ "/dev/sda" "/dev/sdb" ];
+        devices = [
+          "/dev/sda"
+          "/dev/sdb"
+        ];
       };
     };
 
@@ -21,6 +25,11 @@ with lib; {
     programs.node.enable = true;
 
     services = {
+      navidrome = {
+        enable = true;
+        useMinIO = true;
+      };
+
       traefik.enable = true;
       flame.enable = true;
       minecraft-server = {
@@ -32,12 +41,48 @@ with lib; {
           Demissus = "4e79548e-90b4-4830-acfa-ab8f9d56fd60";
         };
       };
+
+      jellyfin = {
+        enable = true;
+        useMinIO = true;
+        hardwareAcceleration.enable = true;
+
+        decodingCodecs = {
+          mpeg2 = true;
+          hevc = true;
+          h264 = true;
+        };
+
+        transcoding = {
+          maxConcurrentStreams = 4;
+          enableHardwareEncoding = true;
+          deleteSegments = true;
+          encodingPreset = "medium";
+        };
+      };
     };
+  };
+
+  ### JELLYFIN HARDWARE ACCELERATION ###
+  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "i965"; # or i965 for older GPUs
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "i965";
+  };
+
+  hardware.graphics = {
+    enable = true;
+
+    extraPackages = with pkgs; [
+      intel-ocl
+      intel-vaapi-driver
+      libva-vdpau-driver
+      intel-compute-runtime-legacy1
+    ];
   };
 
   boot = {
     swraid.enable = true;
-    kernelParams = ["boot.shell_on_fail"];
+    kernelParams = [ "boot.shell_on_fail" ];
     swraid.mdadmConf = ''HOMEHOST <ignore>'';
   };
 

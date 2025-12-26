@@ -28,6 +28,7 @@ in
       ../hosts/${hostname}/config.nix
       ../modules
       inputs.agenix.nixosModules.default
+      inputs.agenix-template.nixosModules.default
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {

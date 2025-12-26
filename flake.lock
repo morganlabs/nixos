@@ -23,6 +23,22 @@
         "type": "github"
       }
     },
+    "agenix-template": {
+      "locked": {
+        "lastModified": 1728762971,
+        "narHash": "sha256-9aTWaQ9VYECCb+oySlBnxMJaSTQ+hfuB2SuAH1Duc+I=",
+        "owner": "jhillyerd",
+        "repo": "agenix-template",
+        "rev": "77cd55731e15d98edec7b9d47650bdd7f977ba5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jhillyerd",
+        "ref": "1.0.0",
+        "repo": "agenix-template",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -166,11 +182,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1766628630,
-        "narHash": "sha256-ULKQFi7/TohrfOsLP/ESfwvd1DjAuwwshLkgj5lqijM=",
+        "lastModified": 1766801229,
+        "narHash": "sha256-8XPf3xnbbdjebe+2fqkNgvL2rBuoRWjv9+BGfQMN1sQ=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "649604ce765f36edee9abbb44f65d88575811c41",
+        "rev": "62ff64bbe571c427981a942a884a1e6f32912f30",
         "type": "github"
       },
       "original": {
@@ -245,6 +261,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "agenix-template": "agenix-template",
         "home-manager": "home-manager_2",
         "jellarr": "jellarr",
         "nix-minecraft": "nix-minecraft",

@@ -4,4 +4,7 @@ in
 {
   "Unbreaking/user-password.age".publicKeys = [ Unbreaking ];
   "Unbreaking/root-password.age".publicKeys = [ Unbreaking ];
+
+  "Unbreaking/minio-username.age".publicKeys = [ Unbreaking ];
+  "Unbreaking/minio-password.age".publicKeys = [ Unbreaking ];
 }

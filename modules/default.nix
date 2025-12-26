@@ -14,6 +14,10 @@
     ./services/traefik.nix
     ./services/flame.nix
     ./services/docker.nix
+    ./services/minio.nix
+    ./services/s3fs.nix
+    ./services/navidrome.nix
+    ./services/jellyfin.nix
 
     ./programs/git.nix
     ./programs/node.nix
