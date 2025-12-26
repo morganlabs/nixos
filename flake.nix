@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    jellarr.url = "github:venkyr77/jellarr";
 
     home-manager = {
       url = "github:nix-community/home-manager";

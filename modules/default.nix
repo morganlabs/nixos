@@ -14,6 +14,7 @@
     ./services/traefik.nix
     ./services/flame.nix
     ./services/docker.nix
+    ./services/jellyfin.nix
 
     ./programs/git.nix
     ./programs/node.nix
