@@ -3,6 +3,7 @@
   lib,
   inputs,
   pkgs,
+  vars,
   ...
 }:
 with lib;
@@ -25,6 +26,7 @@ in
     inputs.nix-minecraft.nixosModules.minecraft-servers
     (import ./website.nix catalogue)
     (import ./mods.nix catalogue.mods)
+    ./rcon.nix
   ];
 
   options.modules.services.minecraft-server = {
@@ -46,11 +48,20 @@ in
         ];
       };
 
+    age.secrets.minecraft-rcon-password.file = ../../../secrets/${vars.hostname}/minecraft-rcon-password.age;
+    age-template.files."rcon-env" = {
+      vars.rconPassword = config.age.secrets.minecraft-rcon-password.path;
+      content = ''
+        RWA_RCON_PASSWORD=$rconPassword
+      '';
+    };
+
     services.minecraft-servers = {
       enable = mkForce true;
       eula = mkForce true;
       dataDir = "/var/lib/minecraft";
       managementSystem.systemd-socket.enable = mkForce true;
+      environmentFile = toString config.age-template.files."rcon-env".path;
 
       servers.fabric = {
         inherit (cfg) whitelist;

@@ -7,4 +7,6 @@ in
 
   "Unbreaking/minio-username.age".publicKeys = [ Unbreaking ];
   "Unbreaking/minio-password.age".publicKeys = [ Unbreaking ];
+
+  "Unbreaking/minecraft-rcon-password.age".publicKeys = [ Unbreaking ];
 }
