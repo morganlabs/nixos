@@ -35,6 +35,8 @@ with lib;
       minecraft-server = {
         enable = true;
         website.enable = true;
+        rcon.enable = true;
+
         whitelist = {
           Durabilitas = "1459c26c-6296-49a9-adbf-2eec51b661b7";
           ijusthatemyself = "8dd83707-3ffe-4030-834c-b2e1681bfc72";

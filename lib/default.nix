@@ -9,4 +9,6 @@ lib: {
   mkIfList = import ./mkIf/mkIfList.nix;
   mkIfStr = import ./mkIf/mkIfStr.nix;
   mkIfBool = import ./mkIf/mkIfBool.nix;
+
+  mkTraefikServices = import ./mkTraefikServices.nix lib;
 }
