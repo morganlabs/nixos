@@ -99,19 +99,12 @@ in
       '';
     };
 
-    services.traefik.dynamicConfigOptions = mkIf cfg.traefik.enable {
-      http = {
-        routers.minio = {
-          rule = "Host(`minio.morganlabs.dev`)";
-          entryPoints = [ "websecure" ];
-          service = "minio";
-          tls = true;
-        };
-
-        services.minio.loadBalancer.servers = [
-          { url = "http://127.0.0.1:${toString ports.console}"; }
-        ];
-      };
-    };
+    services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (mkTraefikServices [
+      {
+        service = "minio";
+        subdomain = "minio";
+        port = ports.console;
+      }
+    ]);
   };
 }

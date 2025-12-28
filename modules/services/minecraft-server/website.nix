@@ -9,7 +9,7 @@ with lib;
 let
   cfg = config.modules.services.minecraft-server.website;
 
-  internalPort = 4587;
+  port = 4587;
 
   # Mod filters & fetchers
   filterMods =
@@ -109,8 +109,8 @@ in
         root = minecraftWebsite;
         listen = [
           {
+            inherit port;
             addr = "127.0.0.1";
-            port = internalPort;
           }
         ];
 
@@ -147,19 +147,12 @@ in
       };
     };
 
-    services.traefik.dynamicConfigOptions = mkIf cfg.traefik.enable {
-      http = {
-        routers.minecraft-server-website = {
-          rule = "Host(`low-power.morganlabs.dev`)";
-          entryPoints = [ "websecure" ];
-          service = "minecraft-server-website";
-          tls = true;
-        };
-
-        services.minecraft-server-website.loadBalancer.servers = [
-          { url = "http://127.0.0.1:${toString internalPort}"; }
-        ];
-      };
-    };
+    services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (mkTraefikServices [
+      {
+        inherit port;
+        service = "low-power";
+        subdomain = "mc-catalogue-website";
+      }
+    ]);
   };
 }

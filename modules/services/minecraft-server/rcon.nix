@@ -61,29 +61,5 @@ in
         port = ports.ws;
       }
     ]);
-
-    # services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable {
-    #   routers.mc-rcon = {
-    #     rule = "Host(`low-power-dash.morganlabs.dev`)";
-    #     entryPoints = [ "websecure" ];
-    #     service = "mc-rcon";
-    #     tls = true;
-    #   };
-
-    #   routers.mc-rcon-ws = {
-    #     rule = "Host(`low-power-dash.morganlabs.dev`) && Path(`/ws`)";
-    #     entryPoints = [ "websecure" ];
-    #     service = "mc-rcon-ws";
-    #     tls = true;
-    #   };
-
-    #   services.mc-rcon.loadBalancer.servers = [
-    #     { url = "http://127.0.0.1:${toString ports.webpanel}"; }
-    #   ];
-
-    #   services.mc-rcon-ws.loadBalancer.servers = [
-    #     { url = "http://127.0.0.1:${toString ports.ws}"; }
-    #   ];
-    # };
   };
 }

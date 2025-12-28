@@ -7,6 +7,7 @@
 with lib;
 let
   cfg = config.modules.services.flame;
+  port = 5005;
 
   flameConfig =
     let
@@ -81,7 +82,7 @@ in
       backend = "docker";
       containers.flame = {
         image = "pawelmalak/flame";
-        ports = [ "5005:5005" ];
+        ports = [ "${toString port}:${toString port}" ];
         volumes = [ "/var/local/flame/data:/app/data" ];
 
         environment.PASSWORD = "password";
@@ -105,18 +106,12 @@ in
       };
     };
 
-    services.traefik.dynamicConfigOptions = mkIf cfg.traefik.enable {
-      http = {
-        routers.flame = {
-          rule = "Host(`dash.morganlabs.dev`)";
-          entryPoints = [ "websecure" ];
-          service = "flame";
-          tls = true;
-        };
-        services.flame.loadBalancer.servers = [
-          { url = "http://127.0.0.1:5005"; }
-        ];
-      };
-    };
+    services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (mkTraefikServices [
+      {
+        inherit port;
+        service = "flame";
+        subdomain = "dash";
+      }
+    ]);
   };
 }

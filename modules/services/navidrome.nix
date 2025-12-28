@@ -45,19 +45,12 @@ in
       };
     };
 
-    services.traefik.dynamicConfigOptions = mkIf cfg.traefik.enable {
-      http = {
-        routers.navidrome = {
-          rule = "Host(`music.morganlabs.dev`)";
-          entryPoints = [ "websecure" ];
-          service = "navidrome";
-          tls = true;
-        };
-
-        services.navidrome.loadBalancer.servers = [
-          { url = "http://127.0.0.1:${toString port}"; }
-        ];
-      };
-    };
+    services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (mkTraefikServices [
+      {
+        inherit port;
+        service = "navidrome";
+        subdomain = "music";
+      }
+    ]);
   };
 }

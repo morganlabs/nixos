@@ -89,19 +89,12 @@ in
       };
     };
 
-    services.traefik.dynamicConfigOptions = mkIf cfg.traefik.enable {
-      http = {
-        routers.jellyfin = {
-          rule = "Host(`jellyfin.morganlabs.dev`)";
-          entryPoints = [ "websecure" ];
-          service = "jellyfin";
-          tls = true;
-        };
-
-        services.jellyfin.loadBalancer.servers = [
-          { url = "http://127.0.0.1:${toString port}"; }
-        ];
-      };
-    };
+    services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (mkTraefikServices [
+      {
+        inherit port;
+        service = "jellyfin";
+        subdomain = "jellyfin";
+      }
+    ]);
   };
 }
