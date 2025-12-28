@@ -891,6 +891,12 @@ id = "uCdwusMi"
 tags = [ "Quality of Life" ]
 
 [[mods.server]]
+# Pause Server When Empty
+source = "modrinth"
+id = "ghDvRD8t"
+tags = [ "Quality of Life", "Performance Enhancement" ]
+
+[[mods.server]]
 # C2Me
 source = "modrinth"
 id = "VSNURh3q"
