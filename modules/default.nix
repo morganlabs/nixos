@@ -18,6 +18,7 @@
     ./services/s3fs.nix
     ./services/navidrome.nix
     ./services/jellyfin.nix
+    ./services/uptime-kuma.nix
 
     ./programs/git.nix
     ./programs/node.nix

@@ -25,13 +25,15 @@ with lib;
     programs.node.enable = true;
 
     services = {
+      traefik.enable = true;
+      flame.enable = true;
+      uptime-kuma.enable = true;
+
       navidrome = {
         enable = true;
         useMinIO = true;
       };
 
-      traefik.enable = true;
-      flame.enable = true;
       minecraft-server = {
         enable = true;
         website.enable = true;
