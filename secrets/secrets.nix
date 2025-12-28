@@ -10,4 +10,8 @@ in
 
   "Unbreaking/minecraft-rcon-password.age".publicKeys = [ Unbreaking ];
   "Unbreaking/minecraft-rcon-user-password.age".publicKeys = [ Unbreaking ];
+
+  "Unbreaking/usenet-server.age".publicKeys = [ Unbreaking ];
+  "Unbreaking/usenet-username.age".publicKeys = [ Unbreaking ];
+  "Unbreaking/usenet-password.age".publicKeys = [ Unbreaking ];
 }

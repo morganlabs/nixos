@@ -10,6 +10,7 @@ in
     enable = mkEnableOption "Enable services.jellyfin";
     useMinIO = mkEnableOption "Use MinIO for storage";
     traefik.enable = mkEnableOption "Enable Traefik routing";
+    group = mkStringOption "The group to run Jellyfin as" "media";
 
     hardwareAcceleration = {
       enable = mkEnableOption "Enable Hardware Acceleration";
@@ -47,6 +48,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    users.groups.${cfg.group} = { };
+
     modules.services = {
       jellyfin.traefik.enable = mkDefault true;
 
@@ -67,13 +70,15 @@ in
             mountPoint = "/mnt/media";
             bucket = "media";
             uid = "jellyfin";
-            gid = "jellyfin";
+            gid = cfg.group;
+            umask = "0007";
           }
         ];
       };
     };
 
     services.jellyfin = {
+      inherit (cfg) group;
       enable = true;
 
       forceEncodingConfig = mkForce cfg.hardwareAcceleration.enable;

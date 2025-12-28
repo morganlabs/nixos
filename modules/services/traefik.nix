@@ -20,6 +20,12 @@
 with lib;
 let
   cfg = config.modules.services.traefik;
+
+  ports = {
+    http = 80;
+    https = 443;
+    dash = 8081;
+  };
 in
 {
   options.modules.services.traefik = {
@@ -27,11 +33,13 @@ in
   };
 
   config = mkIf cfg.enable {
-    networking.firewall.allowedTCPPorts = mkAfter [
-      8080
-      80
-      443
-    ];
+    networking.firewall.allowedTCPPorts =
+      with ports;
+      mkAfter [
+        http
+        https
+        dash
+      ];
     services.traefik = {
       enable = true;
 
@@ -59,9 +67,11 @@ in
       };
 
       staticConfigOptions = {
+        api.dashboard = true;
+
         entryPoints = {
           web = {
-            address = ":80";
+            address = ":${toString ports.http}";
             asDefault = true;
             http.redirections.entrypoint = {
               to = "websecure";
@@ -70,14 +80,9 @@ in
           };
 
           websecure = {
-            address = ":443";
+            address = ":${toString ports.https}";
             asDefault = true;
           };
-        };
-
-        api = {
-          dashboard = true;
-          insecure = true;
         };
       };
     };

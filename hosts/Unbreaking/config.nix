@@ -27,7 +27,9 @@ with lib;
     services = {
       traefik.enable = true;
       flame.enable = true;
-      uptime-kuma.enable = true;
+      status.enable = true;
+      sabnzbd.enable = true;
+      sonarr.enable = true;
 
       navidrome = {
         enable = true;

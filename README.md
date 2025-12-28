@@ -81,3 +81,4 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 - [ ] Off-site Backups
 - [ ] NFS
 - [ ] Home Assistant
+- [ ] OAuth SSO
