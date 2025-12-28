@@ -150,8 +150,8 @@ in
     services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (mkTraefikServices [
       {
         inherit port;
-        service = "low-power";
-        subdomain = "mc-catalogue-website";
+        subdomain = "low-power";
+        service = "mc-catalogue-website";
       }
     ]);
   };
