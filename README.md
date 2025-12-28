@@ -68,11 +68,11 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 
 - [x] Minecraft Fabric server
   - [x] Mods/Resources/Shaders website
-  - [ ] Online admin/RCON panel
-- [ ] Navidrome
+  - [x] Online admin/RCON panel
+- [x] Navidrome
 - [ ] Nextcloud
-- [ ] Jellyfin
-- [ ] Dashboard
+- [x] Jellyfin
+- [x] Dashboard
 - [x] Traefik
 - [ ] Uptime Kuma
 - [ ] PiHole DNS
