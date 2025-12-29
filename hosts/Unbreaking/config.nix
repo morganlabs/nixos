@@ -30,6 +30,7 @@ with lib;
       status.enable = true;
       sabnzbd.enable = true;
       sonarr.enable = true;
+      lidarr.enable = true;
 
       navidrome = {
         enable = true;

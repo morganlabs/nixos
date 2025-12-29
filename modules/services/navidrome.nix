@@ -10,6 +10,7 @@ in
     enable = mkEnableOption "Enable services.navidrome";
     useMinIO = mkEnableOption "Use MinIO for storage";
     traefik.enable = mkEnableOption "Enable Traefik routing";
+    group = mkStringOption "The group to run Jellyfin as" "media";
   };
 
   config = mkIf cfg.enable {
@@ -25,14 +26,15 @@ in
         ];
       };
 
-      s3fs = mkIf cfg.useMinIO {
+      rclone = mkIf cfg.useMinIO {
         enable = mkForce true;
         mounts = mkAfter [
           {
             mountPoint = "/mnt/music";
             bucket = "music";
             uid = "navidrome";
-            gid = "navidrome";
+            gid = cfg.group;
+            umask = "0007";
           }
         ];
       };

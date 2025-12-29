@@ -15,11 +15,12 @@
     ./services/flame.nix
     ./services/docker.nix
     ./services/minio.nix
-    ./services/s3fs.nix
+    ./services/rclone.nix
     ./services/navidrome.nix
     ./services/jellyfin.nix
     ./services/status.nix
     ./services/sonarr.nix
+    ./services/lidarr.nix
     ./services/sabnzbd.nix
 
     ./programs/git.nix

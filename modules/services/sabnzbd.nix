@@ -47,6 +47,7 @@ in
         nzb_backup_dir = /var/lib/sabnzbd/backup
         download_dir = /var/lib/sabnzbd/incomplete
         complete_dir = /var/lib/sabnzbd/complete
+        permissions = 0775
 
         [servers]
         [[$server]]
@@ -73,13 +74,41 @@ in
 
         [categories]
 
-        [[tv]]
-        name = tv
-        dir = tv
+        [[*]]
+        name = *
+        order = 0
+        pp = 3
+        script = Default
+        dir = default
+        newzbin = ""
+        priority = 0
 
         [[movies]]
         name = movies
+        order = 1
+        pp = ""
+        script = Default
         dir = movies
+        newzbin = ""
+        priority = -100
+
+        [[tv]]
+        name = tv
+        order = 2
+        pp = ""
+        script = Default
+        dir = tv
+        newzbin = ""
+        priority = -100
+
+        [[music]]
+        name = music
+        order = 5
+        pp = ""
+        script = Default
+        dir = music
+        newzbin = ""
+        priority = -100
       '';
     };
 

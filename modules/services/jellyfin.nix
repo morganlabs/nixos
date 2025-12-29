@@ -63,7 +63,7 @@ in
         ];
       };
 
-      s3fs = mkIf cfg.useMinIO {
+      rclone = mkIf cfg.useMinIO {
         enable = mkForce true;
         mounts = mkAfter [
           {
