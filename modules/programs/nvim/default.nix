@@ -22,17 +22,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    modules.programs.nvim = {
-      config = {
-	undodir.enable = mkDefault true;
-	swapfile.enable = mkDefault true;
-        line-numbers = {
-	  nu = mkDefault true;
-	  rnu = mkDefault true;
-	};
-      };
-    };
-
     environment.sessionVariables = mkIf cfg.defaultEditor {
       EDITOR = mkForce "nvim";
     };
