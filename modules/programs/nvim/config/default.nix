@@ -4,6 +4,8 @@
     ./undodir.nix
     ./swapfile.nix
     ./colorcolumn.nix
+
+    ./keymaps
   ];
 
   modules.programs.nvim.config = {

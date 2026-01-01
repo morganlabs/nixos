@@ -11,4 +11,6 @@ lib: {
   mkIfBool = import ./mkIf/mkIfBool.nix;
 
   mkTraefikServices = import ./mkTraefikServices.nix lib;
+
+  nixvim.mkKeymap = import ./nixvim/mkKeymap.nix lib;
 }
