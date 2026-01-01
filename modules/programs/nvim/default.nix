@@ -2,7 +2,6 @@
   config,
   lib,
   inputs,
-  vars,
   ...
 }:
 with lib;
@@ -14,6 +13,7 @@ in
     inputs.nixvim.nixosModules.nixvim
     ./config
     ./autocmds
+    ./plugins
   ];
 
   options.modules.programs.nvim = {
