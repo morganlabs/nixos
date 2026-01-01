@@ -24,6 +24,7 @@ in
   config = mkIf cfg.enable {
     modules.programs.nvim = {
       config = {
+	undodir.enable = mkDefault true;
         line-numbers = {
 	  nu = mkDefault true;
 	  rnu = mkDefault true;
