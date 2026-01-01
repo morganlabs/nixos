@@ -23,6 +23,7 @@
     ./services/lidarr.nix
     ./services/sabnzbd.nix
 
+    ./programs/nvim
     ./programs/git.nix
     ./programs/node.nix
   ];

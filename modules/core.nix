@@ -18,7 +18,10 @@ in
     modules = {
       bootloader.systemd-boot.enable = mkDefault true;
 
-      programs.git.enable = mkDefault true;
+      programs = {
+        git.enable = mkDefault true;
+        nvim.enable = mkDefault true;
+      };
 
       networking.enable = mkDefault true;
       hardware.bluetooth.enable = mkDefault true;
