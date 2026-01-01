@@ -1,7 +1,8 @@
-{ ... }:
-
-{
-  imports = [ ./hardware.nix ];
+{ inputs, ... }: {
+  imports = [
+    ./hardware.nix
+    inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+  ];
 
   modules = {
     core.enable = true;

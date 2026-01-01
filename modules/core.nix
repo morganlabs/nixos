@@ -58,7 +58,7 @@ in
 
     users = {
       # Allows me to enforce hashedPasswordFile
-      mutableUsers = mkDefault false;
+      # mutableUsers = mkDefault false;
 
       users = {
         root.hashedPasswordFile = mkForce config.age.secrets.root-password.path;

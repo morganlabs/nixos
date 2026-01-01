@@ -6,6 +6,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     jellarr.url = "github:venkyr77/jellarr";
     agenix-template.url = "github:jhillyerd/agenix-template/1.0.0";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     agenix = {
       url = "github:ryantm/agenix";

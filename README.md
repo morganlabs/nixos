@@ -8,8 +8,8 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 
 * Framework Laptop 13
 * Ryzen 5 7640U
-* 16GB RAM (Planning to upgrade soon)
-* 256GB NVMe SSD (Planning to upgrade soon)
+* 64GB RAM
+* 2TB NVMe SSD
 * 13.5" 2.2K 60Hz Display
 
 # TODO
@@ -20,7 +20,6 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 - [x] Library helper functions
 - [x] Home Manager
 - [x] Configure git
-- [ ] Configure trusted users
 - [ ] Bootloader (Secure Boot)
 - [ ] Pick a kernel (probably linux-zen)
 - [ ] Networking+Firewall+Networking UI
