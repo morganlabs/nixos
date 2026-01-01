@@ -17,7 +17,7 @@ in
   config = mkIf cfg.enable {
     programs.nixvim.opts = {
       swapfile = mkForce true;
-      backup = mkForce true;
+      backup = mkForce false;
     };
   };
 }
