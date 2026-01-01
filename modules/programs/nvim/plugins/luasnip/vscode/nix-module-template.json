@@ -1,0 +1,30 @@
+{
+    "Nix Module": {
+        "prefix": ["module", "{"],
+        "description": "A NixOS module template",
+        "body: [
+          "{"
+          "\tconfig,"
+          "\tlib,"
+          "\tinputs,"
+          "\tvars,"
+          "\t..."
+          "}:"
+          "with lib;"
+          "let"
+          "\tcfg = config.modules.${1:scope.name};"
+          "in"
+          "{"
+          "\toptions.modules.${1:scope.name} = {"
+          "\t\tenable = mkEnableOption \"Enable ${1:scope.name}\";"
+          "\t}"
+          ""
+          "\tconfig = mkIf cfg.enable {"
+          "\t\thome-manager.users.\${vars.user.username = {"
+          "\t\t$0"
+          "\t\t}"
+          "\t}"
+          "}"
+        ]
+    }
+}

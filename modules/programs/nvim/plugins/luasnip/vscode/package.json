@@ -1,0 +1,11 @@
+{
+    "name": "morganlabs-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "nix",
+                "path": "./nix-module-template.json"
+            }
+        ]
+    }
+}

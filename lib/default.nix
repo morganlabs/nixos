@@ -12,5 +12,7 @@ lib: {
 
   mkTraefikServices = import ./mkTraefikServices.nix lib;
 
-  nixvim.mkKeymap = import ./nixvim/mkKeymap.nix lib;
+  nixvim = {
+    mkKeymap = import ./nixvim/mkKeymap.nix lib;
+  };
 }
