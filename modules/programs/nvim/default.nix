@@ -13,6 +13,7 @@ in
   imports = [
     inputs.nixvim.nixosModules.nixvim
     ./config
+    ./autocmds
   ];
 
   options.modules.programs.nvim = {
