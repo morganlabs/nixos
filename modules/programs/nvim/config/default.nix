@@ -1,17 +1,26 @@
 { lib, ...}: with lib; {
   imports = [
-    ./line-numbers.nix
-    ./undodir.nix
-    ./swapfile.nix
     ./colorcolumn.nix
-
+    ./line-numbers.nix
+    ./nerd.nix
+    ./no-line-wrap.nix
+    ./signcolumn.nix
+    ./swapfile.nix
+    ./tabstop.nix
+    ./termguicolors.nix
+    ./undodir.nix
+    ./updatetime.nix
     ./keymaps
   ];
 
   modules.programs.nvim.config = {
-    undodir.enable = mkDefault true;
-    swapfile.enable = mkDefault true;
-    colorcolumn.enable = mkDefault true;
+    colorcolumn.enable = mkForce true;
+    nerd.enable = mkForce true;
+    no-line-wrap.enable = mkForce true;
+    signcolumn.enable = mkForce true;
+    swapfile.enable = mkForce true;
+    termguicolors.enable = mkForce true;
+    undodir.enable = mkForce true;
 
     line-numbers = {
       nu = mkDefault true;
