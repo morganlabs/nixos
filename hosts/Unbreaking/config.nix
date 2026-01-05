@@ -22,7 +22,10 @@ with lib;
 
     hardware.bluetooth.enable = false;
 
-    programs.node.enable = true;
+    programs = {
+      node.enable = true;
+      stylix.enable = false;
+    };
 
     services = {
       traefik.enable = true;
@@ -71,10 +74,8 @@ with lib;
   };
 
   ### JELLYFIN HARDWARE ACCELERATION ###
-  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "i965"; # or i965 for older GPUs
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "i965";
-  };
+  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "i965";
+  environment.sessionVariables.LIBVA_DRIVER_NAME = "i965";
 
   hardware.graphics = {
     enable = true;

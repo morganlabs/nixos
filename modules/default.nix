@@ -4,6 +4,7 @@
 
     ./bootloader/systemd-boot.nix
     ./bootloader/grub.nix
+    ./bootloader/lanzaboote.nix
 
     ./hardware/bluetooth.nix
 
@@ -22,9 +23,16 @@
     ./services/sonarr.nix
     ./services/lidarr.nix
     ./services/sabnzbd.nix
+    ./services/power-management.nix
+    ./services/fprintd.nix
 
     ./programs/nvim
     ./programs/git.nix
     ./programs/node.nix
+    ./programs/stylix
+    ./programs/prism-launcher.nix
+    ./programs/_1password.nix
+
+    ./desktop/hyprland
   ];
 }

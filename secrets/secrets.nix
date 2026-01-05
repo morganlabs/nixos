@@ -18,4 +18,6 @@ in
 
   "Mending/user-password.age".publicKeys = [ Mending ];
   "Mending/root-password.age".publicKeys = [ Mending ];
+
+  "Mending/weather-api-key.age".publicKeys = [ Mending ];
 }

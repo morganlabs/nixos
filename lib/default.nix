@@ -4,6 +4,8 @@ lib: {
   mkBoolOption = import ./mkOption/mkBoolOption.nix lib;
   mkStringOption = import ./mkOption/mkStringOption.nix lib;
   mkListOption = import ./mkOption/mkListOption.nix lib;
+  mkPathOption = import ./mkOption/mkPathOption.nix lib;
+  mkPkgOption = import ./mkOption/mkPkgOption.nix lib;
 
   mkIfElse = import ./mkIf/mkIfElse.nix;
   mkIfList = import ./mkIf/mkIfList.nix;

@@ -4,11 +4,9 @@ This is my repo full of my NixOS configurations.
 
 ## Mending
 
-Don't currently have this laptop, just setting up the configuration inside of a VM to apply when it arrives!
-
 * Framework Laptop 13
 * Ryzen 5 7640U
-* 64GB RAM
+* 16GB (The 64GB kit I bought is borked, so will hopefully be upgrading soon)
 * 2TB NVMe SSD
 * 13.5" 2.2K 60Hz Display
 
@@ -20,44 +18,45 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 - [x] Library helper functions
 - [x] Home Manager
 - [x] Configure git
-- [ ] Bootloader (Secure Boot)
-- [ ] Pick a kernel (probably linux-zen)
-- [ ] Networking+Firewall+Networking UI
-- [ ] Bluetooth
-- [ ] SSH
-  - [ ] Fail2Ban
-  - [ ] Endlessh
+- [x] Bootloader (Secure Boot)
+- [x] Pick a kernel (probably linux-zen)
+- [x] Networking+Firewall
+- [x] Networking UI
+- [x] Bluetooth
+- [x] SSH
+  - [x] Fail2Ban
+  - [x] Endlessh
   - [ ] Only enable SSH when on home network? idk if thats a thing)
-- [ ] Agenix
+- [x] Agenix
 - [ ] zsh
-- [ ] Nixvim
-- [ ] Keyring
-- [ ] Nix Optimisations
+- [x] Nixvim
+- [x] Keyring
+- [x] Nix Optimisations
 
 - [ ] LUKS with TPM
-- [ ] `nixos-hardware`/Hardware quirks
-- [ ] Hyprland setup
+- [x] `nixos-hardware`/Hardware quirks
+- [x] Hyprland setup
 - [ ] Lockscreen
 - [ ] Boot logo/animation (plymouth)
-- [ ] Battery optimizations/Power Management
-  - [ ] Low-power <=> high-performance toggle
-- [ ] Fingerprint
+- [x] Battery optimizations/Power Management
+  - [x] Low-power <=> high-performance toggle
+- [x] Fingerprint
 - [ ] Suspend (to RAM and to Disk after timeout)
 - [ ] Lid Switch to Suspend
-- [ ] Btrfs and Backups
-- [ ] Prism launcher
-  - [ ] Declaritive instances and mods?
-- [ ] GPU stuff (OpenGL/CL)
+- [x] Btrfs
+  - [ ]and Backups
+- [x] Prism launcher
+- [x] GPU stuff (OpenGL/CL)
 - [ ] NordVPN
-- [ ] Auto-theme on wallpaper
-- [ ] Notification daemon
+- [x] Auto-theme on wallpaper
+- [x] Notification daemon
 - [ ] Localsend
-- [ ] Brightness, audio, etc., functions + keys
-- [ ] Remap Caps Lock to Escape
+- [x] Brightness, audio, etc., functions + keys
+- [x] Remap Caps Lock to Escape
 - [ ] Theming (GNOME/Qt/Icons/etc.)
-- [ ] Touchpad
-- [ ] Fonts
-- [ ] Audio
+- [x] Touchpad
+- [x] Fonts
+- [x] Audio
 - [ ] Printing
 - [ ] EarlyOOM (TODO!: Research)
 - [ ] Gaming optimizations
@@ -73,11 +72,9 @@ Don't currently have this laptop, just setting up the configuration inside of a 
 - [x] Jellyfin
 - [x] Dashboard
 - [x] Traefik
-- [ ] Uptime Kuma
 - [ ] PiHole DNS
 - [ ] Portainer
 - [ ] Immich
 - [ ] Off-site Backups
-- [ ] NFS
 - [ ] Home Assistant
 - [ ] OAuth SSO

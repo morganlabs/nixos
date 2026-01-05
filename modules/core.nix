@@ -21,6 +21,7 @@ in
       programs = {
         git.enable = mkDefault true;
         nvim.enable = mkDefault true;
+        stylix.enable = mkDefault true;
       };
 
       networking.enable = mkDefault true;
@@ -28,13 +29,13 @@ in
       services.ssh.enable = mkDefault true;
     };
 
-    nix.settings.trusted-users = [ vars.user.username ];
+    services.dbus.implementation = mkForce "dbus"; # Fix weird bug (nixos-rebuild hangs with broker?)
     networking.hostName = vars.hostname;
 
     environment.systemPackages = [ inputs.agenix.packages.${vars.system}.default ];
 
     age = {
-      identityPaths = mkBefore [ "/home/${vars.user.username}/.ssh/id_ed25519" ];
+      identityPaths = mkBefore [ "/root/.ssh/id_ed25519" ];
       secrets = {
         user-password.file = mkForce ../secrets/${vars.hostname}/user-password.age;
         root-password.file = mkForce ../secrets/${vars.hostname}/root-password.age;
@@ -61,7 +62,7 @@ in
 
     users = {
       # Allows me to enforce hashedPasswordFile
-      # mutableUsers = mkDefault false;
+      mutableUsers = mkDefault false;
 
       users = {
         root.hashedPasswordFile = mkForce config.age.secrets.root-password.path;
@@ -75,6 +76,26 @@ in
       };
     };
 
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    home-manager.backupFileExtension = "bak";
+
+    nix = {
+      optimise.automatic = mkForce true;
+      gc = {
+        automatic = mkForce true;
+        dates = mkForce [ "daily" ];
+        options = mkBefore "--delete-older-than 16d";
+        persistent = mkForce true;
+      };
+      settings = {
+        sandbox = mkForce true;
+        max-jobs = mkForce "auto";
+        cores = mkForce 0;
+        trusted-users = mkBefore [ vars.user.username ];
+        experimental-features = mkBefore [
+          "nix-command"
+          "flakes"
+        ];
+      };
+    };
   };
 }

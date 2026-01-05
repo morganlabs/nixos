@@ -27,6 +27,8 @@ in
       EDITOR = mkForce "nvim";
     };
 
+    stylix.targets.nixvim.enable = mkForce true;
+
     programs.nixvim = {
       enable = mkForce true;
       viAlias = mkForce cfg.alias;
