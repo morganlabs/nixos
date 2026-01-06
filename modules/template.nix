@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  inputs,
   vars,
   ...
 }:
@@ -10,8 +9,6 @@ let
   cfg = config.modules.SCOPE.NAME;
 in
 {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
-
   options.modules.SCOPE.NAME = {
     enable = mkEnableOption "Enable SCOPE.NAME";
   };

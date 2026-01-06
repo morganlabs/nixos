@@ -32,6 +32,9 @@
     ./programs/stylix
     ./programs/prism-launcher.nix
     ./programs/_1password.nix
+    ./programs/steam.nix
+    ./programs/gamemode.nix
+    ./programs/mangohud.nix
 
     ./desktop/hyprland
   ];

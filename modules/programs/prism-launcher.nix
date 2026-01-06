@@ -14,6 +14,8 @@ in
   };
 
   config = mkIf cfg.enable {
+    modules.programs.gamemode.enable = mkDefault true;
+
     environment.systemPackages = with pkgs; [
       (prismlauncher.override {
         additionalPrograms = [ ffmpeg ];

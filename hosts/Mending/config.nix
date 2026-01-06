@@ -25,7 +25,9 @@ with lib;
 
     programs = {
       prism-launcher.enable = true;
+      steam.enable = true;
       _1password.enable = true;
+      mangohud.enable = true;
     };
 
     desktop.hyprland = {
@@ -63,6 +65,11 @@ with lib;
       Port 32107
       ForwardAgent yes
   '';
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   home-manager.users.${vars.user.username}.wayland.windowManager.hyprland.settings.exec-once =
     let
