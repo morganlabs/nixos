@@ -15,18 +15,32 @@ in
 
   config = mkIf cfg.enable {
     programs.nixvim = {
-      extraPackages = with pkgs; [ nixfmt-rfc-style ];
+      extraPackages = with pkgs; [
+        nixfmt-rfc-style
+        prettierd
+      ];
       plugins.conform-nvim = {
         enable = mkForce true;
         settings = {
-          formatters_by_ft = {
-            "_" = mkBefore [
-              "squeeze_blanks"
-              "trim_whitespace"
-              "trim_newlines"
-            ];
-            nix = [ "nixfmt" ];
-          };
+          formatters_by_ft =
+            let
+              jstsConfig = {
+                __unkeyed-1 = "prettierd";
+                __unkeyed-2 = "prettier";
+                timeout_ms = 2000;
+                stop_after_first = true;
+              };
+            in
+            {
+              "_" = mkBefore [
+                "squeeze_blanks"
+                "trim_whitespace"
+                "trim_newlines"
+              ];
+              nix = [ "nixfmt" ];
+              javascript = jstsConfig;
+              typescript = jstsConfig;
+            };
 
           format_after_save = {
             async = true;

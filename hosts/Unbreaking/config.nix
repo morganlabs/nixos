@@ -49,6 +49,7 @@ with lib;
           Durabilitas = "1459c26c-6296-49a9-adbf-2eec51b661b7";
           ijusthatemyself = "8dd83707-3ffe-4030-834c-b2e1681bfc72";
           Demissus = "4e79548e-90b4-4830-acfa-ab8f9d56fd60";
+          S3THY122 = "ec72d038-3a61-44d6-9527-874ccc4ad13b";
         };
       };
 

@@ -9,33 +9,48 @@ with lib;
 let
   cfg = config.modules.services.minecraft-server.mods;
 
-  serverMods = filter (
-    m:
-    elem m.role [
-      "server"
-      "both-optional"
-      "both-required"
-    ]
-  ) mods;
+  filterByRoles = roles: filter (m: elem m.role roles) mods;
+  toLinkFarm = name: attrs: pkgs.linkFarmFromDrvs name (builtins.attrValues attrs);
+  downloadModsToAttrs =
+    mods:
+    listToAttrs (
+      map (m: {
+        name = m.id;
+        value = pkgs.fetchurl {
+          url = m.file;
+          sha512 = m.sha512;
+        };
+      }) mods
+    );
 
-  ### ALL MODS ###
-  serverModsAttrset = listToAttrs (
-    map (m: {
-      name = m.id;
-      value = pkgs.fetchurl {
-        url = m.file;
-        sha512 = m.sha512;
-      };
-    }) serverMods
-  );
+  downloadAndFormat =
+    linkFarmName: roles:
+    let
+      serverMods = filterByRoles roles;
+      serverModsAttrs = downloadModsToAttrs serverMods;
+    in
+    toLinkFarm linkFarmName serverModsAttrs;
 
-  modsDerivation = pkgs.linkFarmFromDrvs "mods" (builtins.attrValues serverModsAttrset);
+  serverMods = downloadAndFormat "server-only-mods" [
+    "server"
+    "both-optional"
+    "both-required"
+  ];
+  clientMods = downloadAndFormat "client-required-mods" [
+    "both-required"
+    "client-required"
+  ];
 
   ### CONFIGS ###
   modConfigs = listToAttrs (
     map (
-      cfg: with cfg; {
-        name = "${directory}/${filename}";
+      cfg:
+      with cfg;
+      let
+        filename = baseNameOf path;
+      in
+      {
+        name = path;
         value = pkgs.writeText filename content;
       }
     ) (concatMap (mod: mod.config or [ ]) mods)
@@ -48,8 +63,13 @@ in
 
   config = mkIf cfg.enable {
     services.minecraft-servers.servers.fabric = {
-      symlinks.mods = modsDerivation;
-      files = modConfigs;
+      files = {
+        "automodpack/host-modpack/main/mods" = clientMods;
+      }
+      // modConfigs;
+      symlinks = {
+        mods = serverMods;
+      };
     };
   };
 }

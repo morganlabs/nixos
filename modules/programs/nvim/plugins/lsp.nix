@@ -27,6 +27,8 @@ in
 
         servers = {
           nixd.enable = mkDefault true;
+          ts_ls.enable = mkDefault true;
+          jsonls.enable = mkDefault true;
         };
       };
 

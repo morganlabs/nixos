@@ -53,8 +53,7 @@ export type LockModRole =
   | "server";
 
 interface ConfigFile {
-  directory: string;
-  filename: string;
+  path: string;
   content: string;
 }
 
