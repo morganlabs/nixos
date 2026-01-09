@@ -62,7 +62,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    services.minecraft-servers.servers.fabric = {
+    services.minecraft-servers.servers.lps = {
       files = {
         "automodpack/host-modpack/main/mods" = clientMods;
       }

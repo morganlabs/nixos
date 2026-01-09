@@ -75,7 +75,7 @@ in
       managementSystem.systemd-socket.enable = mkForce true;
       environmentFile = mkIfStr cfg.rcon.enable (toString config.age-template.files."rcon-env".path);
 
-      servers.fabric = {
+      servers.lps = {
         inherit (cfg) whitelist;
         enable = mkForce true;
         autoStart = mkForce true;
@@ -91,7 +91,8 @@ in
 
         jvmOpts =
           with cfg.config;
-          mkForce "-Xms${toString memory}G -Xmx${toString memory}G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true";
+          mkForce ''-Xms${toString memory}G -Xmx${toString memory}G -XX:+UseZGC -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:+PerfDisableSharedMem -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true'';
+
         serverProperties = {
           motd = "The Low-Power Server Trying It's Best.";
           max-players = 5;
@@ -115,8 +116,8 @@ in
     systemd.services.minecraft-tps-watcher = mkForce {
       description = "Watch Minecraft logs and warn in chat on lag spikes";
       wantedBy = [ "multi-user.target" ];
-      after = [ "minecraft-server-fabric.service" ];
-      requires = [ "minecraft-server-fabric.service" ];
+      after = [ "minecraft-server-lps.service" ];
+      requires = [ "minecraft-server-lps.service" ];
 
       serviceConfig = {
         Type = "simple";
@@ -127,11 +128,11 @@ in
           set -eu
 
           # Follow the journal for the fabric server unit only
-          ${pkgs.systemd}/bin/journalctl -fu minecraft-server-fabric.service |
+          ${pkgs.systemd}/bin/journalctl -fu minecraft-server-lps.service |
           while IFS= read -r line; do
             case "$line" in
               *"Can't keep up!"*)
-                echo "tellraw Durabilitas {\"text\":\"[SERVER/WARN] TPS Low\",\"color\":\"red\"}" | ${pkgs.sudo}/bin/sudo -u minecraft tee /run/minecraft/fabric.stdin
+                echo "tellraw Durabilitas {\"text\":\"[SERVER/WARN] TPS Low\",\"color\":\"red\"}" | ${pkgs.sudo}/bin/sudo -u minecraft tee /run/minecraft/lps.stdin
               ;;
             esac
           done

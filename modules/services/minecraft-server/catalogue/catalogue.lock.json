@@ -40,8 +40,8 @@
             "sha512": "01e467a5237a338d8347b79d2e99659a362b777c4ac10bf6e75382be072b645277b58c655b9b4ad69956f9836601c3a52c733ad437d1f6bd53ea13976545edaa",
             "config": [],
             "dependencies": [
-                "Ua7DFN59",
                 "P7dR8mSH",
+                "Ua7DFN59",
                 "9s6osm5g"
             ]
         },
@@ -60,8 +60,8 @@
             "sha512": "0b2912606607e4e85cd9b713c3d08986c4e7662da8964cad86d230ef13f57fd53adc7b7447145db95c6c3e9c85edb6c3a115a9f3126965855577792e29876e97",
             "config": [],
             "dependencies": [
-                "9s6osm5g",
                 "Ua7DFN59",
+                "9s6osm5g",
                 "P7dR8mSH"
             ]
         },
@@ -80,9 +80,9 @@
             "sha512": "f19c53ecac52866f65e1791f7b46ecc68fff6b1912ac47b42bf64097012262691c7184ea4a95db5e7bfcfda6c9532138dfe29e29af4ab108a407807a8db28074",
             "config": [],
             "dependencies": [
+                "Ua7DFN59",
                 "9s6osm5g",
-                "P7dR8mSH",
-                "Ua7DFN59"
+                "P7dR8mSH"
             ]
         },
         {
@@ -120,9 +120,9 @@
             "sha512": "2ad568affe005aa49be225ca1ce43272d773140dee7053ee4a5981288b5ef7ee92536a1d041ae3f00b6399de2f499abd1bf905cfbb764d569a99dd9b2cf8841f",
             "config": [],
             "dependencies": [
+                "Ua7DFN59",
                 "P7dR8mSH",
-                "9s6osm5g",
-                "Ua7DFN59"
+                "9s6osm5g"
             ]
         },
         {
@@ -161,8 +161,8 @@
             "config": [],
             "dependencies": [
                 "P7dR8mSH",
-                "9s6osm5g",
-                "Ua7DFN59"
+                "Ua7DFN59",
+                "9s6osm5g"
             ]
         },
         {
@@ -529,6 +529,75 @@
         },
         {
             "source": "modrinth",
+            "id": "BVzZfTc1",
+            "title": "[ETF] Entity Texture Features",
+            "description": "Emissive, Random & Custom texture support for entities in resourcepacks just like Optifine but for Fabric",
+            "icon": "https://cdn.modrinth.com/data/BVzZfTc1/af683d206d50b05258d865b0d6e4aa2f2cee12f2_96.webp",
+            "published": "2025-12-29T13:32:25.533415Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "client-required",
+            "file": "https://cdn.modrinth.com/data/BVzZfTc1/versions/P3oS1dIC/entity_texture_features_1.21-fabric-7.0.8.jar",
+            "sha512": "180f3d27ec18026fa27b1f49eb6bcec46c62b29c744ab81182e1c0834363472d2978c4a96074e678635a442019e0645ef6930feb0e03edc9fc289305f855f14c",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "4I1XuqiY",
+            "title": "[EMF] Entity Model Features",
+            "description": "EMF is an, OptiFine format, Custom Entity Model replacement mod available for Fabric and Forge.",
+            "icon": "https://cdn.modrinth.com/data/4I1XuqiY/6e5bbd0d06b1741bfdab6c0cfab6de8fdaf0064c_96.webp",
+            "published": "2025-12-31T14:51:08.401451Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "client-required",
+            "file": "https://cdn.modrinth.com/data/4I1XuqiY/versions/O33Eiuq1/entity_model_features_1.21-fabric-3.0.10.jar",
+            "sha512": "2618864c8c0f94f399feb2bb6fff0ed7c28ea8356eb41fa33bee6e27979ede78901db8e15ce8b3b8ccaecc6fe0d1d832b1fde0c5ec38a7040b55b8f30e7a9979",
+            "config": [],
+            "dependencies": [
+                "BVzZfTc1"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "AANobbMI",
+            "title": "Sodium",
+            "description": "The fastest and most compatible rendering optimization mod for Minecraft. Now available for both NeoForge and Fabric!",
+            "icon": "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
+            "published": "2024-12-17T22:10:57.615075Z",
+            "tags": [
+                "Performance Enhancement"
+            ],
+            "role": "client-required",
+            "file": "https://cdn.modrinth.com/data/AANobbMI/versions/EoNKHoLH/sodium-fabric-0.6.5%2Bmc1.21.1.jar",
+            "sha512": "d8979d318af75def36d60e823b50063a8f83bb22db602f04e4112a891eb564abd85c6c87a2ee6fad312c11703b3f586c6ca72f2ee13883a76ea3f655525603ee",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "Bh37bMuy",
+            "title": "Reese's Sodium Options",
+            "description": "Alternative Options Menu for Sodium",
+            "icon": "https://cdn.modrinth.com/data/Bh37bMuy/icon.png",
+            "published": "2025-01-15T20:35:48.053463Z",
+            "tags": [
+                "UI",
+                "Settings"
+            ],
+            "role": "client-required",
+            "file": "https://cdn.modrinth.com/data/Bh37bMuy/versions/KoUrx3jJ/reeses-sodium-options-fabric-1.8.3%2Bmc1.21.4.jar",
+            "sha512": "42fd766fb3f4064938389599a53c3baad29e40e6ab9cdae9a4302eaa8b2daa96af9128978348549ef47122ecf2663b2e81e5155d01a4be4eba4d03c7e6974dba",
+            "config": [],
+            "dependencies": [
+                "AANobbMI"
+            ]
+        },
+        {
+            "source": "modrinth",
             "id": "fQEb0iXm",
             "title": "Krypton",
             "description": "A mod to optimize the Minecraft networking stack",
@@ -631,732 +700,6 @@
         },
         {
             "source": "modrinth",
-            "id": "BVzZfTc1",
-            "title": "[ETF] Entity Texture Features",
-            "description": "Emissive, Random & Custom texture support for entities in resourcepacks just like Optifine but for Fabric",
-            "icon": "https://cdn.modrinth.com/data/BVzZfTc1/af683d206d50b05258d865b0d6e4aa2f2cee12f2_96.webp",
-            "published": "2025-12-29T13:32:25.533415Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "client-required",
-            "file": "https://cdn.modrinth.com/data/BVzZfTc1/versions/P3oS1dIC/entity_texture_features_1.21-fabric-7.0.8.jar",
-            "sha512": "180f3d27ec18026fa27b1f49eb6bcec46c62b29c744ab81182e1c0834363472d2978c4a96074e678635a442019e0645ef6930feb0e03edc9fc289305f855f14c",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "4I1XuqiY",
-            "title": "[EMF] Entity Model Features",
-            "description": "EMF is an, OptiFine format, Custom Entity Model replacement mod available for Fabric and Forge.",
-            "icon": "https://cdn.modrinth.com/data/4I1XuqiY/6e5bbd0d06b1741bfdab6c0cfab6de8fdaf0064c_96.webp",
-            "published": "2025-12-31T14:51:08.401451Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "client-required",
-            "file": "https://cdn.modrinth.com/data/4I1XuqiY/versions/O33Eiuq1/entity_model_features_1.21-fabric-3.0.10.jar",
-            "sha512": "2618864c8c0f94f399feb2bb6fff0ed7c28ea8356eb41fa33bee6e27979ede78901db8e15ce8b3b8ccaecc6fe0d1d832b1fde0c5ec38a7040b55b8f30e7a9979",
-            "config": [],
-            "dependencies": [
-                "BVzZfTc1"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "AANobbMI",
-            "title": "Sodium",
-            "description": "The fastest and most compatible rendering optimization mod for Minecraft. Now available for both NeoForge and Fabric!",
-            "icon": "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
-            "published": "2024-12-17T22:10:57.615075Z",
-            "tags": [
-                "Performance Enhancement"
-            ],
-            "role": "client-required",
-            "file": "https://cdn.modrinth.com/data/AANobbMI/versions/EoNKHoLH/sodium-fabric-0.6.5%2Bmc1.21.1.jar",
-            "sha512": "d8979d318af75def36d60e823b50063a8f83bb22db602f04e4112a891eb564abd85c6c87a2ee6fad312c11703b3f586c6ca72f2ee13883a76ea3f655525603ee",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "Bh37bMuy",
-            "title": "Reese's Sodium Options",
-            "description": "Alternative Options Menu for Sodium",
-            "icon": "https://cdn.modrinth.com/data/Bh37bMuy/icon.png",
-            "published": "2025-01-15T20:35:48.053463Z",
-            "tags": [
-                "UI",
-                "Settings"
-            ],
-            "role": "client-required",
-            "file": "https://cdn.modrinth.com/data/Bh37bMuy/versions/KoUrx3jJ/reeses-sodium-options-fabric-1.8.3%2Bmc1.21.4.jar",
-            "sha512": "42fd766fb3f4064938389599a53c3baad29e40e6ab9cdae9a4302eaa8b2daa96af9128978348549ef47122ecf2663b2e81e5155d01a4be4eba4d03c7e6974dba",
-            "config": [],
-            "dependencies": [
-                "AANobbMI"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "k68glP2e",
-            "title": "AutoModpack",
-            "description": "Enjoy a seamless modpack installation process and effortless updates with a user-friendly solution that simplifies management, making your gaming experience a breeze.",
-            "icon": "https://cdn.modrinth.com/data/k68glP2e/1cee94d3e17436d409839a79fa5d6bced5993023.png",
-            "published": "2025-12-19T15:39:28.805336Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/k68glP2e/versions/TRNUVtP0/automodpack-mc1.21.1-fabric-4.0.2.jar",
-            "sha512": "080cdf228a43c72d67bd46e4b085fe68fa6906a06ecfe4e775861c054137594b756eb81ef327a001a19b0495aecd3ed75f31cf9865f322c36ed2c17cd143ce34",
-            "config": [
-                {
-                    "path": "automodpack/automodpack-server.json",
-                    "content": "{\n  \"DO_NOT_CHANGE_IT\": 2,\n  \"modpackName\": \"Low Power Server\",\n  \"modpackHost\": true,\n  \"generateModpackOnStart\": true,\n  \"syncedFiles\": [],\n  \"allowEditsInFiles\": [\n    \"/options.txt\",\n    \"/config/**\"\n  ],\n  \"forceCopyFilesToStandardLocation\": [],\n  \"autoExcludeServerSideMods\": true,\n  \"autoExcludeUnnecessaryFiles\": true,\n  \"requireAutoModpackOnClient\": true,\n  \"nagUnModdedClients\": true,\n  \"nagMessage\": \"This server automagically manages mods with AutoModPack.\",\n  \"nagClickableMessage\": \"Download AutoModPack here.\",\n  \"nagClickableLink\": \"https://modrinth.com/project/automodpack\",\n  \"bindAddress\": \"\",\n  \"bindPort\": -1,\n  \"addressToSend\": \"\",\n  \"portToSend\": -1,\n  \"disableInternalTLS\": false,\n  \"requireMagicPackets\": false,\n  \"updateIpsOnEveryStart\": false,\n  \"bandwidthLimit\": 0,\n  \"validateSecrets\": true,\n  \"secretLifetime\": 336,\n  \"selfUpdater\": false,\n  \"acceptedLoaders\": [ \"fabric\" ]\n}\n    "
-                }
-            ],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "b8kG1VGq",
-            "title": "Aileron",
-            "description": "An expansive overhaul to Minecraft's Elytra.",
-            "icon": "https://cdn.modrinth.com/data/b8kG1VGq/7ee046278d6884fe7fb7c4e72cf35eae22ecd4a2_96.webp",
-            "published": "2025-09-23T21:03:17.057680Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/b8kG1VGq/versions/wX06GzSb/aileron-1.21.1-fabric-1.1.4.jar",
-            "sha512": "2716e85c2cf3e848b5f586aee23272cfa7f672de7738da4ebddf6352377e42583d16b0cd4c8c36f97766de27ebafe0a21dd9cfb10019a05f3dd8d75685ecef72",
-            "config": [
-                {
-                    "path": "config/aileron.json",
-                    "content": "{\n  \"fireworkUseBehaviour\": \"NORMAL\",\n  \"doCameraRoll\": true,\n  \"cameraRollScale\": 1.0,\n  \"cameraRollSpeed\": 0.1,\n  \"cloudskipperSpeedMultiplier\": 1.0,\n  \"cloudskipperCloudLevel\": 192.0,\n  \"smokestackAirRecharge\": true,\n  \"smokestackChargeTicks\": 20,\n  \"campfiresPushPlayers\": true,\n  \"campfirePushMaxStrength\": 24.0,\n  \"campfirePushBaseStrength\": 10.0\n}\n"
-                }
-            ],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "66VIiT1y",
-            "title": "Universal Bone Meal",
-            "description": "Stop the bonemeal discrimination! Grow all plants, no limitations.",
-            "icon": "https://cdn.modrinth.com/data/66VIiT1y/a9044e7055e9822c0582170dfe69a2e2664a06d2_96.webp",
-            "published": "2024-09-17T16:06:07.387236Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/66VIiT1y/versions/WdnxEvD1/UniversalBoneMeal-v21.1.0-1.21.1-Fabric.jar",
-            "sha512": "fdb514a31ef89607a4fef54c2bdcf2ed7464afe013014824f3e217ff555a3532c95151791852acd897ebc84cd5428f0fe4fa84bb02f2e24c8699cd9b9af9df71",
-            "config": [],
-            "dependencies": [
-                "QAGBst4M",
-                "P7dR8mSH",
-                "ohNO6lps"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "jCBrrLTs",
-            "title": "Tax Free Levels",
-            "description": "Flattens the ever-increasing anvil and enchantment costs and makes renaming items always cost 1 level",
-            "icon": "https://cdn.modrinth.com/data/jCBrrLTs/icon.png",
-            "published": "2025-01-20T12:25:29.145600Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/jCBrrLTs/versions/PJV01Pls/TaxFreeLevels-1.4.7-fabric-1.21.1.jar",
-            "sha512": "82bc601bd8151aea65a95deb0a56abdc9edbe7b41826143046894ebba48693ae21e2451ba4c1fd7398880e8fe45d1134442a304630874f99adb26449167204bf",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH",
-                "9s6osm5g"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "fFEIiSDQ",
-            "title": "Supplementaries",
-            "description": "Vanilla+ additions: Jars, signposts, faucets, weather vanes spring launchers, sconces, planters, lights, decoration and automation",
-            "icon": "https://cdn.modrinth.com/data/fFEIiSDQ/e9f5f66fa3b67e54acb91258a1428d68311c58bc_96.webp",
-            "published": "2025-12-28T10:08:35.362554Z",
-            "tags": [
-                "Blocks",
-                "Items",
-                "Redstone"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/fFEIiSDQ/versions/sL3OlZYC/supplementaries-1.21-3.5.16-fabric.jar",
-            "sha512": "871b2fe1999a1313dc18d0a2f1ace3ee1a304fe89daf1a23b82c985a0ba8ede944724a9fd742b428daaee79759dbb38cba35daf9271ead76a7e8e7b0d1c702b1",
-            "config": [],
-            "dependencies": [
-                "twkfQtEc",
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "3dsI6Hle",
-            "title": "Stormie's Spiders",
-            "description": "Enhances the AI of spiders and their ability to climb! Continuation of Spiders 2.0 and Nyf's Spiders.",
-            "icon": "https://cdn.modrinth.com/data/3dsI6Hle/02ea35844191d4ac8868b5fb77d30c1e5c4c5ff3.gif",
-            "published": "2025-12-21T16:25:12.107741Z",
-            "tags": [
-                "Mobs",
-                "Animations",
-                "Enhancement"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/3dsI6Hle/versions/Mg9wTnWf/stormiespiders-fabric-1.21.1-3.0.2.jar",
-            "sha512": "62dad2fc25a5ad59ff759a036ebad1fb072f4cff7ce0d3dfca377c3199603bd24a7c19e33f3edbbcec772bfc0bdf29fbf3d6500220b415916c13b2c9710c25c5",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "w4an97C2",
-            "title": "Macaw's Lights and Lamps",
-            "description": "Adds vanilla styled lamps, torches, street lamps, paper lamps, wall lamps, slabs... Make your world brighter!",
-            "icon": "https://cdn.modrinth.com/data/w4an97C2/23b3786d03ab6ed8b8df056d1123f20129175b6b_96.webp",
-            "published": "2025-12-07T13:03:28.546529Z",
-            "tags": [
-                "Blocks"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/w4an97C2/versions/2tPrjftM/mcw-lights-1.1.5-mc1.21.1fabric.jar",
-            "sha512": "f87dbe8fea64b59b642ab0bf0ef6c88970a42d9bd98d370bb68884286a8abb7d5b508b13569dcf3b5d1f08f84d9ec88656e975d629bdd2d205bc47e25f60f461",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "kNxa8z3e",
-            "title": "Macaw's Doors",
-            "description": "Adds vanilla doors with every wood color and new unique doors!\nSuch as western, garage, shoji and more...!",
-            "icon": "https://cdn.modrinth.com/data/kNxa8z3e/ced8fa00264400cbe06d622b92a6d1106cedc65d_96.webp",
-            "published": "2025-02-01T16:42:52.421593Z",
-            "tags": [
-                "Blocks"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/kNxa8z3e/versions/C9nD929i/mcw-doors-1.1.2-mc1.21.1fabric.jar",
-            "sha512": "192d83ffe13117d63103a16b6d7aa2d64aade697a3f1ddd0a85375347a196cfaab4a88aec6345b4df89083ad49cfcc7762bc284ed2988d218f5f402ca55dc856",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "GURcjz8O",
-            "title": "Macaw's Bridges",
-            "description": "A simple mod that adds a lot of bridges!",
-            "icon": "https://cdn.modrinth.com/data/GURcjz8O/5cd0895fdcde03f1d970ef910dd9287fb881bdc6_96.webp",
-            "published": "2025-05-14T11:58:26.219381Z",
-            "tags": [
-                "Blocks"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/GURcjz8O/versions/kMrmVNHL/mcw-bridges-3.1.0-mc1.21.1fabric.jar",
-            "sha512": "21856167efae173a8210d0c06215d1314e1969621192964154e010d15c05defe84040257b2a98013f4e8073397c1d246ab1797c50ee503392a84eb405e879fac",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "C7I0BCni",
-            "title": "Macaw's Windows",
-            "description": "Adds lots of Windows, Mosaic Glass, Blinds, Shutters, Curtains and more...!",
-            "icon": "https://cdn.modrinth.com/data/C7I0BCni/7eb5e7816f887154e69a4001bee5bcc143242b32_96.webp",
-            "published": "2025-12-10T21:48:43.805054Z",
-            "tags": [
-                "Blocks"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/C7I0BCni/versions/4mvfMpVO/mcw-mcwwindows-2.4.2-mc1.21.1fabric.jar",
-            "sha512": "071f0d8f6af273bbc5ebc5a321d15269efaf1319284bc72af54c6a9247bbea6fa547e9fbce8d0864ad3b4fe3ee9601ef08ff517d138cb772b24341fe82e70eac",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "GmwLse2I",
-            "title": "Macaw's Fences and Walls",
-            "description": "Adds new vanilla styled fences, walls and gates!",
-            "icon": "https://cdn.modrinth.com/data/GmwLse2I/ebe4d2375e0a402e5587665ba9da5eb50f37422a_96.webp",
-            "published": "2025-12-08T16:24:29.729641Z",
-            "tags": [
-                "Blocks"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/GmwLse2I/versions/ZGMGDbjg/mcw-mcwfences-1.2.1-mc1.21.1fabric.jar",
-            "sha512": "598a58415d719eec008e1ad51d55bd3a92d4dce586952197b6e4209a8d1b15a74db713a9c9954a9ef052dbfab9c4501f3ca55f1a102ed77d2b3bfd1c7ea26fe9",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "EltpO5cN",
-            "title": "Lootr",
-            "description": "A mod that makes it so nobody misses out on Loot! All loot chests are instanced per player and visually unique.",
-            "icon": "https://cdn.modrinth.com/data/EltpO5cN/3dc915eb1bbcd65654c17eb3870de4aba055d0c6_96.webp",
-            "published": "2026-01-03T06:04:17.598712Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/EltpO5cN/versions/Bgmr50HI/lootr-fabric-1.21.1-1.11.36.110.jar",
-            "sha512": "e967e55c375e512b33e0f1e6a1279aab82daae07fba44a16a893d4e1ae771ecb7e5978932b242ee4d39ab7f93e7458ef1dd3a1376d6ae63e19c47fd21a21d0b0",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH",
-                "9s6osm5g"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "ppMUvsIg",
-            "title": "Leaf Me Alone",
-            "description": "Allows any rideable entity with controlling it passenger to move trough leaves",
-            "icon": "https://cdn.modrinth.com/data/ppMUvsIg/719c7f993b00eda40d9515a55a0d80b31cfc7fae_96.webp",
-            "published": "2024-05-04T10:58:59.724618Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/ppMUvsIg/versions/NjQdo38w/leafmealone-1.0.1.jar",
-            "sha512": "b425566c864ec421269c4fe175a79e4e9e2d900f9f8fe279296ae47b1f9450677fd9a74790540cea0db08964a229622374d58aa95b8e18a00cf3f44b62a881ea",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "3JQDJrYW",
-            "title": "[Let's Do] Furniture",
-            "description": "Let's expand your world with a whole set of new and exciting furnitures! All in the style of the Let's Do Mods.",
-            "icon": "https://cdn.modrinth.com/data/3JQDJrYW/8bf0c1aed604d2fa0e647d4f6a2005740da2f0b4_96.webp",
-            "published": "2025-10-01T03:51:38.166977Z",
-            "tags": [
-                "Blocks"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/3JQDJrYW/versions/J3ju9fwy/letsdo-furniture-fabric-1.1.1.jar",
-            "sha512": "9a60ce3aa34fd2dfdc46ea1b0c1d4c9096b0b0cb61205df0cb024b11635495e35f970efabc0b36d2c58b1b0a4ff660f12d1d279ea7a598ae89fb5cd06bec75da",
-            "config": [],
-            "dependencies": [
-                "lhGA9TYQ"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "Guh4HXen",
-            "title": "Items Displayed [Fabric]",
-            "description": "A mod for builders and adventurers who would like to have their items placed in the world, not lying around in chests!",
-            "icon": "https://cdn.modrinth.com/data/Guh4HXen/4e0b7b16f5b60457717af63acbf4e3cfd91e41fc_96.webp",
-            "published": "2024-09-29T22:05:13.436380Z",
-            "tags": [
-                "Blocks"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/Guh4HXen/versions/BTxdJfoV/ItemsDisplayed%20-%20v1.3-1.21.1.jar",
-            "sha512": "7c2d42c15c6496ba6b90b15472837a59f5864aa2b59f1544db246d6a42533c4d825b95dcaaa911ceaa82604fa242e35daa1827c6274547b601273eec13947eb8",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "I0UYcPa0",
-            "title": "Inmis",
-            "description": "A simple backpack mod for Fabric. I need more inventory space!",
-            "icon": "https://cdn.modrinth.com/data/I0UYcPa0/af80dbe3a46208d0d761c72634dd901e5a46f2c6_96.webp",
-            "published": "2025-09-01T13:54:43.375671Z",
-            "tags": [
-                "Storage",
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/I0UYcPa0/versions/iE11BIfP/inmis-2.8.2-1.21.1.jar",
-            "sha512": "245e77e43f19408f37656f51e97246bb12aae9f4bc30db47c9a2cb3fc1cfd555264c34a1370221f940ebc168dc46463dc7972ca57806152c9bce90be65dddc2e",
-            "config": [
-                {
-                    "path": "config/inmis.json",
-                    "content": "{\n  \"backpacks\": [\n    {\n      \"name\": \"baby\",\n      \"rowWidth\": 3,\n      \"numberOfRows\": 1,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"frayed\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 1,\n      \"isFireImmune\": false,\n      \"dyeable\": true,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"plated\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 2,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_iron\"\n    },\n    {\n      \"name\": \"gilded\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 3,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_gold\"\n    },\n    {\n      \"name\": \"bejeweled\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 5,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_diamond\"\n    },\n    {\n      \"name\": \"blazing\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 6,\n      \"isFireImmune\": true,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"withered\",\n      \"rowWidth\": 11,\n      \"numberOfRows\": 6,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"endless\",\n      \"rowWidth\": 15,\n      \"numberOfRows\": 6,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    }\n  ],\n  \"unstackablesOnly\": false,\n  \"disableShulkers\": false,\n  \"blacklist\": [],\n  \"playSound\": true,\n  \"requireArmorTrinketToOpen\": false,\n  \"allowBackpacksInChestplate\": true,\n  \"enableTrinketCompatibility\": true,\n  \"spillArmorBackpacksOnDeath\": false,\n  \"spillMainBackpacksOnDeath\": false,\n  \"trinketRendering\": true,\n  \"guiTitleColor\": \"0x404040\"\n}\n"
-                }
-            ],
-            "dependencies": [
-                "9s6osm5g",
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "5aaWibi9",
-            "title": "Trinkets",
-            "description": "A data-driven accessory mod",
-            "icon": "https://cdn.modrinth.com/data/5aaWibi9/icon.png",
-            "published": "2024-07-15T11:03:14.206207Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/5aaWibi9/versions/JagCscwi/trinkets-3.10.0.jar",
-            "sha512": "3ea846c945a0559696501ff65b373c8ee8fd9b394604e9910b4ed710c3e07cadc674a615a2c3b385951a42253a418201975df951b3100053ed39afadc70221c9",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "MI1LWe93",
-            "title": "Creeper Overhaul",
-            "description": "A mod which overhauls the vanilla creepers!",
-            "icon": "https://cdn.modrinth.com/data/MI1LWe93/d42fb7a69f1e7a86584fa1ed43520af98acec065.png",
-            "published": "2025-01-04T03:30:40.759976Z",
-            "tags": [
-                "Textures"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/MI1LWe93/versions/O6yuPiE8/CreeperOverhaul-fabric-1.21.1-4.0.6.jar",
-            "sha512": "696ed6a972c49186f081c636d929f1058bbbe20e90faf1cb03937c4915a0583f258168b03ccf9d5b97a003c17cae4428cbfd94cfa250b059acb4f9b802af7e08",
-            "config": [],
-            "dependencies": [
-                "8BmcQJ2H",
-                "G1hIVOrD",
-                "M1953qlQ"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "72GXx2MO",
-            "title": "Emojiful",
-            "description": "Emojis in minecraft",
-            "icon": "https://cdn.modrinth.com/data/72GXx2MO/83075fde40e249a83cb73efda948d8a1209bd890_96.webp",
-            "published": "2025-06-08T16:17:03.629097Z",
-            "tags": [
-                "Social"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/72GXx2MO/versions/ERmtNe8G/Emojiful-Fabric-1.21-5.2.1.jar",
-            "sha512": "d93b14b142be816649cbead156f4820e71d5aeffd735455ab0cf87e7028d08899bccebbf9aa550d2f54a7b06f43b74320f28aa8565b9bf9361de52d55b0e50bf",
-            "config": [
-                {
-                    "path": "config/emojiful.json",
-                    "content": "{\n  \"renderEmoji\": true,\n  \"emojiSelector\": true,\n  \"emojiAutocomplete\": false,\n  \"gifEmojis\": true,\n  \"emojiReplacement\": true,\n  \"enableLoadTwemoji\": false,\n  \"loadCustom\": true,\n  \"loadDatapack\": true,\n  \"profanityFilter\": false,\n  \"profanityFilterReplacement\": \":swear:\"\n}\n"
-                }
-            ],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "Yd4wb5wZ",
-            "title": "Critters and Companions",
-            "description": "Adds a few new friends to your world!",
-            "icon": "https://cdn.modrinth.com/data/Yd4wb5wZ/6a54e2ebabb89763669ba56c76a3514ca5605d3e_96.webp",
-            "published": "2025-10-25T09:48:51.702478Z",
-            "tags": [
-                "Mobs"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/Yd4wb5wZ/versions/wHpQleS4/crittersandcompanions-fabric-1.21.1-2.3.4.jar",
-            "sha512": "143848ee10a4494a7e1c027171e7fa7a624ae7aa5e6f881d6cc2504fb5a5466cb66ba09eedeeab073e8c5356cb333828c300a20eb7339e7877bc298118a0eb15",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "SJu6sklj",
-            "title": "Countered's Terrain Slabs",
-            "description": "A world generation mod that improves the terrain by adding slabs",
-            "icon": "https://cdn.modrinth.com/data/SJu6sklj/a7a5b6f0524c9a89a8feeb262c00e1383ec8d986_96.webp",
-            "published": "2025-10-18T11:30:19.410645Z",
-            "tags": [
-                "Terrain"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/SJu6sklj/versions/SG6z8PTH/countereds_terrain_slabs-2.1.2.jar",
-            "sha512": "440305962718c954f766a860f2e82d1cec31e90abb8e5e50bf864756b7c17156de00558b2c0adde672c4ec91fcd0f38f78dea6922549fa8186dfa1ba74f0eaf6",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "gc8OEnCC",
-            "title": "BetterEnd",
-            "description": "New Biomes, mysterious rituals and Mobs for your End",
-            "icon": "https://cdn.modrinth.com/data/gc8OEnCC/3afe2f097e9deff31158da380647fdc47131756f_96.webp",
-            "published": "2024-08-31T15:46:29.398073Z",
-            "tags": [
-                "Dimension Overhaul",
-                "Terrain",
-                "Biomes"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/gc8OEnCC/versions/4qhBEg6J/better-end-21.0.11.jar",
-            "sha512": "d3094b88202fca1ccc055e8429eac42eac1bd696a82ed650a9f1426cd5b28bd08e0af4d41664ed3fad10d8477c6da7c6be9d626a5664cfbc664844355c97c5b1",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH",
-                "RiN8rDVs",
-                "BgNRHReB"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "6iTJugQR",
-            "title": "Amendments",
-            "description": "Many changes to vanilla blocks",
-            "icon": "https://cdn.modrinth.com/data/6iTJugQR/46e156f1c798bfc3c18bd2a55567af1086674f02_96.webp",
-            "published": "2025-12-19T02:53:59.418163Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/6iTJugQR/versions/74FJtGcV/amendments-1.21-2.0.13-fabric.jar",
-            "sha512": "051636b95ce9c35883a978ba9e2c2d3b7286b56c753c3426b7a0e9d5b40eff18a90afafbce22217f14f360243940a65e27a48a64a8313d56a7f23ab0690bafae",
-            "config": [],
-            "dependencies": [
-                "twkfQtEc",
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "Heh3BbSv",
-            "title": "Gravestones",
-            "description": "Adds highly configurable Graves that spawn on death to hold your items",
-            "icon": "https://cdn.modrinth.com/data/Heh3BbSv/e10b4d60fb1d7eb24044b8c40f0eec4346e5894a_96.webp",
-            "published": "2025-12-14T04:53:24.531863Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/Heh3BbSv/versions/HO3Zv8HU/gravestones-1.2.7%2B1.21%2BA.jar",
-            "sha512": "537e4acbc9cb35936c78703982ab74aac7a30e7c13214ce9b69c5cefd37813a5dcdaf635b496ab4ca740f7bd709157cc83db0ce2c9d0412588fa494b23d529cc",
-            "config": [
-                {
-                    "path": "config/gravestones.json",
-                    "content": "{\n  \"decay_with_deaths\": true,\n  \"decay_with_time\": true,\n  \"decay_time\": 576000,\n  \"decay_time_type\": \"TICKS\",\n  \"aesthetic_decay\": false,\n\n  \"store_experience\": true,\n  \"experience_cap\": false,\n  \"experience_kept\": \"TWO_THIRDS\",\n  \"experience_decay\": true,\n  \"drop_experience\": false,\n\n  \"gravestone_accessible_owner_only\": true,\n  \"broadcast_collect_in_chat\": false,\n  \"broadcast_coordinates_in_chat\": true,\n\n  \"aesthetic_gravestones\": true,\n  \"spawn_gravestone_skeletons\": true,\n  \"spawn_gravestones_in_creative\": false,\n  \"spawn_gravestones_with_keepinv\": false,\n  \"show_heads\": true,\n  \"time_format\": \"DDMMYYYY\",\n  \"console_info\": false\n}\n"
-                }
-            ],
-            "dependencies": [
-                "P7dR8mSH",
-                "ZLKQjA7t"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "OZBR5JT5",
-            "title": "Easy Anvils",
-            "description": "Be ready for overhauled anvils! Items stay, better name tags, many tweaks!",
-            "icon": "https://cdn.modrinth.com/data/OZBR5JT5/c317debbe36e008daa3a0af715adf615b365aa5c_96.webp",
-            "published": "2024-09-18T10:12:33.493373Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/OZBR5JT5/versions/znaWBlgU/EasyAnvils-v21.1.0-1.21.1-Fabric.jar",
-            "sha512": "cf9eda6d27ac9155c83140b1b931a3048a2e81da63957423c5a2958342c58c315d17c5c3730f3f952ef19e4e3632741cee4ef9605c476b8c82b06d60190ee6a1",
-            "config": [
-                {
-                    "path": "config/easyanvils-common.toml",
-                    "content": "disable_vanilla_anvil = true\nname_tag_crafting_recipe = true\nconvert_vanilla_anvil_during_world_gen = true\n"
-                }
-            ],
-            "dependencies": [
-                "P7dR8mSH",
-                "ohNO6lps",
-                "QAGBst4M"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "9hx3AbJM",
-            "title": "Easy Magic",
-            "description": "Enchanting tables as they always should have been! Items stay after closing, and easy re-rolls.",
-            "icon": "https://cdn.modrinth.com/data/9hx3AbJM/5387d7206ba13438d088d127845d255c1a79b9c2_96.webp",
-            "published": "2025-10-26T07:28:01.633190Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/9hx3AbJM/versions/LLLfoeWJ/EasyMagic-v21.1.4-1.21.1-Fabric.jar",
-            "sha512": "46927747f1867a152cb291bd76a8e013cf1cd0821663614f9d737c704743fe4c356aff6fb7cbcc3e8c425d964678631fab8afdd2b26cda5f577b6a3cc9160a5a",
-            "config": [],
-            "dependencies": [
-                "ohNO6lps",
-                "P7dR8mSH",
-                "QAGBst4M"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "uXXizFIs",
-            "title": "FerriteCore",
-            "description": "Memory usage optimizations",
-            "icon": "https://cdn.modrinth.com/data/uXXizFIs/222a126f26f8f9ae1eb339f3b767677f18bff31f_96.webp",
-            "published": "2024-10-27T09:57:57.152381Z",
-            "tags": [
-                "Performance Enhancement"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/uXXizFIs/versions/bwKMSBhn/ferritecore-7.0.2-hotfix-fabric.jar",
-            "sha512": "ca975bd3708cd96d30cf1447ac8883572113562eb2dd697e60c1cf382d6b70d0b1a511fcbfd042c51b2cf5d5ffc718b847f845e4c8a3e421e8c9ee741119a421",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "2M01OLQq",
-            "title": "Shulker Box Tooltip",
-            "description": "View the contents of shulker boxes from your inventory",
-            "icon": "https://cdn.modrinth.com/data/2M01OLQq/bb490716cf2590cf84100a495931c3d4743bce43_96.webp",
-            "published": "2025-11-09T19:03:51.854205Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/2M01OLQq/versions/nGPvABlf/shulkerboxtooltip-fabric-5.1.8%2B1.21.1.jar",
-            "sha512": "b0b79aae60a2f88ac88ceb7bf114f7e1ce7701586da6b1acbd9d6f4e1d11d71dcc68e20e5f5cf5840832eabcb614f710a621bbe806eee9effeb9d778e122f1a4",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "EsAfCjCV",
-            "title": "AppleSkin",
-            "description": "Food/hunger-related HUD improvements",
-            "icon": "https://cdn.modrinth.com/data/EsAfCjCV/icon.png",
-            "published": "2024-11-01T06:22:22.888816Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/EsAfCjCV/versions/b5ZiCjAr/appleskin-fabric-mc1.21-3.0.6.jar",
-            "sha512": "accbb36b863bdeaaeb001f7552534f3bdf0f27556795cf8e813f9b32e7732450ec5133da5e0ec9b92dc22588c48ffb61577c375f596dc351f15c15ce6a6f4228",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "9eGKb6K1",
-            "title": "Simple Voice Chat",
-            "description": "A working voice chat in Minecraft!",
-            "icon": "https://cdn.modrinth.com/data/9eGKb6K1/icon.png",
-            "published": "2026-01-04T15:22:05.691058Z",
-            "tags": [
-                "Social"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/9eGKb6K1/versions/nhQ1beo9/voicechat-fabric-1.21.1-2.6.11.jar",
-            "sha512": "1e02bbfe8c7694e7884516d9c3a5f7885441625c78d6c6dbf6f084f0a6a49795cdaae3b7c78a064b933be38cd99400edbc2ea2d545955cf0941efb32c292a0f5",
-            "config": [
-                {
-                    "path": "config/voicechat/voicechat-server.properties",
-                    "content": "port=24454\nbind_address=\"0.0.0.0\"\n"
-                }
-            ],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "FsoeTIV0",
-            "title": "Fast Item Frames",
-            "description": "Supercharged item frames! Less lag, better performance, and now they can change color and vanish!",
-            "icon": "https://cdn.modrinth.com/data/FsoeTIV0/61ec84b804647ef0c09ea49995f86aaec2f28fc8_96.webp",
-            "published": "2025-09-04T14:51:17.371565Z",
-            "tags": [
-                "Performance Enhancement"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/FsoeTIV0/versions/drSo3Q2h/FastItemFrames-v21.1.6-1.21.1-Fabric.jar",
-            "sha512": "c7371fe3337476c14dcd5d0686fdb6ed7b80e2d42c570117ee6fbf4e419252af355eb6f27e5217f8bf008955e771d498847f0c6058c05ab31ac98005e8ca09ea",
-            "config": [],
-            "dependencies": [
-                "ohNO6lps",
-                "P7dR8mSH",
-                "QAGBst4M"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "j7Ux0G0U",
-            "title": "Not interested!",
-            "description": "Adds a way for you to tell the wandering trader to go away.",
-            "icon": "https://cdn.modrinth.com/data/j7Ux0G0U/c2f254f900ab9afa12291814eda9829792d42f0e_96.webp",
-            "published": "2024-06-21T08:12:47.185414Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/j7Ux0G0U/versions/NvNK3nUY/not_interested--mc1.21--fabric--1.0.jar",
-            "sha512": "a56bca1336e8aefd6fff879fa84c3380da50fdfec996f6cfc55a1f39d604cf24cc8c6e6b9b20eaa642c3ef233283ec02a7e5a3eaa4186ae8251a957b54fba402",
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "d6MhxwRo",
-            "title": "Soul Fire'd",
-            "description": "Let Soul Fire burn!",
-            "icon": "https://cdn.modrinth.com/data/d6MhxwRo/04b84b747ee4d3f66960d42f6014c2030b26e3ea_96.webp",
-            "published": "2025-12-22T11:10:30.438870Z",
-            "tags": [
-                "Enhancement"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/d6MhxwRo/versions/OTfiCvWr/soul-fire-d-fabric-1.21-6.1.0.jar",
-            "sha512": "85cc01c71f20d8d49ef8a3f80fcbf0329db006badd6d454b80e494159cdb91941924bc65694a24b8f8cbf452f5d0f4805e54b44870c74a73a5b07f697723a510",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH",
-                "7Z7a9JyH",
-                "dQcfqGbl"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "qQyHxfxd",
-            "title": "No Chat Reports",
-            "description": "Makes chat unreportable (where possible)",
-            "icon": "https://cdn.modrinth.com/data/qQyHxfxd/icon.png",
-            "published": "2024-11-08T18:15:36.668133Z",
-            "tags": [
-                "Quality of Life",
-                "Social"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/qQyHxfxd/versions/D8K0KJXM/NoChatReports-FABRIC-1.21.1-v2.9.1.jar",
-            "sha512": "23bb4a8a6a3f7071281cf97560e12f37e1f5f638a156e3fcb92a50ff0091f1fcfa3e090e7745e4b1175e7c2c784e38d73536a1044db1bf225a182fab758a5a29",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
             "id": "RWrgTm1s",
             "title": "Better Farming Right Click  + Right Click Harvest",
             "description": "(Client side) Input changes to farming to help speed up your intense farming exploits!",
@@ -1389,8 +732,8 @@
             "sha512": "5870a83513a97f221a7a67567fcef41f3bef5a8f02d88418d26758a0727a5bb70736e2ebb544e151965d6224e5c9478d20d3f5dd7a1cc4ec201c783a7ed969cb",
             "config": [],
             "dependencies": [
-                "9s6osm5g",
-                "P7dR8mSH"
+                "P7dR8mSH",
+                "9s6osm5g"
             ]
         },
         {
@@ -1426,9 +769,9 @@
             "sha512": "b99e468ac6be61fb0bea813e0845901edef70a7078d62cc0f69a544e892cb162849aa238da25c61e094aa30ea77a3341aebf47de549e7b9ac9eeabaa362dcc47",
             "config": [],
             "dependencies": [
-                "5faXoLqX",
                 "P7dR8mSH",
-                "1OE8wbN0"
+                "1OE8wbN0",
+                "5faXoLqX"
             ]
         },
         {
@@ -1446,9 +789,9 @@
             "sha512": "b99e468ac6be61fb0bea813e0845901edef70a7078d62cc0f69a544e892cb162849aa238da25c61e094aa30ea77a3341aebf47de549e7b9ac9eeabaa362dcc47",
             "config": [],
             "dependencies": [
-                "5faXoLqX",
                 "P7dR8mSH",
-                "1OE8wbN0"
+                "1OE8wbN0",
+                "5faXoLqX"
             ]
         },
         {
@@ -1634,8 +977,8 @@
             "sha512": "11cc959f768506329c8938e95f4a0086c4a00cff82852e09c72f60d0938a91beba53499ec4c1cf11abc07f8b853bcb4ff8f87268b67b274fc6972f9abf9a0b92",
             "config": [],
             "dependencies": [
-                "OsZiaDHq",
-                "P7dR8mSH"
+                "P7dR8mSH",
+                "OsZiaDHq"
             ]
         },
         {
@@ -1991,8 +1334,8 @@
             "sha512": "a2e89d23f25fc7387f68e1055325367fd8a01d4267ea5f2612edd83b09948bd74cdc670e1397dcbcb91f2b599d46ece4f51c076fd0c364920228df0862f6acab",
             "config": [],
             "dependencies": [
-                "P7dR8mSH",
-                "9s6osm5g"
+                "9s6osm5g",
+                "P7dR8mSH"
             ]
         },
         {
@@ -2119,6 +1462,683 @@
         },
         {
             "source": "modrinth",
+            "id": "k68glP2e",
+            "title": "AutoModpack",
+            "description": "Enjoy a seamless modpack installation process and effortless updates with a user-friendly solution that simplifies management, making your gaming experience a breeze.",
+            "icon": "https://cdn.modrinth.com/data/k68glP2e/1cee94d3e17436d409839a79fa5d6bced5993023.png",
+            "published": "2025-12-19T15:39:28.805336Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/k68glP2e/versions/TRNUVtP0/automodpack-mc1.21.1-fabric-4.0.2.jar",
+            "sha512": "080cdf228a43c72d67bd46e4b085fe68fa6906a06ecfe4e775861c054137594b756eb81ef327a001a19b0495aecd3ed75f31cf9865f322c36ed2c17cd143ce34",
+            "config": [
+                {
+                    "path": "automodpack/automodpack-server.json",
+                    "content": "{\n  \"DO_NOT_CHANGE_IT\": 2,\n  \"modpackName\": \"Low Power Server\",\n  \"modpackHost\": true,\n  \"generateModpackOnStart\": true,\n  \"syncedFiles\": [],\n  \"allowEditsInFiles\": [\n    \"/options.txt\",\n    \"/config/**\"\n  ],\n  \"forceCopyFilesToStandardLocation\": [],\n  \"autoExcludeServerSideMods\": true,\n  \"autoExcludeUnnecessaryFiles\": true,\n  \"requireAutoModpackOnClient\": true,\n  \"nagUnModdedClients\": true,\n  \"nagMessage\": \"This server automagically manages mods with AutoModPack.\",\n  \"nagClickableMessage\": \"Download AutoModPack here.\",\n  \"nagClickableLink\": \"https://modrinth.com/project/automodpack\",\n  \"bindAddress\": \"\",\n  \"bindPort\": -1,\n  \"addressToSend\": \"\",\n  \"portToSend\": -1,\n  \"disableInternalTLS\": false,\n  \"requireMagicPackets\": false,\n  \"updateIpsOnEveryStart\": false,\n  \"bandwidthLimit\": 0,\n  \"validateSecrets\": true,\n  \"secretLifetime\": 336,\n  \"selfUpdater\": false,\n  \"acceptedLoaders\": [ \"fabric\" ]\n}\n    "
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "b8kG1VGq",
+            "title": "Aileron",
+            "description": "An expansive overhaul to Minecraft's Elytra.",
+            "icon": "https://cdn.modrinth.com/data/b8kG1VGq/7ee046278d6884fe7fb7c4e72cf35eae22ecd4a2_96.webp",
+            "published": "2025-09-23T21:03:17.057680Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/b8kG1VGq/versions/wX06GzSb/aileron-1.21.1-fabric-1.1.4.jar",
+            "sha512": "2716e85c2cf3e848b5f586aee23272cfa7f672de7738da4ebddf6352377e42583d16b0cd4c8c36f97766de27ebafe0a21dd9cfb10019a05f3dd8d75685ecef72",
+            "config": [
+                {
+                    "path": "config/aileron.json",
+                    "content": "{\n  \"fireworkUseBehaviour\": \"NORMAL\",\n  \"doCameraRoll\": true,\n  \"cameraRollScale\": 1.0,\n  \"cameraRollSpeed\": 0.1,\n  \"cloudskipperSpeedMultiplier\": 1.0,\n  \"cloudskipperCloudLevel\": 192.0,\n  \"smokestackAirRecharge\": true,\n  \"smokestackChargeTicks\": 20,\n  \"campfiresPushPlayers\": true,\n  \"campfirePushMaxStrength\": 24.0,\n  \"campfirePushBaseStrength\": 10.0\n}\n"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "66VIiT1y",
+            "title": "Universal Bone Meal",
+            "description": "Stop the bonemeal discrimination! Grow all plants, no limitations.",
+            "icon": "https://cdn.modrinth.com/data/66VIiT1y/a9044e7055e9822c0582170dfe69a2e2664a06d2_96.webp",
+            "published": "2024-09-17T16:06:07.387236Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/66VIiT1y/versions/WdnxEvD1/UniversalBoneMeal-v21.1.0-1.21.1-Fabric.jar",
+            "sha512": "fdb514a31ef89607a4fef54c2bdcf2ed7464afe013014824f3e217ff555a3532c95151791852acd897ebc84cd5428f0fe4fa84bb02f2e24c8699cd9b9af9df71",
+            "config": [],
+            "dependencies": [
+                "ohNO6lps",
+                "QAGBst4M",
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "jCBrrLTs",
+            "title": "Tax Free Levels",
+            "description": "Flattens the ever-increasing anvil and enchantment costs and makes renaming items always cost 1 level",
+            "icon": "https://cdn.modrinth.com/data/jCBrrLTs/icon.png",
+            "published": "2025-01-20T12:25:29.145600Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/jCBrrLTs/versions/PJV01Pls/TaxFreeLevels-1.4.7-fabric-1.21.1.jar",
+            "sha512": "82bc601bd8151aea65a95deb0a56abdc9edbe7b41826143046894ebba48693ae21e2451ba4c1fd7398880e8fe45d1134442a304630874f99adb26449167204bf",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH",
+                "9s6osm5g"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "fFEIiSDQ",
+            "title": "Supplementaries",
+            "description": "Vanilla+ additions: Jars, signposts, faucets, weather vanes spring launchers, sconces, planters, lights, decoration and automation",
+            "icon": "https://cdn.modrinth.com/data/fFEIiSDQ/e9f5f66fa3b67e54acb91258a1428d68311c58bc_96.webp",
+            "published": "2025-12-28T10:08:35.362554Z",
+            "tags": [
+                "Blocks",
+                "Items",
+                "Redstone"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/fFEIiSDQ/versions/sL3OlZYC/supplementaries-1.21-3.5.16-fabric.jar",
+            "sha512": "871b2fe1999a1313dc18d0a2f1ace3ee1a304fe89daf1a23b82c985a0ba8ede944724a9fd742b428daaee79759dbb38cba35daf9271ead76a7e8e7b0d1c702b1",
+            "config": [],
+            "dependencies": [
+                "twkfQtEc",
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "4q8UOK1d",
+            "title": "Subtle Effects",
+            "description": "Adding many new subtle details through particles and a few sounds",
+            "icon": "https://cdn.modrinth.com/data/4q8UOK1d/8a5d3febe9a9badba435a3f66a49668d04ada01f_96.webp",
+            "published": "2025-12-02T22:14:49.732926Z",
+            "tags": [
+                "Quality of Life",
+                "Effects"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/4q8UOK1d/versions/LhFxQIFD/SubtleEffects-fabric-1.21.1-1.13.2-hotfix.1.jar",
+            "sha512": "0ae066f5f6af5cc3a98eab999e1bda6e7d88e3899bfc2e50e5480ddcb594f02334fca2e6031f45ab13c5804f6bac3e7d44288c866f477c436d93a0b88a442af3",
+            "config": [],
+            "dependencies": [
+                "hYykXjDp",
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "3dsI6Hle",
+            "title": "Stormie's Spiders",
+            "description": "Enhances the AI of spiders and their ability to climb! Continuation of Spiders 2.0 and Nyf's Spiders.",
+            "icon": "https://cdn.modrinth.com/data/3dsI6Hle/02ea35844191d4ac8868b5fb77d30c1e5c4c5ff3.gif",
+            "published": "2025-12-21T16:25:12.107741Z",
+            "tags": [
+                "Mobs",
+                "Animations",
+                "Enhancement"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/3dsI6Hle/versions/Mg9wTnWf/stormiespiders-fabric-1.21.1-3.0.2.jar",
+            "sha512": "62dad2fc25a5ad59ff759a036ebad1fb072f4cff7ce0d3dfca377c3199603bd24a7c19e33f3edbbcec772bfc0bdf29fbf3d6500220b415916c13b2c9710c25c5",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "w4an97C2",
+            "title": "Macaw's Lights and Lamps",
+            "description": "Adds vanilla styled lamps, torches, street lamps, paper lamps, wall lamps, slabs... Make your world brighter!",
+            "icon": "https://cdn.modrinth.com/data/w4an97C2/23b3786d03ab6ed8b8df056d1123f20129175b6b_96.webp",
+            "published": "2025-12-07T13:03:28.546529Z",
+            "tags": [
+                "Blocks"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/w4an97C2/versions/2tPrjftM/mcw-lights-1.1.5-mc1.21.1fabric.jar",
+            "sha512": "f87dbe8fea64b59b642ab0bf0ef6c88970a42d9bd98d370bb68884286a8abb7d5b508b13569dcf3b5d1f08f84d9ec88656e975d629bdd2d205bc47e25f60f461",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "kNxa8z3e",
+            "title": "Macaw's Doors",
+            "description": "Adds vanilla doors with every wood color and new unique doors!\nSuch as western, garage, shoji and more...!",
+            "icon": "https://cdn.modrinth.com/data/kNxa8z3e/ced8fa00264400cbe06d622b92a6d1106cedc65d_96.webp",
+            "published": "2025-02-01T16:42:52.421593Z",
+            "tags": [
+                "Blocks"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/kNxa8z3e/versions/C9nD929i/mcw-doors-1.1.2-mc1.21.1fabric.jar",
+            "sha512": "192d83ffe13117d63103a16b6d7aa2d64aade697a3f1ddd0a85375347a196cfaab4a88aec6345b4df89083ad49cfcc7762bc284ed2988d218f5f402ca55dc856",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "GURcjz8O",
+            "title": "Macaw's Bridges",
+            "description": "A simple mod that adds a lot of bridges!",
+            "icon": "https://cdn.modrinth.com/data/GURcjz8O/5cd0895fdcde03f1d970ef910dd9287fb881bdc6_96.webp",
+            "published": "2025-05-14T11:58:26.219381Z",
+            "tags": [
+                "Blocks"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/GURcjz8O/versions/kMrmVNHL/mcw-bridges-3.1.0-mc1.21.1fabric.jar",
+            "sha512": "21856167efae173a8210d0c06215d1314e1969621192964154e010d15c05defe84040257b2a98013f4e8073397c1d246ab1797c50ee503392a84eb405e879fac",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "C7I0BCni",
+            "title": "Macaw's Windows",
+            "description": "Adds lots of Windows, Mosaic Glass, Blinds, Shutters, Curtains and more...!",
+            "icon": "https://cdn.modrinth.com/data/C7I0BCni/7eb5e7816f887154e69a4001bee5bcc143242b32_96.webp",
+            "published": "2025-12-10T21:48:43.805054Z",
+            "tags": [
+                "Blocks"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/C7I0BCni/versions/4mvfMpVO/mcw-mcwwindows-2.4.2-mc1.21.1fabric.jar",
+            "sha512": "071f0d8f6af273bbc5ebc5a321d15269efaf1319284bc72af54c6a9247bbea6fa547e9fbce8d0864ad3b4fe3ee9601ef08ff517d138cb772b24341fe82e70eac",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "GmwLse2I",
+            "title": "Macaw's Fences and Walls",
+            "description": "Adds new vanilla styled fences, walls and gates!",
+            "icon": "https://cdn.modrinth.com/data/GmwLse2I/ebe4d2375e0a402e5587665ba9da5eb50f37422a_96.webp",
+            "published": "2025-12-08T16:24:29.729641Z",
+            "tags": [
+                "Blocks"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/GmwLse2I/versions/ZGMGDbjg/mcw-mcwfences-1.2.1-mc1.21.1fabric.jar",
+            "sha512": "598a58415d719eec008e1ad51d55bd3a92d4dce586952197b6e4209a8d1b15a74db713a9c9954a9ef052dbfab9c4501f3ca55f1a102ed77d2b3bfd1c7ea26fe9",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "EltpO5cN",
+            "title": "Lootr",
+            "description": "A mod that makes it so nobody misses out on Loot! All loot chests are instanced per player and visually unique.",
+            "icon": "https://cdn.modrinth.com/data/EltpO5cN/3dc915eb1bbcd65654c17eb3870de4aba055d0c6_96.webp",
+            "published": "2026-01-03T06:04:17.598712Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/EltpO5cN/versions/Bgmr50HI/lootr-fabric-1.21.1-1.11.36.110.jar",
+            "sha512": "e967e55c375e512b33e0f1e6a1279aab82daae07fba44a16a893d4e1ae771ecb7e5978932b242ee4d39ab7f93e7458ef1dd3a1376d6ae63e19c47fd21a21d0b0",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH",
+                "9s6osm5g"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "ppMUvsIg",
+            "title": "Leaf Me Alone",
+            "description": "Allows any rideable entity with controlling it passenger to move trough leaves",
+            "icon": "https://cdn.modrinth.com/data/ppMUvsIg/719c7f993b00eda40d9515a55a0d80b31cfc7fae_96.webp",
+            "published": "2024-05-04T10:58:59.724618Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/ppMUvsIg/versions/NjQdo38w/leafmealone-1.0.1.jar",
+            "sha512": "b425566c864ec421269c4fe175a79e4e9e2d900f9f8fe279296ae47b1f9450677fd9a74790540cea0db08964a229622374d58aa95b8e18a00cf3f44b62a881ea",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "3JQDJrYW",
+            "title": "[Let's Do] Furniture",
+            "description": "Let's expand your world with a whole set of new and exciting furnitures! All in the style of the Let's Do Mods.",
+            "icon": "https://cdn.modrinth.com/data/3JQDJrYW/8bf0c1aed604d2fa0e647d4f6a2005740da2f0b4_96.webp",
+            "published": "2025-10-01T03:51:38.166977Z",
+            "tags": [
+                "Blocks"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/3JQDJrYW/versions/J3ju9fwy/letsdo-furniture-fabric-1.1.1.jar",
+            "sha512": "9a60ce3aa34fd2dfdc46ea1b0c1d4c9096b0b0cb61205df0cb024b11635495e35f970efabc0b36d2c58b1b0a4ff660f12d1d279ea7a598ae89fb5cd06bec75da",
+            "config": [],
+            "dependencies": [
+                "lhGA9TYQ"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "Guh4HXen",
+            "title": "Items Displayed [Fabric]",
+            "description": "A mod for builders and adventurers who would like to have their items placed in the world, not lying around in chests!",
+            "icon": "https://cdn.modrinth.com/data/Guh4HXen/4e0b7b16f5b60457717af63acbf4e3cfd91e41fc_96.webp",
+            "published": "2024-09-29T22:05:13.436380Z",
+            "tags": [
+                "Blocks"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/Guh4HXen/versions/BTxdJfoV/ItemsDisplayed%20-%20v1.3-1.21.1.jar",
+            "sha512": "7c2d42c15c6496ba6b90b15472837a59f5864aa2b59f1544db246d6a42533c4d825b95dcaaa911ceaa82604fa242e35daa1827c6274547b601273eec13947eb8",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "I0UYcPa0",
+            "title": "Inmis",
+            "description": "A simple backpack mod for Fabric. I need more inventory space!",
+            "icon": "https://cdn.modrinth.com/data/I0UYcPa0/af80dbe3a46208d0d761c72634dd901e5a46f2c6_96.webp",
+            "published": "2025-09-01T13:54:43.375671Z",
+            "tags": [
+                "Storage",
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/I0UYcPa0/versions/iE11BIfP/inmis-2.8.2-1.21.1.jar",
+            "sha512": "245e77e43f19408f37656f51e97246bb12aae9f4bc30db47c9a2cb3fc1cfd555264c34a1370221f940ebc168dc46463dc7972ca57806152c9bce90be65dddc2e",
+            "config": [
+                {
+                    "path": "config/inmis.json",
+                    "content": "{\n  \"backpacks\": [\n    {\n      \"name\": \"baby\",\n      \"rowWidth\": 3,\n      \"numberOfRows\": 1,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"frayed\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 1,\n      \"isFireImmune\": false,\n      \"dyeable\": true,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"plated\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 2,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_iron\"\n    },\n    {\n      \"name\": \"gilded\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 3,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_gold\"\n    },\n    {\n      \"name\": \"bejeweled\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 5,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_diamond\"\n    },\n    {\n      \"name\": \"blazing\",\n      \"rowWidth\": 9,\n      \"numberOfRows\": 6,\n      \"isFireImmune\": true,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"withered\",\n      \"rowWidth\": 11,\n      \"numberOfRows\": 6,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    },\n    {\n      \"name\": \"endless\",\n      \"rowWidth\": 15,\n      \"numberOfRows\": 6,\n      \"isFireImmune\": false,\n      \"dyeable\": false,\n      \"openSound\": \"minecraft:item.armor.equip_leather\"\n    }\n  ],\n  \"unstackablesOnly\": false,\n  \"disableShulkers\": false,\n  \"blacklist\": [],\n  \"playSound\": true,\n  \"requireArmorTrinketToOpen\": false,\n  \"allowBackpacksInChestplate\": true,\n  \"enableTrinketCompatibility\": true,\n  \"spillArmorBackpacksOnDeath\": false,\n  \"spillMainBackpacksOnDeath\": false,\n  \"trinketRendering\": true,\n  \"guiTitleColor\": \"0x404040\"\n}\n"
+                }
+            ],
+            "dependencies": [
+                "9s6osm5g",
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "5aaWibi9",
+            "title": "Trinkets",
+            "description": "A data-driven accessory mod",
+            "icon": "https://cdn.modrinth.com/data/5aaWibi9/icon.png",
+            "published": "2024-07-15T11:03:14.206207Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/5aaWibi9/versions/JagCscwi/trinkets-3.10.0.jar",
+            "sha512": "3ea846c945a0559696501ff65b373c8ee8fd9b394604e9910b4ed710c3e07cadc674a615a2c3b385951a42253a418201975df951b3100053ed39afadc70221c9",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "MI1LWe93",
+            "title": "Creeper Overhaul",
+            "description": "A mod which overhauls the vanilla creepers!",
+            "icon": "https://cdn.modrinth.com/data/MI1LWe93/d42fb7a69f1e7a86584fa1ed43520af98acec065.png",
+            "published": "2025-01-04T03:30:40.759976Z",
+            "tags": [
+                "Textures"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/MI1LWe93/versions/O6yuPiE8/CreeperOverhaul-fabric-1.21.1-4.0.6.jar",
+            "sha512": "696ed6a972c49186f081c636d929f1058bbbe20e90faf1cb03937c4915a0583f258168b03ccf9d5b97a003c17cae4428cbfd94cfa250b059acb4f9b802af7e08",
+            "config": [],
+            "dependencies": [
+                "8BmcQJ2H",
+                "G1hIVOrD",
+                "M1953qlQ"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "72GXx2MO",
+            "title": "Emojiful",
+            "description": "Emojis in minecraft",
+            "icon": "https://cdn.modrinth.com/data/72GXx2MO/83075fde40e249a83cb73efda948d8a1209bd890_96.webp",
+            "published": "2025-06-08T16:17:03.629097Z",
+            "tags": [
+                "Social"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/72GXx2MO/versions/ERmtNe8G/Emojiful-Fabric-1.21-5.2.1.jar",
+            "sha512": "d93b14b142be816649cbead156f4820e71d5aeffd735455ab0cf87e7028d08899bccebbf9aa550d2f54a7b06f43b74320f28aa8565b9bf9361de52d55b0e50bf",
+            "config": [
+                {
+                    "path": "config/emojiful.json",
+                    "content": "{\n  \"renderEmoji\": true,\n  \"emojiSelector\": true,\n  \"emojiAutocomplete\": false,\n  \"gifEmojis\": true,\n  \"emojiReplacement\": true,\n  \"enableLoadTwemoji\": false,\n  \"loadCustom\": true,\n  \"loadDatapack\": true,\n  \"profanityFilter\": false,\n  \"profanityFilterReplacement\": \":swear:\"\n}\n"
+                }
+            ],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "Yd4wb5wZ",
+            "title": "Critters and Companions",
+            "description": "Adds a few new friends to your world!",
+            "icon": "https://cdn.modrinth.com/data/Yd4wb5wZ/6a54e2ebabb89763669ba56c76a3514ca5605d3e_96.webp",
+            "published": "2025-10-25T09:48:51.702478Z",
+            "tags": [
+                "Mobs"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/Yd4wb5wZ/versions/wHpQleS4/crittersandcompanions-fabric-1.21.1-2.3.4.jar",
+            "sha512": "143848ee10a4494a7e1c027171e7fa7a624ae7aa5e6f881d6cc2504fb5a5466cb66ba09eedeeab073e8c5356cb333828c300a20eb7339e7877bc298118a0eb15",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "SJu6sklj",
+            "title": "Countered's Terrain Slabs",
+            "description": "A world generation mod that improves the terrain by adding slabs",
+            "icon": "https://cdn.modrinth.com/data/SJu6sklj/a7a5b6f0524c9a89a8feeb262c00e1383ec8d986_96.webp",
+            "published": "2025-10-18T11:30:19.410645Z",
+            "tags": [
+                "Terrain"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/SJu6sklj/versions/SG6z8PTH/countereds_terrain_slabs-2.1.2.jar",
+            "sha512": "440305962718c954f766a860f2e82d1cec31e90abb8e5e50bf864756b7c17156de00558b2c0adde672c4ec91fcd0f38f78dea6922549fa8186dfa1ba74f0eaf6",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "gc8OEnCC",
+            "title": "BetterEnd",
+            "description": "New Biomes, mysterious rituals and Mobs for your End",
+            "icon": "https://cdn.modrinth.com/data/gc8OEnCC/3afe2f097e9deff31158da380647fdc47131756f_96.webp",
+            "published": "2024-08-31T15:46:29.398073Z",
+            "tags": [
+                "Dimension Overhaul",
+                "Terrain",
+                "Biomes"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/gc8OEnCC/versions/4qhBEg6J/better-end-21.0.11.jar",
+            "sha512": "d3094b88202fca1ccc055e8429eac42eac1bd696a82ed650a9f1426cd5b28bd08e0af4d41664ed3fad10d8477c6da7c6be9d626a5664cfbc664844355c97c5b1",
+            "config": [],
+            "dependencies": [
+                "RiN8rDVs",
+                "BgNRHReB",
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "6iTJugQR",
+            "title": "Amendments",
+            "description": "Many changes to vanilla blocks",
+            "icon": "https://cdn.modrinth.com/data/6iTJugQR/46e156f1c798bfc3c18bd2a55567af1086674f02_96.webp",
+            "published": "2025-12-19T02:53:59.418163Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/6iTJugQR/versions/74FJtGcV/amendments-1.21-2.0.13-fabric.jar",
+            "sha512": "051636b95ce9c35883a978ba9e2c2d3b7286b56c753c3426b7a0e9d5b40eff18a90afafbce22217f14f360243940a65e27a48a64a8313d56a7f23ab0690bafae",
+            "config": [],
+            "dependencies": [
+                "twkfQtEc",
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "Heh3BbSv",
+            "title": "Gravestones",
+            "description": "Adds highly configurable Graves that spawn on death to hold your items",
+            "icon": "https://cdn.modrinth.com/data/Heh3BbSv/e10b4d60fb1d7eb24044b8c40f0eec4346e5894a_96.webp",
+            "published": "2025-12-14T04:53:24.531863Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/Heh3BbSv/versions/HO3Zv8HU/gravestones-1.2.7%2B1.21%2BA.jar",
+            "sha512": "537e4acbc9cb35936c78703982ab74aac7a30e7c13214ce9b69c5cefd37813a5dcdaf635b496ab4ca740f7bd709157cc83db0ce2c9d0412588fa494b23d529cc",
+            "config": [
+                {
+                    "path": "config/gravestones.json",
+                    "content": "{\n  \"decay_with_deaths\": true,\n  \"decay_with_time\": true,\n  \"decay_time\": 576000,\n  \"decay_time_type\": \"TICKS\",\n  \"aesthetic_decay\": false,\n\n  \"store_experience\": true,\n  \"experience_cap\": false,\n  \"experience_kept\": \"TWO_THIRDS\",\n  \"experience_decay\": true,\n  \"drop_experience\": false,\n\n  \"gravestone_accessible_owner_only\": true,\n  \"broadcast_collect_in_chat\": false,\n  \"broadcast_coordinates_in_chat\": true,\n\n  \"aesthetic_gravestones\": true,\n  \"spawn_gravestone_skeletons\": true,\n  \"spawn_gravestones_in_creative\": false,\n  \"spawn_gravestones_with_keepinv\": false,\n  \"show_heads\": true,\n  \"time_format\": \"DDMMYYYY\",\n  \"console_info\": false\n}\n"
+                }
+            ],
+            "dependencies": [
+                "P7dR8mSH",
+                "ZLKQjA7t"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "OZBR5JT5",
+            "title": "Easy Anvils",
+            "description": "Be ready for overhauled anvils! Items stay, better name tags, many tweaks!",
+            "icon": "https://cdn.modrinth.com/data/OZBR5JT5/c317debbe36e008daa3a0af715adf615b365aa5c_96.webp",
+            "published": "2024-09-18T10:12:33.493373Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/OZBR5JT5/versions/znaWBlgU/EasyAnvils-v21.1.0-1.21.1-Fabric.jar",
+            "sha512": "cf9eda6d27ac9155c83140b1b931a3048a2e81da63957423c5a2958342c58c315d17c5c3730f3f952ef19e4e3632741cee4ef9605c476b8c82b06d60190ee6a1",
+            "config": [
+                {
+                    "path": "config/easyanvils-common.toml",
+                    "content": "disable_vanilla_anvil = true\nname_tag_crafting_recipe = true\nconvert_vanilla_anvil_during_world_gen = true\n"
+                }
+            ],
+            "dependencies": [
+                "P7dR8mSH",
+                "ohNO6lps",
+                "QAGBst4M"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "9hx3AbJM",
+            "title": "Easy Magic",
+            "description": "Enchanting tables as they always should have been! Items stay after closing, and easy re-rolls.",
+            "icon": "https://cdn.modrinth.com/data/9hx3AbJM/5387d7206ba13438d088d127845d255c1a79b9c2_96.webp",
+            "published": "2025-10-26T07:28:01.633190Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/9hx3AbJM/versions/LLLfoeWJ/EasyMagic-v21.1.4-1.21.1-Fabric.jar",
+            "sha512": "46927747f1867a152cb291bd76a8e013cf1cd0821663614f9d737c704743fe4c356aff6fb7cbcc3e8c425d964678631fab8afdd2b26cda5f577b6a3cc9160a5a",
+            "config": [],
+            "dependencies": [
+                "ohNO6lps",
+                "P7dR8mSH",
+                "QAGBst4M"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "uXXizFIs",
+            "title": "FerriteCore",
+            "description": "Memory usage optimizations",
+            "icon": "https://cdn.modrinth.com/data/uXXizFIs/222a126f26f8f9ae1eb339f3b767677f18bff31f_96.webp",
+            "published": "2024-10-27T09:57:57.152381Z",
+            "tags": [
+                "Performance Enhancement"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/uXXizFIs/versions/bwKMSBhn/ferritecore-7.0.2-hotfix-fabric.jar",
+            "sha512": "ca975bd3708cd96d30cf1447ac8883572113562eb2dd697e60c1cf382d6b70d0b1a511fcbfd042c51b2cf5d5ffc718b847f845e4c8a3e421e8c9ee741119a421",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "2M01OLQq",
+            "title": "Shulker Box Tooltip",
+            "description": "View the contents of shulker boxes from your inventory",
+            "icon": "https://cdn.modrinth.com/data/2M01OLQq/bb490716cf2590cf84100a495931c3d4743bce43_96.webp",
+            "published": "2025-11-09T19:03:51.854205Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/2M01OLQq/versions/nGPvABlf/shulkerboxtooltip-fabric-5.1.8%2B1.21.1.jar",
+            "sha512": "b0b79aae60a2f88ac88ceb7bf114f7e1ce7701586da6b1acbd9d6f4e1d11d71dcc68e20e5f5cf5840832eabcb614f710a621bbe806eee9effeb9d778e122f1a4",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "EsAfCjCV",
+            "title": "AppleSkin",
+            "description": "Food/hunger-related HUD improvements",
+            "icon": "https://cdn.modrinth.com/data/EsAfCjCV/icon.png",
+            "published": "2024-11-01T06:22:22.888816Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/EsAfCjCV/versions/b5ZiCjAr/appleskin-fabric-mc1.21-3.0.6.jar",
+            "sha512": "accbb36b863bdeaaeb001f7552534f3bdf0f27556795cf8e813f9b32e7732450ec5133da5e0ec9b92dc22588c48ffb61577c375f596dc351f15c15ce6a6f4228",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "9eGKb6K1",
+            "title": "Simple Voice Chat",
+            "description": "A working voice chat in Minecraft!",
+            "icon": "https://cdn.modrinth.com/data/9eGKb6K1/icon.png",
+            "published": "2026-01-04T15:22:05.691058Z",
+            "tags": [
+                "Social"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/9eGKb6K1/versions/nhQ1beo9/voicechat-fabric-1.21.1-2.6.11.jar",
+            "sha512": "1e02bbfe8c7694e7884516d9c3a5f7885441625c78d6c6dbf6f084f0a6a49795cdaae3b7c78a064b933be38cd99400edbc2ea2d545955cf0941efb32c292a0f5",
+            "config": [
+                {
+                    "path": "config/voicechat/voicechat-server.properties",
+                    "content": "port=24454\nbind_address=\"0.0.0.0\"\n"
+                }
+            ],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "FsoeTIV0",
+            "title": "Fast Item Frames",
+            "description": "Supercharged item frames! Less lag, better performance, and now they can change color and vanish!",
+            "icon": "https://cdn.modrinth.com/data/FsoeTIV0/61ec84b804647ef0c09ea49995f86aaec2f28fc8_96.webp",
+            "published": "2025-09-04T14:51:17.371565Z",
+            "tags": [
+                "Performance Enhancement"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/FsoeTIV0/versions/drSo3Q2h/FastItemFrames-v21.1.6-1.21.1-Fabric.jar",
+            "sha512": "c7371fe3337476c14dcd5d0686fdb6ed7b80e2d42c570117ee6fbf4e419252af355eb6f27e5217f8bf008955e771d498847f0c6058c05ab31ac98005e8ca09ea",
+            "config": [],
+            "dependencies": [
+                "ohNO6lps",
+                "P7dR8mSH",
+                "QAGBst4M"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "j7Ux0G0U",
+            "title": "Not interested!",
+            "description": "Adds a way for you to tell the wandering trader to go away.",
+            "icon": "https://cdn.modrinth.com/data/j7Ux0G0U/c2f254f900ab9afa12291814eda9829792d42f0e_96.webp",
+            "published": "2024-06-21T08:12:47.185414Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/j7Ux0G0U/versions/NvNK3nUY/not_interested--mc1.21--fabric--1.0.jar",
+            "sha512": "a56bca1336e8aefd6fff879fa84c3380da50fdfec996f6cfc55a1f39d604cf24cc8c6e6b9b20eaa642c3ef233283ec02a7e5a3eaa4186ae8251a957b54fba402",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "d6MhxwRo",
+            "title": "Soul Fire'd",
+            "description": "Let Soul Fire burn!",
+            "icon": "https://cdn.modrinth.com/data/d6MhxwRo/04b84b747ee4d3f66960d42f6014c2030b26e3ea_96.webp",
+            "published": "2025-12-22T11:10:30.438870Z",
+            "tags": [
+                "Enhancement"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/d6MhxwRo/versions/OTfiCvWr/soul-fire-d-fabric-1.21-6.1.0.jar",
+            "sha512": "85cc01c71f20d8d49ef8a3f80fcbf0329db006badd6d454b80e494159cdb91941924bc65694a24b8f8cbf452f5d0f4805e54b44870c74a73a5b07f697723a510",
+            "config": [],
+            "dependencies": [
+                "dQcfqGbl",
+                "P7dR8mSH",
+                "7Z7a9JyH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "qQyHxfxd",
+            "title": "No Chat Reports",
+            "description": "Makes chat unreportable (where possible)",
+            "icon": "https://cdn.modrinth.com/data/qQyHxfxd/icon.png",
+            "published": "2024-11-08T18:15:36.668133Z",
+            "tags": [
+                "Quality of Life",
+                "Social"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/qQyHxfxd/versions/D8K0KJXM/NoChatReports-FABRIC-1.21.1-v2.9.1.jar",
+            "sha512": "23bb4a8a6a3f7071281cf97560e12f37e1f5f638a156e3fcb92a50ff0091f1fcfa3e090e7745e4b1175e7c2c784e38d73536a1044db1bf225a182fab758a5a29",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
             "id": "P7dR8mSH",
             "title": "Fabric API",
             "description": "Lightweight and modular API providing common hooks and intercompatibility measures utilized by mods using the Fabric toolchain.",
@@ -2235,25 +2255,6 @@
         },
         {
             "source": "modrinth",
-            "id": "hYykXjDp",
-            "title": "Fzzy Config",
-            "description": "Config API with automatic GUIs, powerful validation options, server-client sync, and more!",
-            "icon": "https://cdn.modrinth.com/data/hYykXjDp/11f469b1bf1f201a95c2e3ddc09ca47d85c3ed53.png",
-            "published": "2025-12-14T18:00:59.690293Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/hYykXjDp/versions/QpNZ4LVv/fzzy_config-0.7.4-fix1%2B1.21.jar",
-            "sha512": "3126f1ecd1f7c9c1e6981a7966b73c942a2bd4328e134b00a0f8a9436217062ffc350fcf1cfdc6b8097ed9f4809337f98a34b75cfda2445e5c0dbb4eeae21d6a",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH",
-                "Ha28R6CL"
-            ]
-        },
-        {
-            "source": "modrinth",
             "id": "ohNO6lps",
             "title": "Forge Config API Port",
             "description": "NeoForge's & Forge's config systems provided to other modding ecosystems. Designed for a multiloader architecture.",
@@ -2291,183 +2292,19 @@
         },
         {
             "source": "modrinth",
-            "id": "twkfQtEc",
-            "title": "Moonlight Lib",
-            "description": "dynamic data pack and registration, villager activities, custom map marker and a lot more",
-            "icon": "https://cdn.modrinth.com/data/twkfQtEc/icon.png",
-            "published": "2026-01-03T12:38:21.554511Z",
+            "id": "1OE8wbN0",
+            "title": "Prism",
+            "description": "A library all about color! Provides lots of color-related functionality for dependent mods.",
+            "icon": "https://cdn.modrinth.com/data/1OE8wbN0/2fecc17cdc6036b648f0defc7c9a85a6733be435_96.webp",
+            "published": "2025-04-01T19:46:31.360602Z",
             "tags": [
                 "Support Mod"
             ],
             "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/twkfQtEc/versions/uXRoRBX6/moonlight-1.21-2.29.7-fabric.jar",
-            "sha512": "47589a64aca8c6a2c0eb6be3d8a90a826aca308761ce8e185ea61de9e4c71af2ccc510aede41492a904004815daa84e3a024c43f0d2d6e04b25574705c3900ee",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "lhGA9TYQ",
-            "title": "Architectury API",
-            "description": "An intermediary api aimed to ease developing multiplatform mods.",
-            "icon": "https://cdn.modrinth.com/data/lhGA9TYQ/05fe3a61c28faaccaec3533b92e1b321edde7bf6_96.webp",
-            "published": "2024-10-05T19:24:06.840627Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Wto0RchG/architectury-13.0.8-fabric.jar",
-            "sha512": "7a24a0481732c5504b07347d64a2843c10c29e748018af8e5f5844e5ea2f4517433886231025d823f90eb0b0271d1fa9849c27e7b0c81476c73753f79f19302a",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "8BmcQJ2H",
-            "title": "Geckolib",
-            "description": "A 3D animation library for entities, blocks, items, armor, and more!",
-            "icon": "https://cdn.modrinth.com/data/8BmcQJ2H/012d1aadbc754995de66e8c149a56aa10b63fe05_96.webp",
-            "published": "2026-01-04T07:21:59.231744Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/fvT8GY10/geckolib-fabric-1.21.1-4.8.3.jar",
-            "sha512": "a7249f519b1dcd07678cb0469e6d55c043f5240ca109b5c7269e94fd00e1e38a6acf816cd7afed435a593afd8d9f7a0231aebccbe19021a493db8b1eae192d8c",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "G1hIVOrD",
-            "title": "Resourceful Lib",
-            "description": "Resourceful Lib",
-            "icon": "https://cdn.modrinth.com/data/G1hIVOrD/52130f41d05162ce6d7d1832a47d3c238d102632_96.webp",
-            "published": "2024-12-08T04:44:17.577543Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/G1hIVOrD/versions/Hf91FuVF/resourcefullib-fabric-1.21-3.0.12.jar",
-            "sha512": "df8a9586eaa0e2f8e1e6a5651ba79ff6c95327b0ab89cdab4708cc6ed51c3da6829d00e8f176e7e7b7b37d4af8c5bd9e3df047f3a8a04fd1af925d80c774185b",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "M1953qlQ",
-            "title": "Resourceful Config",
-            "description": "Resourceful Config is a mod that allows for developers to make cross-platform configs",
-            "icon": "https://cdn.modrinth.com/data/M1953qlQ/cadcab644905f7e9ee92220d29f5c27113eb167b_96.webp",
-            "published": "2025-04-26T17:59:10.850489Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/M1953qlQ/versions/dQh99ERC/resourcefulconfig-fabric-1.21-3.0.11.jar",
-            "sha512": "11189c68626404bef5021bae51bcec1840dba0c3356ca275e9b3439e20ba474fb9ba6f6bf4b4f08b3e9a43c58ac553e2e0d182429bd606948d8211bd49c1d0e7",
+            "file": "https://cdn.modrinth.com/data/1OE8wbN0/versions/obM5d9Uv/Prism-1.21.1-fabric-1.0.11.jar",
+            "sha512": "e6a3e6b272ea30e0a8f3b383c51651049e5df8a36a7c144fd9a3f2be089813ac7c21805495664f1faa7b456ac99b417cc65690fcf6c08860cd23cd7aba2f04c1",
             "config": [],
             "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "RiN8rDVs",
-            "title": "World Weaver",
-            "description": "A Fabric utility mod that aims to streamline common modding\ntasks, particularly those related to world creation. As a successor to BCLib, WoVer is intended to eventually take its\nplace.",
-            "icon": "https://cdn.modrinth.com/data/RiN8rDVs/f38c47b3c1839f2c72c14055626e8f95799e2a73_96.webp",
-            "published": "2024-08-10T23:09:21.615206Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/RiN8rDVs/versions/mPmeykPR/worldweaver-21.0.13.jar",
-            "sha512": "d45470e9d1152f6ba0282a4005648738209d8f08bfdc72e147047dc0544ef2ba094689fb6d4d86ee2717dda38cb9fb01bb30743484e48dfb498c9a608ff24fcf",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "BgNRHReB",
-            "title": "BCLib",
-            "description": "A Library Mod for the BetterX Team",
-            "icon": "https://cdn.modrinth.com/data/BgNRHReB/9cbe79c9f1f12fd9696ba81e54d7ddd42476e777_96.webp",
-            "published": "2024-08-13T18:00:56.991329Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/BgNRHReB/versions/TxWM7AW8/bclib-21.0.13.jar",
-            "sha512": "93a5b45e4abcb27af6a8e8f662db9fd4115dfbb9e17adbce642f2217f5d09b48474d6b9e12b0673bdc663668e8d0d71b8fa23307c96c06176df55c090623a00c",
-            "config": [],
-            "dependencies": [
-                "RiN8rDVs",
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "ZLKQjA7t",
-            "title": "PneumonoCore",
-            "description": "Core mod my other mods depend on",
-            "icon": "https://cdn.modrinth.com/data/ZLKQjA7t/c34b767b808a8649ef277a3901a93b186dfe59e4.png",
-            "published": "2025-12-13T13:30:17.569736Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/ZLKQjA7t/versions/QKvgjhTZ/pneumonocore-1.2.1%2B1.21%2BA.jar",
-            "sha512": "028e18a7ec6719f67b3d2e2d0c57d207ff7ddf0b048d64c2dfed127566283aaafc17d70927d1c30259d4990ce0c12d5c177c4f5bbc2285a9163c08e29b364c28",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "7Z7a9JyH",
-            "title": "Prometheus",
-            "description": "🔥 Backbone of modded fire 🔥",
-            "icon": "https://cdn.modrinth.com/data/7Z7a9JyH/7b0887d753f7ce278d647f336c0f3d948f9e2bc8_96.webp",
-            "published": "2025-12-22T10:27:54.125097Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/7Z7a9JyH/versions/4LXAY72L/prometheus-fabric-1.21-1.2.5.jar",
-            "sha512": "732b1589b7cb7338861906688439241385a24fcda6c3e0fed77abca9844ff07a732a708ec97fcaa6e42c7cd2b5ebc348b406f04b49bdaac977b252fa2be97065",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH",
-                "dQcfqGbl"
-            ]
-        },
-        {
-            "source": "modrinth",
-            "id": "dQcfqGbl",
-            "title": "Cobweb",
-            "description": "Crystal Nest API",
-            "icon": "https://cdn.modrinth.com/data/dQcfqGbl/efabe366d357324b430892f41a6239e3d4fe9271_96.webp",
-            "published": "2025-11-04T21:21:48.467481Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/dQcfqGbl/versions/RDHSnisj/cobweb-fabric-1.21-1.4.0.jar",
-            "sha512": "05007533a5d67284fd039b6a5e577e0eb2bd48b797d067e1f944142a2d69c75fd294ed5ba55b71a97bd1503da1205a1430430fdeb64032d9bd8998a011df4781",
-            "config": [],
-            "dependencies": [
-                "P7dR8mSH"
-            ]
         },
         {
             "source": "modrinth",
@@ -2486,22 +2323,6 @@
             "dependencies": [
                 "P7dR8mSH"
             ]
-        },
-        {
-            "source": "modrinth",
-            "id": "1OE8wbN0",
-            "title": "Prism",
-            "description": "A library all about color! Provides lots of color-related functionality for dependent mods.",
-            "icon": "https://cdn.modrinth.com/data/1OE8wbN0/2fecc17cdc6036b648f0defc7c9a85a6733be435_96.webp",
-            "published": "2025-04-01T19:46:31.360602Z",
-            "tags": [
-                "Support Mod"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/1OE8wbN0/versions/obM5d9Uv/Prism-1.21.1-fabric-1.0.11.jar",
-            "sha512": "e6a3e6b272ea30e0a8f3b383c51651049e5df8a36a7c144fd9a3f2be089813ac7c21805495664f1faa7b456ac99b417cc65690fcf6c08860cd23cd7aba2f04c1",
-            "config": [],
-            "dependencies": []
         },
         {
             "source": "modrinth",
@@ -2666,6 +2487,205 @@
         },
         {
             "source": "modrinth",
+            "id": "twkfQtEc",
+            "title": "Moonlight Lib",
+            "description": "dynamic data pack and registration, villager activities, custom map marker and a lot more",
+            "icon": "https://cdn.modrinth.com/data/twkfQtEc/icon.png",
+            "published": "2026-01-03T12:38:21.554511Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/twkfQtEc/versions/uXRoRBX6/moonlight-1.21-2.29.7-fabric.jar",
+            "sha512": "47589a64aca8c6a2c0eb6be3d8a90a826aca308761ce8e185ea61de9e4c71af2ccc510aede41492a904004815daa84e3a024c43f0d2d6e04b25574705c3900ee",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "hYykXjDp",
+            "title": "Fzzy Config",
+            "description": "Config API with automatic GUIs, powerful validation options, server-client sync, and more!",
+            "icon": "https://cdn.modrinth.com/data/hYykXjDp/11f469b1bf1f201a95c2e3ddc09ca47d85c3ed53.png",
+            "published": "2025-12-14T18:00:59.690293Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/hYykXjDp/versions/QpNZ4LVv/fzzy_config-0.7.4-fix1%2B1.21.jar",
+            "sha512": "3126f1ecd1f7c9c1e6981a7966b73c942a2bd4328e134b00a0f8a9436217062ffc350fcf1cfdc6b8097ed9f4809337f98a34b75cfda2445e5c0dbb4eeae21d6a",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH",
+                "Ha28R6CL"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "lhGA9TYQ",
+            "title": "Architectury API",
+            "description": "An intermediary api aimed to ease developing multiplatform mods.",
+            "icon": "https://cdn.modrinth.com/data/lhGA9TYQ/05fe3a61c28faaccaec3533b92e1b321edde7bf6_96.webp",
+            "published": "2024-10-05T19:24:06.840627Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/lhGA9TYQ/versions/Wto0RchG/architectury-13.0.8-fabric.jar",
+            "sha512": "7a24a0481732c5504b07347d64a2843c10c29e748018af8e5f5844e5ea2f4517433886231025d823f90eb0b0271d1fa9849c27e7b0c81476c73753f79f19302a",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "8BmcQJ2H",
+            "title": "Geckolib",
+            "description": "A 3D animation library for entities, blocks, items, armor, and more!",
+            "icon": "https://cdn.modrinth.com/data/8BmcQJ2H/012d1aadbc754995de66e8c149a56aa10b63fe05_96.webp",
+            "published": "2026-01-04T07:21:59.231744Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/fvT8GY10/geckolib-fabric-1.21.1-4.8.3.jar",
+            "sha512": "a7249f519b1dcd07678cb0469e6d55c043f5240ca109b5c7269e94fd00e1e38a6acf816cd7afed435a593afd8d9f7a0231aebccbe19021a493db8b1eae192d8c",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "G1hIVOrD",
+            "title": "Resourceful Lib",
+            "description": "Resourceful Lib",
+            "icon": "https://cdn.modrinth.com/data/G1hIVOrD/52130f41d05162ce6d7d1832a47d3c238d102632_96.webp",
+            "published": "2024-12-08T04:44:17.577543Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/G1hIVOrD/versions/Hf91FuVF/resourcefullib-fabric-1.21-3.0.12.jar",
+            "sha512": "df8a9586eaa0e2f8e1e6a5651ba79ff6c95327b0ab89cdab4708cc6ed51c3da6829d00e8f176e7e7b7b37d4af8c5bd9e3df047f3a8a04fd1af925d80c774185b",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "M1953qlQ",
+            "title": "Resourceful Config",
+            "description": "Resourceful Config is a mod that allows for developers to make cross-platform configs",
+            "icon": "https://cdn.modrinth.com/data/M1953qlQ/cadcab644905f7e9ee92220d29f5c27113eb167b_96.webp",
+            "published": "2025-04-26T17:59:10.850489Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/M1953qlQ/versions/dQh99ERC/resourcefulconfig-fabric-1.21-3.0.11.jar",
+            "sha512": "11189c68626404bef5021bae51bcec1840dba0c3356ca275e9b3439e20ba474fb9ba6f6bf4b4f08b3e9a43c58ac553e2e0d182429bd606948d8211bd49c1d0e7",
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "RiN8rDVs",
+            "title": "World Weaver",
+            "description": "A Fabric utility mod that aims to streamline common modding\ntasks, particularly those related to world creation. As a successor to BCLib, WoVer is intended to eventually take its\nplace.",
+            "icon": "https://cdn.modrinth.com/data/RiN8rDVs/f38c47b3c1839f2c72c14055626e8f95799e2a73_96.webp",
+            "published": "2024-08-10T23:09:21.615206Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/RiN8rDVs/versions/mPmeykPR/worldweaver-21.0.13.jar",
+            "sha512": "d45470e9d1152f6ba0282a4005648738209d8f08bfdc72e147047dc0544ef2ba094689fb6d4d86ee2717dda38cb9fb01bb30743484e48dfb498c9a608ff24fcf",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "BgNRHReB",
+            "title": "BCLib",
+            "description": "A Library Mod for the BetterX Team",
+            "icon": "https://cdn.modrinth.com/data/BgNRHReB/9cbe79c9f1f12fd9696ba81e54d7ddd42476e777_96.webp",
+            "published": "2024-08-13T18:00:56.991329Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/BgNRHReB/versions/TxWM7AW8/bclib-21.0.13.jar",
+            "sha512": "93a5b45e4abcb27af6a8e8f662db9fd4115dfbb9e17adbce642f2217f5d09b48474d6b9e12b0673bdc663668e8d0d71b8fa23307c96c06176df55c090623a00c",
+            "config": [],
+            "dependencies": [
+                "RiN8rDVs",
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "ZLKQjA7t",
+            "title": "PneumonoCore",
+            "description": "Core mod my other mods depend on",
+            "icon": "https://cdn.modrinth.com/data/ZLKQjA7t/c34b767b808a8649ef277a3901a93b186dfe59e4.png",
+            "published": "2025-12-13T13:30:17.569736Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/ZLKQjA7t/versions/QKvgjhTZ/pneumonocore-1.2.1%2B1.21%2BA.jar",
+            "sha512": "028e18a7ec6719f67b3d2e2d0c57d207ff7ddf0b048d64c2dfed127566283aaafc17d70927d1c30259d4990ce0c12d5c177c4f5bbc2285a9163c08e29b364c28",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "dQcfqGbl",
+            "title": "Cobweb",
+            "description": "Crystal Nest API",
+            "icon": "https://cdn.modrinth.com/data/dQcfqGbl/efabe366d357324b430892f41a6239e3d4fe9271_96.webp",
+            "published": "2025-11-04T21:21:48.467481Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/dQcfqGbl/versions/RDHSnisj/cobweb-fabric-1.21-1.4.0.jar",
+            "sha512": "05007533a5d67284fd039b6a5e577e0eb2bd48b797d067e1f944142a2d69c75fd294ed5ba55b71a97bd1503da1205a1430430fdeb64032d9bd8998a011df4781",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH"
+            ]
+        },
+        {
+            "source": "modrinth",
+            "id": "7Z7a9JyH",
+            "title": "Prometheus",
+            "description": "🔥 Backbone of modded fire 🔥",
+            "icon": "https://cdn.modrinth.com/data/7Z7a9JyH/7b0887d753f7ce278d647f336c0f3d948f9e2bc8_96.webp",
+            "published": "2025-12-22T10:27:54.125097Z",
+            "tags": [
+                "Support Mod"
+            ],
+            "role": "both-required",
+            "file": "https://cdn.modrinth.com/data/7Z7a9JyH/versions/4LXAY72L/prometheus-fabric-1.21-1.2.5.jar",
+            "sha512": "732b1589b7cb7338861906688439241385a24fcda6c3e0fed77abca9844ff07a732a708ec97fcaa6e42c7cd2b5ebc348b406f04b49bdaac977b252fa2be97065",
+            "config": [],
+            "dependencies": [
+                "P7dR8mSH",
+                "dQcfqGbl"
+            ]
+        },
+        {
+            "source": "modrinth",
             "id": "Ha28R6CL",
             "title": "Fabric Language Kotlin",
             "description": "This is a mod that enables usage of the Kotlin programming language for Fabric mods.",
@@ -2679,26 +2699,6 @@
             "sha512": "90bf59f810ea62363bdd7b2ce85a6268b7db67d6d4ce5ae6555204bc7eff0446a6e17d60ef51ad41bf85e92ca430043a8f7c21157cbaee9279733304605cc4d0",
             "config": [],
             "dependencies": []
-        },
-        {
-            "source": "modrinth",
-            "id": "4q8UOK1d",
-            "title": "Subtle Effects",
-            "description": "Adding many new subtle details through particles and a few sounds",
-            "icon": "https://cdn.modrinth.com/data/4q8UOK1d/8a5d3febe9a9badba435a3f66a49668d04ada01f_96.webp",
-            "published": "2025-12-02T22:14:49.732926Z",
-            "tags": [
-                "Quality of Life",
-                "Effects"
-            ],
-            "role": "both-required",
-            "file": "https://cdn.modrinth.com/data/4q8UOK1d/versions/LhFxQIFD/SubtleEffects-fabric-1.21.1-1.13.2-hotfix.1.jar",
-            "sha512": "0ae066f5f6af5cc3a98eab999e1bda6e7d88e3899bfc2e50e5480ddcb594f02334fca2e6031f45ab13c5804f6bac3e7d44288c866f477c436d93a0b88a442af3",
-            "config": [],
-            "dependencies": [
-                "hYykXjDp",
-                "P7dR8mSH"
-            ]
         }
     ],
     "resourcePacks": []

@@ -43,7 +43,7 @@ in
       };
     };
 
-    services.minecraft-servers.servers.fabric.serverProperties = {
+    services.minecraft-servers.servers.lps.serverProperties = {
       "enable-rcon" = true;
       "rcon.password" = "@RWA_RCON_PASSWORD@";
       "rcon.port" = ports.rcon;
