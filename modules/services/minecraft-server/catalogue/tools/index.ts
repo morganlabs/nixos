@@ -1,4 +1,5 @@
 import ModrinthAPI from "./helpers/ModrinthAPI";
+import ManualAPI from "./helpers/ManualAPI";
 import { Lockfile } from "./helpers/Lockfile";
 import { Catalogue } from "./helpers/Catalogue";
 
@@ -8,6 +9,7 @@ import type { CatalogueModEntry } from "./helpers/Catalogue";
 const catalogue = new Catalogue();
 const lockfile = new Lockfile();
 const modrinth = new ModrinthAPI(catalogue.gameVersion, catalogue.loader);
+const manual = new ManualAPI();
 
 const SAFELY_IGNORABLE_MOD_IDS: string[] = ["qvIfYCYJ"];
 
@@ -74,8 +76,21 @@ async function fetchAllMods(
   console.log(`Fetching all ${role} ${type}`);
 
   const notInLockfile = mods.filter((m) => !lockfile.hasMod(m.id));
+
+  const modrinthMods = notInLockfile.filter(
+    (m) => m.source.toLowerCase() === "modrinth",
+  );
+  const manualMods = notInLockfile.filter(
+    (m) => m.source.toLowerCase() === "manual",
+  );
+
+  for (const mod of manualMods) {
+    const formatted = manual.format(mod, role);
+    lockfile.addMod(formatted);
+  }
+
   const responses = await Promise.all(
-    notInLockfile.map((m) => modrinth.fetchMod(m)),
+    modrinthMods.map((m) => modrinth.fetchMod(m)),
   );
 
   for (const mod of responses) {

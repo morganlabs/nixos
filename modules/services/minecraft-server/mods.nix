@@ -14,14 +14,36 @@ let
   downloadModsToAttrs =
     mods:
     listToAttrs (
-      map (m: {
-        name = m.id;
-        value = pkgs.fetchurl {
-          url = m.file;
-          sha512 = m.sha512;
-        };
-      }) mods
+      map (
+        m: with m; {
+          name = id;
+          value = pkgs.fetchurl {
+            url = file;
+            "${sha.type}" = sha.value;
+          };
+        }
+      ) mods
     );
+
+  # downloadModsToAttrs =
+  #   mods:
+  #   listToAttrs (
+  #     map (m: {
+  #       name = m.id;
+  #       value =
+  #         pkgs.fetchurl {
+  #           url = m.file;
+  #         }
+  #         // (
+  #           if m ? "sha512" then
+  #             { sha512 = m.sha512; }
+  #           else if m ? "sha256" then
+  #             { sha256 = m.sha256; }
+  #           else
+  #             { sha256 = lib.fakeSha256; }
+  #         );
+  #     }) mods
+  #   );
 
   downloadAndFormat =
     linkFarmName: roles:
@@ -65,11 +87,9 @@ in
     services.minecraft-servers.servers.lps = {
       files = {
         "automodpack/host-modpack/main/mods" = clientMods;
+        mods = serverMods;
       }
       // modConfigs;
-      symlinks = {
-        mods = serverMods;
-      };
     };
   };
 }

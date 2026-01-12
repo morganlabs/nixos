@@ -58,16 +58,19 @@ interface ConfigFile {
 }
 
 export interface LockMod {
-  source: "modrinth";
+  source: "modrinth" | "manual";
   id: string;
   title: string;
   description: string;
   icon?: string;
-  published: string;
+  published?: string;
   tags: string[];
   role: LockModRole;
   file: string;
-  sha512: string;
+  sha: {
+    type: "sha256" | "sha512";
+    value: string;
+  };
   dependencies?: string[];
   config?: ConfigFile[];
 }

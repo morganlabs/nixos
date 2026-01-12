@@ -11,12 +11,16 @@ const mods = defineCollection({
     id: z.string(),
     title: z.string(),
     description: z.string(),
-    icon: z.nullable(z.string()),
-    published: z.string(),
+    icon: z.string().optional(),
+    published: z.string().optional(),
     tags: z.array(z.string()),
     role: z.string(),
     file: z.string(),
     sha512: z.string(),
+    sha: z.object({
+      type: z.enum(["sha512", "sha256"]),
+      value: z.string,
+    }),
     dependencies: z.array(z.string()),
   }),
 });

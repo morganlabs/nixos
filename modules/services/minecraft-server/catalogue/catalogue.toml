@@ -1,39 +1,328 @@
 gameVersion = "1.21.1"
 loader = "fabric"
 
-    # "/automodpack/host-modpack/main/mods/architectury-13.0.8-fabric.jar"
-    # "/automodpack/host-modpack/main/mods/bclib-21.0.13.jar"
-    # "/automodpack/host-modpack/main/mods/bookshelf-fabric-1.21.1-21.1.80.jar"
-    # "/automodpack/host-modpack/main/mods/cloth-config-15.0.140-fabric.jar"
-    # "/automodpack/host-modpack/main/mods/cobweb-fabric-1.21-1.4.0.jar"
-    # "/automodpack/host-modpack/main/mods/collective-1.21.1-8.13.jar"
-    # "/automodpack/host-modpack/main/mods/CreativeCore_FABRIC_v2.13.14_mc1.21.1.jar"
-    # "/automodpack/host-modpack/main/mods/cristellib-fabric-1.21.1-3.0.2.jar"
-    # "/automodpack/host-modpack/main/mods/fabric-api-0.116.7-2B1.21.1.jar"
-    # "/automodpack/host-modpack/main/mods/fabric-language-kotlin-1.13.8-2Bkotlin.2.3.0.jar"
-    # "/automodpack/host-modpack/main/mods/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar"
-    # "/automodpack/host-modpack/main/mods/fzzy_config-0.7.4-fix1-2B1.21.jar"
-    # "/automodpack/host-modpack/main/mods/geckolib-fabric-1.21.1-4.8.3.jar"
-    # "/automodpack/host-modpack/main/mods/Iceberg-1.21.1-fabric-1.3.2.jar"
-    # "/automodpack/host-modpack/main/mods/lithostitched-1.5.7-fabric-1.21.1.jar"
-    # "/automodpack/host-modpack/main/mods/moonlight-1.21-2.29.7-fabric.jar"
-    # "/automodpack/host-modpack/main/mods/mru-1.0.19-2BLTS-2B1.21.1-2Bfabric.jar"
-    # "/automodpack/host-modpack/main/mods/OctoLib-FABRIC-0.6.0.4-2B1.21.jar"
-    # "/automodpack/host-modpack/main/mods/owo-lib-0.12.15.4-2B1.21.jar"
-    # "/automodpack/host-modpack/main/mods/placeholder-api-2.4.2-2B1.21.jar"
-    # "/automodpack/host-modpack/main/mods/pneumonocore-1.2.1-2B1.21-2BA.jar"
-    # "/automodpack/host-modpack/main/mods/prickle-fabric-1.21.1-21.1.11.jar"
-    # "/automodpack/host-modpack/main/mods/Prism-1.21.1-fabric-1.0.11.jar"
-    # "/automodpack/host-modpack/main/mods/prometheus-fabric-1.21-1.2.5.jar"
-    # "/automodpack/host-modpack/main/mods/PuzzlesLib-v21.1.39-1.21.1-Fabric.jar"
-    # "/automodpack/host-modpack/main/mods/reeses-sodium-options-fabric-1.8.3-2Bmc1.21.4.jar"
-    # "/automodpack/host-modpack/main/mods/resourcefulconfig-fabric-1.21-3.0.11.jar"
-    # "/automodpack/host-modpack/main/mods/resourcefullib-fabric-1.21-3.0.12.jar"
-    # "/automodpack/host-modpack/main/mods/Searchables-fabric-1.21.1-1.0.2.jar"
-    # "/automodpack/host-modpack/main/mods/sodium-fabric-0.6.5-2Bmc1.21.1.jar"
-    # "/automodpack/host-modpack/main/mods/sodiumoptionsapi-fabric-1.0.10-1.21.1.jar"
-    # "/automodpack/host-modpack/main/mods/worldweaver-21.0.13.jar"
-    # "/automodpack/host-modpack/main/mods/yet_another_config_lib_v3-3.8.1-2B1.21.1-fabric.jar"
+[[mods.both.required]]
+# Xaero's MiniMap
+source = "modrinth"
+id = "1bokaNcj"
+tags = [ "Quality of Life" ]
+
+[[mods.server]]
+source = "manual"
+id = "dj48skje"
+title = "LuckPerms Fabric Placeholder API"
+file = "https://ci.lucko.me/job/LuckPermsPlaceholders/12/artifact/fabric-placeholderapi/build/libs/LuckPerms-Fabric-PlaceholderAPI-Hook.jar"
+sha256 = "sha256-BkuYwJedKLKCZhFWII5by6LpoMhRsuMS5vAEK5Qpdoc="
+version = "1.0.0"
+tags = [ "Styling", "Chat" ]
+
+[[mods.server]]
+# Styled Chat
+source = "modrinth"
+id = "doqSKB0e"
+tags = [ "UI" ]
+    [[mods.server.config]]
+    path = "config/styled-chat.json"
+    content = """
+{
+  "CONFIG_VERSION_DONT_TOUCH_THIS": 3,
+  "text_formatting": {
+    // Enables parsing of links in chat
+    "parse_links": true,
+
+    // Enables markdown
+    "markdown": true,
+
+    // Enables support for legacy (&x) codes in chat (only when typed by player)
+    "legacy_formatting": true,
+
+    // Enables formatting from other mods (might break StyledChat one, if mod implements it incorrectly)
+    "formatting_from_other_mods": false
+  },
+
+  "chat_preview": {
+    // Sends full message (entire formatting surrounding it) in chat preview
+    "send_full_message": false,
+
+    // Require chat preview for formatting, disabling it otherwise
+    "require_for_formatting": false
+  },
+
+  "auto_completion": {
+    // Enables autocompletion for tags (for example <red>, <rainbow>)
+    "tags": true,
+
+    // Enables autocompletion for tag aliases (for example <c>, <rb>)
+    "tag_aliases": true,
+
+    // Enables autocompletion for emoticons (for example :pos:, :item:)
+    "emoticons": false
+  },
+
+  // Default style settings
+  "default": {
+    // Display name (local variables: ${default}, ${name})
+    "display_name": "${default}",
+
+    // Style of messages
+    "message_formats": {
+      // Chat message style (local variables: ${player}, ${message})
+      "chat": "${player} ${message}",
+
+      // Join message (local variables: ${player})
+      "joined_the_game": "<yellow><lang:multiplayer.player.joined:'${player}'></yellow>",
+
+      // Join message after name change (local variables: ${player}, ${old_name})
+      "joined_after_name_change": "<yellow><lang:multiplayer.player.joined.renamed:'${player}':'${old_name}'></yellow>",
+
+      // Join message for players joining for first time (local variables: ${player})
+      "joined_for_first_time": "<yellow><lang:multiplayer.player.joined:'${player}'></yellow>",
+
+      // Player leaving server (local variables: ${player})
+      "left_game": "<yellow><lang:multiplayer.player.left:'${player}'></yellow>",
+
+      // Player death message (local variables: ${player}, ${default_message})
+      "base_death": "${default_message}",
+
+      // Finishing advancement task (local variables: ${player}, ${advancement})
+      "advancement_task": "<lang:chat.type.advancement.task:'${player}':'${advancement}'>",
+
+      // Finishing advancement challenge (local variables: ${player}, ${advancement})
+      "advancement_challenge": "<lang:chat.type.advancement.challenge:'${player}':'${advancement}'>",
+
+      // Finishing advancement goal (local variables: ${player}, ${advancement})
+      "advancement_goal": "<lang:chat.type.advancement.goal:'${player}':'${advancement}'>",
+
+      // Team message, visible to player sending it (local variables: ${team}, ${displayName}, ${message})
+      // "sent_team_chat": "<lang:'chat.type.team.sent':'<hover\\:\\'<lang\\:chat.type.team.hover>\\'><suggest_command\\:\\'/teammsg \\'>${team}':'${displayName}':'${message}'>",
+
+      // Team message, visible to other team members (local variables: ${team}, ${displayName}, ${message})
+      // "received_team_chat": "<lang:'chat.type.team.text':'<hover\\:\\'<lang\\:chat.type.team.hover>\\'><suggest_command\\:\\'/teammsg \\'>${team}':'${displayName}':'${message}'>",
+
+      // Private message, visible to player sending (local variables: ${receiver}, ${sender}, ${message})
+      "sent_private_message": "<gray><italic><lang:commands.message.display.outgoing:'${receiver}':'${message}'>",
+
+      // Private message, visible to others (local variables: ${receiver}, ${sender}, ${message})
+      "received_private_message": "<gray><italic><lang:commands.message.display.incoming:'${sender}':'${message}'>",
+
+      // Output of /say command (local variables: ${player}, ${message})
+      "say_command": "[${player}] ${message}",
+
+      // Output of /me command (local variables: ${player}, ${message})
+      "me_command": "<lang:'chat.type.emote':'${player}':'${message}'>",
+
+      // Death message send when player's pet dies (local variables: ${default_message}, ${pet})
+      "pet_death": "${default_message}"
+    },
+    // Style of link (local variables: ${link}, ${url})
+    "link_style": "<underline><c:#7878ff>${link}",
+    // Style of spoilers (local variables: ${spoiler})
+    "spoiler_style": "<gray>${spoiler}",
+    // Spoiler symbol used in spoiler style
+    "spoiler_symbol": "▌",
+    // Formatting accessible to players
+
+    "formatting": {
+      "dark_red": true,
+      "green": true,
+      "underline": true,
+      "dark_green": true,
+      "black": true,
+      "yellow": true,
+      "bold": true,
+      "italic": true,
+      "dark_blue": true,
+      "dark_purple": true,
+      "gold": true,
+      "red": true,
+      "aqua": true,
+      "gray": true,
+      "light_purple": true,
+      "blue": true,
+      "white": true,
+      "dark_aqua": true,
+      "dark_gray": true,
+      "rainbow": true,
+      "spoiler": true,
+      "strikethrough": true
+    },
+
+    "emoticons": {
+      "item": "[%player:equipment_slot mainhand%]"
+    }
+  },
+
+  "styles": [
+    {
+        "require": { "type": "permission", "permission": "meta.color.owner_color" },
+        "message_formats": { "chat": "<b><blue>[%luckperms:prefix%] ${player}</blue></b> ${message}" }
+    },
+    {
+        "require": { "type": "permission", "permission": "meta.color.player_color" },
+        "message_formats": { "chat": "<b><gray>[%luckperms:prefix%] ${player}</gray></b> ${message}" }
+    }
+  ]
+}
+"""
+
+[[mods.server]]
+# LuckPerms
+source = "modrinth"
+id = "Vebnzrzj"
+tags = [ "Permissions", "Moderation" ]
+dependencies = [ "lzVo0Dll" ]
+    [[mods.server.config]]
+    path = "config/luckperms/luckperms.conf"
+    content = """
+storage-method: yaml
+"""
+    [[mods.server.config]]
+    path = "mods/luckperms/yaml-storage/groups/default.yml"
+
+    content = """
+name: default
+permissions:
+- essentialcommands.tpa
+- essentialcommands.tpahere
+- essentialcommands.tpaccept
+- essentialcommands.tpdeny
+- essentialcommands.home.set
+- essentialcommands.home.tp
+- essentialcommands.home.delete
+- essentialcommands.warp.tp
+- essentialcommands.spawn.tp
+- essentialcommands.back
+- essentialcommands.randomteleport
+- essentialcommands.afk
+- essentialcommands.nickname.self
+- essentialcommands.nickname.reveal
+- essentialcommands.rules
+- displayname.Player
+- prefix.1.Player
+- meta.color.player_color
+"""
+    [[mods.server.config]]
+    path = "mods/luckperms/yaml-storage/groups/owner.yml"
+    content = """
+name: owner
+permissions:
+- luckperms.*
+- banhammer.*
+- chunky.*
+- essentialcommands.*
+- servercore.*
+- vanish.*
+- voicechat.*
+- xaero.*
+- displayname.Owner
+- prefix.1.Owner
+- meta.color.owner_color
+"""
+    [[mods.server.config]]
+    path = "mods/luckperms/yaml-storage/users/1459c26c-6296-49a9-adbf-2eec51b661b7.yml"
+    content = """
+uuid: 1459c26c-6296-49a9-adbf-2eec51b661b7
+name: Durabilitas
+primary-group: owner
+parents:
+- default
+- owner
+"""
+
+[[mods.server]]
+# Essential Commands
+source = "modrinth"
+id = "6VdDUivB"
+tags = [ "Commands", "Moderation" ]
+    [[mods.server.config]]
+    path = "config/EssentialCommands.properties"
+    content = """
+teleport_delay=1.0
+teleport_interrupt_on_damaged=true
+teleport_interrupt_on_move=true
+teleport_interrupt_on_move_max_blocks=2.0
+allow_teleport_between_dimensions=true
+teleport_with_followers=true
+enable_rtp=true
+enable_bed=false
+enable_top=false
+
+enable_back=true
+allow_back_on_death=false
+persist_back_location=true
+
+enable_warp=true
+enable_spawn=true
+
+enable_afk=true
+auto_afk_enabled=true
+auto_afk_time=PT15M
+invuln_while_afk=true
+
+enable_nick=true
+nick_reveal_on_hover=true
+nickname_above_head=true
+nicknames_in_player_list=false
+
+enable_feed=false
+enable_heal=false
+enable_extinguish=false
+enable_repair=false
+enable_suicide=false
+enable_gametime=false
+enable_day=false
+enable_night=false
+enable_near=false
+enable_workbench=false
+enable_anvil=false
+enable_enderchest=false
+enable_wastebin=false
+
+enable_rules=true
+
+check_for_updates=false
+broadcast_to_ops=true
+use_permissions_api=true
+"""
+    [[mods.server.config]]
+    path = "config/essentialcommands/rules.txt"
+    content = """
+Below is a set of guidelines for what you can or cannot do. Any non-listed infraction may still result in some kind of punishment so please use initiative!
+
+1. DO respect other players (Know who you're talking to and their humor. Absolutely no harassment or targeted trolling.)
+2. DO try to resolve issues as they appear
+3. DO fix or tell the owner if you break something on accident
+4. DO NOT grief or steal from other players
+5. DO NOT kill pets (tamed animals, creatures marked as pets/with a name, etc.)
+6. DO NOT PvP without consent from all parties (no killing of new players or ambushing)
+7. DO NOT use hacked clients (x-ray, kill-aura, nuker, etc.)
+
+## Punishments ##
+
+Breaking of the above rules will result in the following punishments in order. Large infractions may skip steps in the punishment ladder if seen fit.
+
+1. Written warning
+2. Temp ban (1-3 days)
+3. Season-long ban
+"""
+
+[[mods.server]]
+# Fabric Permissions API
+source = "modrinth"
+id = "lzVo0Dll"
+tags = [ "Permissions", "Moderation" ]
+
+[[mods.server]]
+# BanHammer
+source = "modrinth"
+id = "Wpqg0ciI"
+tags = [ "Moderation" ]
+
+[[mods.server]]
+# Vanish
+source = "modrinth"
+id = "UL4bJFDY"
+tags = [ "Moderation" ]
 
 [[mods.both.required]]
 # AutoModpack
@@ -549,6 +838,7 @@ tags = [ "Performance Enhancement" ]
     path = "config/lithium.properties"
     content = """
 mixin.chunk.palette=false
+mixin.chunk.no_locking=false
 """
 
 [[mods.server]]

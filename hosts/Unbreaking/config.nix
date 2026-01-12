@@ -42,7 +42,7 @@ with lib;
 
       minecraft-server = {
         enable = true;
-        website.enable = true;
+        # website.enable = true;
         rcon.enable = true;
 
         whitelist = {

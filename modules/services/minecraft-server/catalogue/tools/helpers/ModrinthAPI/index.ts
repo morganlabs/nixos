@@ -121,7 +121,10 @@ export default class ModrinthAPI {
       tags: toml.tags,
       role,
       file: primaryFile.url,
-      sha512: primaryFile.hashes.sha512,
+      sha: {
+        type: "sha512",
+        value: primaryFile.hashes.sha512,
+      },
       config,
       dependencies: [
         ...version.dependencies

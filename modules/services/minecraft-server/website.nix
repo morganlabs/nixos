@@ -12,57 +12,57 @@ let
   port = 4587;
 
   # Mod filters & fetchers
-  filterMods =
-    roles: if roles == [ ] then catalogue.mods else filter (m: elem m.role roles) catalogue.mods;
+  # filterMods =
+  #   roles: if roles == [ ] then catalogue.mods else filter (m: elem m.role roles) catalogue.mods;
 
-  allModsList = filterMods [ ];
-  serverModsList = filterMods [
-    "server"
-    "both-required"
-    "both-optional"
-  ];
-  recommendedModsList = filterMods [
-    "client-required"
-    "client-optional"
-    "both-required"
-    "both-optional"
-  ];
-  requiredModsList = filterMods [
-    "client-required"
-    "both-required"
-  ];
+  # allModsList = filterMods [ ];
+  # serverModsList = filterMods [
+  #   "server"
+  #   "both-required"
+  #   "both-optional"
+  # ];
+  # recommendedModsList = filterMods [
+  #   "client-required"
+  #   "client-optional"
+  #   "both-required"
+  #   "both-optional"
+  # ];
+  # requiredModsList = filterMods [
+  #   "client-required"
+  #   "both-required"
+  # ];
 
-  mkSymlinkScript =
-    modsList:
-    concatMapStringsSep "\n" (
-      m:
-      let
-        fname = "${m.role}-${lib.replaceStrings [ " " ] [ "_" ] m.title}-${m.id}.jar";
-        drv = pkgs.fetchurl {
-          url = m.file;
-          sha512 = m.sha512;
-        };
-      in
-      "ln -sf ${drv} \"${fname}\"" # ← "${fname}" only (relative to mods/)
-    ) modsList;
-
-  mkModZip =
-    zipName: modsList:
-    pkgs.runCommand "${zipName}.zip" { } ''
-      set -eu
-      mkdir -p "mods"
-
-      cd "mods"
-      ${mkSymlinkScript modsList}
-      cd ..
-
-      ${pkgs.zip}/bin/zip -r "$out" mods/
-    '';
-
-  allModsZip = mkModZip "all-mods" allModsList;
-  serverModsZip = mkModZip "server-mods" serverModsList;
-  recommendedModsZip = mkModZip "recommended-mods" recommendedModsList;
-  requiredModsZip = mkModZip "required-mods" requiredModsList;
+  # mkSymlinkScript =
+  #   modsList:
+  #   concatMapStringsSep "\n" (
+  #     m:
+  #     let
+  #       fname = "${m.role}-${lib.replaceStrings [ " " ] [ "_" ] m.title}-${m.id}.jar";
+  #       drv = pkgs.fetchurl {
+  #         url = m.file;
+  #         sha512 = m.sha512;
+  #       };
+  #     in
+  #     "ln -sf ${drv} \"${fname}\"" # ← "${fname}" only (relative to mods/)
+  #   ) modsList;
+  #
+  # mkModZip =
+  #   zipName: modsList:
+  #   pkgs.runCommand "${zipName}.zip" { } ''
+  #     set -eu
+  #     mkdir -p "mods"
+  #
+  #     cd "mods"
+  #     ${mkSymlinkScript modsList}
+  #     cd ..
+  #
+  #     ${pkgs.zip}/bin/zip -r "$out" mods/
+  #   '';
+  #
+  # allModsZip = mkModZip "all-mods" allModsList;
+  # serverModsZip = mkModZip "server-mods" serverModsList;
+  # recommendedModsZip = mkModZip "recommended-mods" recommendedModsList;
+  # requiredModsZip = mkModZip "required-mods" requiredModsList;
 
   minecraftWebsite = pkgs.buildNpmPackage {
     pname = "minecraft-mod-website";
@@ -81,13 +81,13 @@ let
     installPhase = "cp -r dist $out";
   };
 
-  mkZipAlias = zipFile: {
-    alias = toString zipFile;
-    extraConfig = ''
-      autoindex off;
-      add_header Content-Type application/zip;
-    '';
-  };
+  # mkZipAlias = zipFile: {
+  #   alias = toString zipFile;
+  #   extraConfig = ''
+  #     autoindex off;
+  #     add_header Content-Type application/zip;
+  #   '';
+  # };
 in
 {
   options.modules.services.minecraft-server.website = {
@@ -140,10 +140,10 @@ in
           '';
         };
 
-        locations."= /mods/all-mods.zip" = mkZipAlias allModsZip;
-        locations."= /mods/server-mods.zip" = mkZipAlias serverModsZip;
-        locations."= /mods/recommended-mods.zip" = mkZipAlias recommendedModsZip;
-        locations."= /mods/required-mods.zip" = mkZipAlias requiredModsZip;
+        # locations."= /mods/all-mods.zip" = mkZipAlias allModsZip;
+        # locations."= /mods/server-mods.zip" = mkZipAlias serverModsZip;
+        # locations."= /mods/recommended-mods.zip" = mkZipAlias recommendedModsZip;
+        # locations."= /mods/required-mods.zip" = mkZipAlias requiredModsZip;
       };
     };
 

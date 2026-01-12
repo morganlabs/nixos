@@ -81,14 +81,6 @@ in
         autoStart = mkForce true;
         package = mkForce pkgs.fabricServers.fabric-1_21_1;
 
-        operators = mkForce {
-          Durabilitas = {
-            uuid = "1459c26c-6296-49a9-adbf-2eec51b661b7";
-            level = 4;
-            bypassesPlayerLimit = true;
-          };
-        };
-
         jvmOpts =
           with cfg.config;
           mkForce ''-Xms${toString memory}G -Xmx${toString memory}G -XX:+UseZGC -XX:+ParallelRefProcEnabled -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:+PerfDisableSharedMem -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true'';
