@@ -12,7 +12,10 @@ let
 
   pkgs = import inputs.nixpkgs {
     inherit system overlays;
-    config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+      nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "copilot.vim" ];
+    };
   };
 
   myLib = import ../lib pkgs.lib;

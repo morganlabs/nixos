@@ -13,6 +13,7 @@ with lib;
     ./telescope.nix
     ./tiny-inline-diagnostic.nix
     ./treesitter.nix
+    ./copilot.nix
   ];
 
   modules.programs.nvim.plugins = {
@@ -27,5 +28,6 @@ with lib;
     telescope.enable = mkDefault true;
     tiny-inline-diagnostic.enable = mkDefault true;
     treesitter.enable = mkDefault true;
+    copilot.enable = mkDefault true;
   };
 }
