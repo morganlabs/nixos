@@ -26,6 +26,7 @@ with lib;
     programs = {
       prism-launcher.enable = true;
       _1password.enable = true;
+      obsidian.enable = true;
     };
 
     desktop.hyprland = {

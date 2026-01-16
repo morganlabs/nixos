@@ -35,6 +35,7 @@
     ./programs/steam.nix
     ./programs/gamemode.nix
     ./programs/mangohud.nix
+    ./programs/obsidian.nix
 
     ./desktop/hyprland
   ];
