@@ -2,19 +2,18 @@
 #   ### ALWAYS REQURIED ###
 #   service = "service-name";
 #
-#  ### CREATING RULE ###
-#  subdomain = "some-subdomain"; # Becomes ${subdomain}.${defaultDomain} # OR
-#  rule = "Host(`${subdomain}.${defaultDomain}`)"; # Passed through as-is
+#   ### CREATING RULE ###
+#   subdomain = "some-subdomain"; # Becomes ${subdomain}.${defaultDomain} # OR
+#   rule = "Host(`${subdomain}.${defaultDomain}`)"; # Passed through as-is
 #
-#  ### CREATING LOADBALANCER SERVER ###
-#  port = 25575; # Creates "http://127.0.0.1:${toString port}"
-#  # OR
-#  internalURL = "http://127.0.0.1:whatever";
+#   ### CREATING LOADBALANCER SERVER ###
+#   port = 25575; # Creates "http://127.0.0.1:${toString port}"
+#   # OR
+#   internalURL = "http://127.0.0.1:whatever";
 #
-#  ### DEFAULTS ###
-#  entrypoints = [ "websecure" ];
-#  tls = true;
-#
+#   ### DEFAULTS ###
+#   entrypoints = [ "websecure" ];
+#   tls = true;
 # }
 
 lib: rawServices:
@@ -30,6 +29,7 @@ let
         if (item ? internalURL) then item.internalURL else "http://127.0.0.1:${toString item.port}";
       entrypoints = if (item ? entrypoints) then item.entrypoints else [ "websecure" ];
       tls = if (item ? tls) then item.tls else true;
+      middlewares = if (item ? middlewares) then item.middlewares else [ ];
     in
     with item;
     {
@@ -39,6 +39,7 @@ let
           rule
           entrypoints
           tls
+          middlewares
           ;
       };
 

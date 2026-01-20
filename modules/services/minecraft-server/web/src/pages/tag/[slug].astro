@@ -27,7 +27,7 @@ const mods = (await getCollection("mods"))
     .sort(({ data: a }, { data: b }) => a.title.localeCompare(b.title));
 ---
 
-<BaseLayout title="Low-Power Server Catalogue">
+<BaseLayout title="Low-Power SMP Catalogue">
     <div class="mods">
         {mods.map((mod) => <ModItem showTags={false} {mod} />)}
     </div>

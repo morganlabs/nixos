@@ -8,21 +8,10 @@ const mods = (await getCollection("mods")).sort(({ data: a }, { data: b }) =>
 );
 ---
 
-<BaseLayout title="Low-Power Server Catalogue">
+<BaseLayout title="Low-Power SMP Catalogue">
     <div class="downloadButtons">
-        <a class="button primary" href="/mods/recommended-mods.zip" download
-            >Recommended Mods</a
-        >
-        <a class="button secondary" href="/mods/required-mods.zip" download
-            >Required Mods</a
-        >
-        <a class="button secondary" href="/mods/server-mods.zip" download
-            >Server Mods</a
-        >
-        <a class="button secondary" href="/mods/all-mods.zip" download
-            >All Mods</a
-        >
-    </div>
+        <a class="button primary" href="/mods/lpsmp-optional-mods.zip" download>Optional Mods</a>
+        </div>
 
     <div class="mods">
         {mods.map((mod) => <ModItem showTags={true} {mod} />)}

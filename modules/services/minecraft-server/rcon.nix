@@ -37,8 +37,8 @@ in
           RWA_RCON_PORT = toString ports.rcon;
           RWA_SERVER_NAME = "Low-Power SMP";
           RWA_GAME = "minecraft";
-          RWA_WEBSOCKET_URL = "wss://low-power-dash.morganlabs.dev/ws";
-          RWA_WEBSOCKET_URL_SSL = "wss://low-power-dash.morganlabs.dev/ws";
+          RWA_WEBSOCKET_URL = "wss://mc.morganlabs.dev/dash/ws";
+          RWA_WEBSOCKET_URL_SSL = "wss://mc.morganlabs.dev/dash/ws";
         };
       };
     };
@@ -49,17 +49,32 @@ in
       "rcon.port" = ports.rcon;
     };
 
-    services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (mkTraefikServices [
+    services.traefik.dynamicConfigOptions.http = mkIf cfg.traefik.enable (
       {
-        service = "mc-rcon";
-        subdomain = "low-power-dash";
-        port = ports.webpanel;
+        middlewares.dash-stripprefix.stripPrefix.prefixes = [ "/dash" ];
       }
-      {
-        service = "mc-rcon-ws";
-        rule = "Host(`low-power-dash.morganlabs.dev`) && Path(`/ws`)";
-        port = ports.ws;
-      }
-    ]);
+      // (mkTraefikServices [
+        # Needed to get scripts/styles/etc to work properly
+        # Hopefully this doesnt fuck me over in the future
+        {
+          service = "mc-rcon-assets";
+          rule = "Host(`mc.morganlabs.dev`) && PathRegexp(`^/(stylesheets|files|scripts|images|views|wsconfig|widgets)(/.*)?$`)";
+          port = ports.webpanel;
+        }
+
+        {
+          service = "mc-rcon-ws";
+          rule = "Host(`mc.morganlabs.dev`) && PathPrefix(`/dash/ws`)";
+          port = ports.ws;
+          middlewares = [ "dash-stripprefix" ];
+        }
+        {
+          service = "mc-rcon";
+          rule = "Host(`mc.morganlabs.dev`) && PathPrefix(`/dash`)";
+          port = ports.webpanel;
+          middlewares = [ "dash-stripprefix" ];
+        }
+      ])
+    );
   };
 }
