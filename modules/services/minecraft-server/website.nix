@@ -11,12 +11,11 @@ let
 
   port = 4587;
 
-  # Mod filters & fetchers
-  filterMods =
+  # Mod filters
+  filterModsByRole =
     roles: if roles == [ ] then catalogue.mods else filter (m: elem m.role roles) catalogue.mods;
 
-  # allModsList = filterMods [ ];
-  optionalModsList = filterMods [
+  optionalModsList = filterModsByRole [
     "client-optional"
     "both-optional"
   ];
@@ -107,12 +106,10 @@ in
 
         locations."/tag/" = {
           extraConfig = ''
-            # Clean URLs: /tag/qol → /tag/qol/index.html (NO trailing slash)
             location ~ ^/tag/([^/]+)/?$ {
               try_files /tag/$1/index.html =404;
             }
 
-            # Directory index + SPA fallback
             try_files $uri $uri/ /tag/index.html /index.html;
             index index.html index.htm;
             autoindex on;

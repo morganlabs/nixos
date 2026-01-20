@@ -21,6 +21,7 @@ button,
     padding: 0.5rem;
     border-radius: 8px;
     text-decoration: none;
+    cursor: pointer;
 
     &.primary {
         background-color: blue;

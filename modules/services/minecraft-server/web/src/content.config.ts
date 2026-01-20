@@ -2,10 +2,17 @@ import { defineCollection } from "astro:content";
 import { file } from "astro/loaders";
 import { z } from "astro/zod";
 
+const cataloguePath = "src/data/catalogue.json";
+const mkLoader = (key: string) =>
+  file(cataloguePath, {
+    parser: (text) => {
+      const data = JSON.parse(text)[key];
+      return Array.isArray(data) ? data : [data];
+    },
+  });
+
 const mods = defineCollection({
-  loader: file("src/data/catalogue.json", {
-    parser: (text) => JSON.parse(text).mods,
-  }),
+  loader: mkLoader("mods"),
   schema: z.object({
     source: z.enum(["manual", "modrinth"]),
     id: z.string(),
@@ -31,9 +38,7 @@ const mods = defineCollection({
 });
 
 const resourcePacks = defineCollection({
-  loader: file("src/data/catalogue.json", {
-    parser: (text) => JSON.parse(text).resourcePacks,
-  }),
+  loader: mkLoader("resourcePacks"),
   schema: z.object({
     id: z.string(),
   }),
