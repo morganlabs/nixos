@@ -53,9 +53,15 @@ in
       mode = "0400";
     };
 
-    modules.desktop.hyprland = {
-      withUWSM = mkDefault true;
-      smart-gaps.enable = mkDefault true;
+    modules = {
+      programs = {
+        firefox.enable = mkDefault true;
+      };
+
+      desktop.hyprland = {
+        withUWSM = mkDefault true;
+        smart-gaps.enable = mkDefault true;
+      };
     };
 
     programs.uwsm.enable = cfg.withUWSM;
@@ -70,7 +76,6 @@ in
 
     environment.systemPackages = with pkgs; [
       kitty
-      firefox
       hyprlauncher
       adwaita-icon-theme
     ];

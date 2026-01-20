@@ -18,6 +18,10 @@ let
     };
   };
 
+  mkNixPak = inputs.nixpak.lib.nixpak {
+    inherit (pkgs) lib;
+    inherit pkgs;
+  };
   myLib = import ../lib pkgs.lib;
 
   lib = pkgs.lib.extend (_: prev: prev // myLib);
@@ -26,7 +30,14 @@ in
   "${hostname}" = inputs.nixpkgs.lib.nixosSystem {
     inherit system pkgs;
 
-    specialArgs = { inherit vars lib inputs; };
+    specialArgs = {
+      inherit
+        vars
+        lib
+        inputs
+        mkNixPak
+        ;
+    };
     modules = [
       ../hosts/${hostname}/config.nix
       ../modules

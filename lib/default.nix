@@ -17,4 +17,10 @@ lib: {
   nixvim = {
     mkKeymap = import ./nixvim/mkKeymap.nix lib;
   };
+
+  firefox = {
+    mkBookmark = import ./firefox/mkBookmark.nix;
+    mkBookmarkFolder = import ./firefox/mkBookmarkFolder.nix;
+    mkSearchEngine = import ./firefox/mkSearchEngine.nix;
+  };
 }
