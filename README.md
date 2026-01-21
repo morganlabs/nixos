@@ -44,7 +44,7 @@ This is my repo full of my NixOS configurations.
 - [ ] Suspend (to RAM and to Disk after timeout)
 - [ ] Lid Switch to Suspend
 - [x] Btrfs
-  - [ ]and Backups
+  - [ ] and Backups
 - [x] Prism launcher
 - [x] GPU stuff (OpenGL/CL)
 - [ ] NordVPN
@@ -53,13 +53,13 @@ This is my repo full of my NixOS configurations.
 - [ ] Localsend
 - [x] Brightness, audio, etc., functions + keys
 - [x] Remap Caps Lock to Escape
-- [ ] Theming (GNOME/Qt/Icons/etc.)
+- [x] Theming (GNOME/Qt/Icons/etc.)
 - [x] Touchpad
 - [x] Fonts
 - [x] Audio
 - [ ] Printing
 - [ ] EarlyOOM (TODO!: Research)
-- [ ] Gaming optimizations
+- [x] Gaming optimizations
 - [ ] Cachix (TODO!: Research)
 
 ## Servers
