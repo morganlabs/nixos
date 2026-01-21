@@ -13,11 +13,12 @@ in
   options.modules.services.sabnzbd = {
     enable = mkEnableOption "Enable services.sabnzbd";
     traefik.enable = mkEnableOption "Enable Traefik routing";
-    group = mkStringOption "The group to run sabnzbd as" config.modules.services.jellyfin.group;
+    group = mkStringOption "The group to run sabnzbd as" config.modules.services.navidrome.group;
   };
 
   config = mkIf cfg.enable {
     modules.services.sabnzbd.traefik.enable = mkDefault true;
+    users.groups.${cfg.group} = { };
 
     age.secrets = {
       usenet-server.file = ../../secrets/${vars.hostname}/usenet-server.age;

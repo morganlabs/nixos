@@ -10,10 +10,12 @@ in
     enable = mkEnableOption "Enable services.navidrome";
     useMinIO = mkEnableOption "Use MinIO for storage";
     traefik.enable = mkEnableOption "Enable Traefik routing";
-    group = mkStringOption "The group to run Jellyfin as" "media";
+    group = mkStringOption "The group to run Navidrome as" "media";
   };
 
   config = mkIf cfg.enable {
+    users.groups.media = { };
+
     modules.services = {
       navidrome.traefik.enable = mkDefault true;
       minio = mkIf cfg.useMinIO {

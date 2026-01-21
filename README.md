@@ -69,7 +69,6 @@ This is my repo full of my NixOS configurations.
   - [x] Online admin/RCON panel
 - [x] Navidrome
 - [ ] Nextcloud
-- [x] Jellyfin
 - [x] Dashboard
 - [x] Traefik
 - [ ] PiHole DNS

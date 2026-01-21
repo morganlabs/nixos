@@ -32,7 +32,6 @@ with lib;
       flame.enable = true;
       status.enable = true;
       sabnzbd.enable = true;
-      sonarr.enable = true;
       lidarr.enable = true;
 
       navidrome = {
@@ -52,31 +51,8 @@ with lib;
           S3THY122 = "ec72d038-3a61-44d6-9527-874ccc4ad13b";
         };
       };
-
-      jellyfin = {
-        enable = true;
-        useMinIO = true;
-        hardwareAcceleration.enable = true;
-
-        decodingCodecs = {
-          mpeg2 = true;
-          hevc = true;
-          h264 = true;
-        };
-
-        transcoding = {
-          maxConcurrentStreams = 4;
-          enableHardwareEncoding = true;
-          deleteSegments = true;
-          encodingPreset = "medium";
-        };
-      };
     };
   };
-
-  ### JELLYFIN HARDWARE ACCELERATION ###
-  systemd.services.jellyfin.environment.LIBVA_DRIVER_NAME = "i965";
-  environment.sessionVariables.LIBVA_DRIVER_NAME = "i965";
 
   hardware.graphics = {
     enable = true;

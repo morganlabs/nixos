@@ -8,11 +8,12 @@ in
   options.modules.services.lidarr = {
     enable = mkEnableOption "Enable services.lidarr";
     traefik.enable = mkEnableOption "Enable Traefik routing";
-    group = mkStringOption "The group to run Lidarr as" config.modules.services.jellyfin.group;
+    group = mkStringOption "The group to run Lidarr as" config.modules.services.navidrome.group;
   };
 
   config = mkIf cfg.enable {
     modules.services.lidarr.traefik.enable = mkDefault true;
+    users.groups.media = { };
 
     services.lidarr = {
       inherit (cfg) group;

@@ -18,9 +18,7 @@
     ./services/minio.nix
     ./services/rclone.nix
     ./services/navidrome.nix
-    ./services/jellyfin.nix
     ./services/status.nix
-    ./services/sonarr.nix
     ./services/lidarr.nix
     ./services/sabnzbd.nix
     ./services/power-management.nix
