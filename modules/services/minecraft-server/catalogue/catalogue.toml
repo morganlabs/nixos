@@ -798,9 +798,15 @@ tags = [ "Terrain" ]
 dependencies = [ "XaDC71GB" ]
 
 [[mods.server]]
-# TreeTimber
+# Tree Vein Miner
 source = "modrinth"
-id = "fhTDuo6c"
+id = "wEhW4ceB"
+tags = [ "Quality of Life" ]
+
+[[mods.server]]
+# Ore Vein Miner
+source = "modrinth"
+id = "Xl2GihRU"
 tags = [ "Quality of Life" ]
 
 [[mods.server]]

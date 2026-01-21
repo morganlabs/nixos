@@ -438,25 +438,6 @@
         },
         {
             "source": "modrinth",
-            "id": "fhTDuo6c",
-            "title": "TreeTimber",
-            "description": "Tree faling mod (treecapitator)",
-            "icon": "https://cdn.modrinth.com/data/fhTDuo6c/de0dfc31ab5648ac5f770a52f6f4a608961372a9_96.webp",
-            "published": "2024-12-28T19:02:39.710671Z",
-            "tags": [
-                "Quality of Life"
-            ],
-            "role": "server",
-            "file": "https://cdn.modrinth.com/data/fhTDuo6c/versions/QlaAfPUN/TreeTimberFabric-1.21.1-1.0.1.jar",
-            "sha": {
-                "type": "sha512",
-                "value": "34657fa909f0a818574ce07f0659253c36328c3e03947072b779aae0facb9d3b210ada0dfe030a9f0accd6704d337b106304b77d6c4b8f77615ff2ccc2eef30b"
-            },
-            "config": [],
-            "dependencies": []
-        },
-        {
-            "source": "modrinth",
             "id": "DjLobEOy",
             "title": "Towns and Towers",
             "description": "Spice up your world with new villages, pillager outposts, and even new ships!",
@@ -3326,6 +3307,44 @@
             "dependencies": [
                 "lzVo0Dll"
             ]
+        },
+        {
+            "source": "modrinth",
+            "id": "wEhW4ceB",
+            "title": "Tree Vein Miner",
+            "description": "Tree Vein Miner Removes entire trees (logs and leaves) when crouching",
+            "icon": "https://cdn.modrinth.com/data/wEhW4ceB/13afc2a73d24ba8aa7b32e0d032a02fae5380ff7_96.webp",
+            "published": "2026-01-17T13:36:19.545392Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "server",
+            "file": "https://cdn.modrinth.com/data/wEhW4ceB/versions/2V313Qzt/tree-vein-miner-1.1.jar",
+            "sha": {
+                "type": "sha512",
+                "value": "f16e9cd1c891e3696d284d6898b011f1f0dd588bccaa8e1515ad67a9fd1e44973d635f770da81f9a41f096b7d69d3feb7fa7d80bf5e245e76f314ae59f34736e"
+            },
+            "config": [],
+            "dependencies": []
+        },
+        {
+            "source": "modrinth",
+            "id": "Xl2GihRU",
+            "title": "Ore Vein Miner",
+            "description": "Vein Miner automatically mines connected ore blocks when you break one",
+            "icon": "https://cdn.modrinth.com/data/Xl2GihRU/17054186ed0c6c4d10bffd7ad1c422d7211c3004_96.webp",
+            "published": "2026-01-17T13:41:29.865057Z",
+            "tags": [
+                "Quality of Life"
+            ],
+            "role": "server",
+            "file": "https://cdn.modrinth.com/data/Xl2GihRU/versions/f1UDmNmz/ore-vein-miner-1.0.jar",
+            "sha": {
+                "type": "sha512",
+                "value": "56b7749d4f566d9bcc06673799982c5430ba4af820a3862c9a3270189070da6e08ffa2111866e1d90b1b324010b98afb7f54758ebbbe0a052ad65aec9f08bbae"
+            },
+            "config": [],
+            "dependencies": []
         }
     ],
     "resourcePacks": []

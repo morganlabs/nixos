@@ -7,7 +7,10 @@
       inherit username;
       fullName = "Morgan Jones";
       home = "/home/${username}";
-      email.work = "me@morganlabs.dev";
+      email = {
+        personal = "jmorgan@fastmail.uk";
+        work = "me@morganjones.tech";
+      };
       face = ./face.jpg;
     };
 }

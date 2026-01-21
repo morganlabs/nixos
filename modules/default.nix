@@ -23,6 +23,8 @@
     ./services/sabnzbd.nix
     ./services/power-management.nix
     ./services/fprintd.nix
+    ./services/vaultwarden.nix
+    ./services/nextcloud.nix
 
     ./programs/nvim
     ./programs/git.nix

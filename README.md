@@ -68,7 +68,7 @@ This is my repo full of my NixOS configurations.
   - [x] Mods/Resources/Shaders website
   - [x] Online admin/RCON panel
 - [x] Navidrome
-- [ ] Nextcloud
+- [x] Nextcloud
 - [x] Dashboard
 - [x] Traefik
 - [ ] PiHole DNS

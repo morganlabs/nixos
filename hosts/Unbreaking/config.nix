@@ -33,6 +33,8 @@ with lib;
       status.enable = true;
       sabnzbd.enable = true;
       lidarr.enable = true;
+      vaultwarden.enable = true;
+      nextcloud.enable = true;
 
       navidrome = {
         enable = true;
