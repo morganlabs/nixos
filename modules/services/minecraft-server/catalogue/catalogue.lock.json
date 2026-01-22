@@ -66,7 +66,8 @@
             "icon": "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",
             "published": "2024-12-17T22:10:57.615075Z",
             "tags": [
-                "Performance Enhancement"
+                "Performance Enhancement",
+                "Support Mod"
             ],
             "role": "client-required",
             "file": "https://cdn.modrinth.com/data/AANobbMI/versions/EoNKHoLH/sodium-fabric-0.6.5%2Bmc1.21.1.jar",
@@ -86,7 +87,8 @@
             "published": "2025-01-15T20:35:48.053463Z",
             "tags": [
                 "UI",
-                "Settings"
+                "Settings",
+                "Support Mod"
             ],
             "role": "client-required",
             "file": "https://cdn.modrinth.com/data/Bh37bMuy/versions/KoUrx3jJ/reeses-sodium-options-fabric-1.8.3%2Bmc1.21.4.jar",
@@ -2164,7 +2166,8 @@
             "published": "2025-09-01T13:54:43.375671Z",
             "tags": [
                 "Storage",
-                "Quality of Life"
+                "Quality of Life",
+                "Support Mod"
             ],
             "role": "both-required",
             "file": "https://cdn.modrinth.com/data/I0UYcPa0/versions/iE11BIfP/inmis-2.8.2-1.21.1.jar",

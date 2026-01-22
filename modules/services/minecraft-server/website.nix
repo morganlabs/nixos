@@ -11,14 +11,15 @@ let
 
   port = 4587;
 
-  # Mod filters
-  filterModsByRole =
-    roles: if roles == [ ] then catalogue.mods else filter (m: elem m.role roles) catalogue.mods;
+  filterModsByRolesAndTags =
+    roles: tags:
+    let
+      modMatchesRole = m: any (r: r == m.role) roles;
+      modMatchesTag = m: any (t: elem t m.tags) tags;
+    in
+    filter (m: modMatchesRole m || modMatchesTag m) catalogue.mods;
 
-  optionalModsList = filterModsByRole [
-    "client-optional"
-    "both-optional"
-  ];
+  optionalModsList = filterModsByRolesAndTags [ "client-optional" "both-optional" ] [ "Support Mod" ];
 
   mkSymlinkScript =
     modsList:
